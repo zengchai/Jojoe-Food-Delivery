@@ -37,7 +37,7 @@ $_SESSION['LEVEL'] = $user_level;
 if ($_SESSION['LEVEL']==1){
     header("Location: selmainpage.php");
 }
-else if ($_SESSION['LEVEL']==2){
+else if ($_SESSION['LEVEL']==0){
     header("Location: stumainpage.php");
 }
 }
