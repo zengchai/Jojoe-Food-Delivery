@@ -31,6 +31,7 @@ $user = "CREATE TABLE user(
     CONSTRAINT user_pk PRIMARY KEY(user_id))";
 
 $menu = "CREATE TABLE menu(
+    menu_img MEDIUMBLOB NOT NULL,
     menu_code VARCHAR(10) NOT NULL,
     menu_name VARCHAR(30) NOT NULL,
     menu_price FLOAT(8) NOT NULL,
