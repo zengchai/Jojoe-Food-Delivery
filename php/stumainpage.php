@@ -33,10 +33,16 @@ if ($_SESSION["Login"] != "YES") {
     $res = mysqli_query($conn, $sql);
 
         if (mysqli_num_rows($res) > 0) {
-            while ($images = mysqli_fetch_assoc($res)) { ?>
+            while ($row = mysqli_fetch_assoc($res)) { 
+            
+            echo "<p> $row[menu_code] </p>
+            <p> $row[menu_name] </p>";?>
 
-            <img src="../menuimages/<?=$images['menu_img']?>">
-
-    <?php } } ?>
+            <img src="../menuimages/<?=$row['menu_img']?>">
+            
+    <?php echo "<p> $row[menu_price] </p>
+    <p> $row[menu_description] </p>";
+    } } 
+    ?>
 </body>
 </html>
