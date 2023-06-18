@@ -40,23 +40,16 @@ $menu = "CREATE TABLE menu(
 
 $order = "CREATE TABLE orders(
   order_id INT(10),
-  total_price FLOAT(8) NOT NULL,
-  CONSTRAINT orderid_pk PRIMARY KEY(order_id))";
-
-$payment = "CREATE TABLE payment(
-  order_id INT(10) NOT NULL,
   user_id VARCHAR(10) NOT NULL,
-  payment_no VARCHAR(10) NOT NULL,
   payment_status VARCHAR(15) NOT NULL,
-  payment_amount FLOAT(8) NOT NULL,
   payment_date DATE NOT NULL,
-  CONSTRAINT makeorder_pk PRIMARY KEY (order_id,payment_no),
-  CONSTRAINT makeorder_fk FOREIGN KEY (order_id) REFERENCES orders(order_id),
-  CONSTRAINT mo_fk FOREIGN KEY (user_id) REFERENCES user(user_id))";
+  total_price FLOAT(8) NOT NULL,
+  CONSTRAINT orderid_pk PRIMARY KEY(order_id,user_id),
+  CONSTRAINT user_fk FOREIGN KEY(user_id) REFERENCES user(user_id))";
+
 
 $orderdetail = "CREATE TABLE orderdetail(
     order_id INT(10) NOT NULL,
-    order_date DATE NOT NULL,
     menu_code VARCHAR(10) NOT NULL,
     order_quantity INT(4) NOT NULL,
     order_price FLOAT(8) NOT NULL,
@@ -89,12 +82,6 @@ if (mysqli_query($conn, $orderdetail)) {
     echo "Error creating table: " . mysqli_error($conn);
   }
 
-  
-  if (mysqli_query($conn, $payment)) {
-    echo "Table payment created successfully";
-  } else {
-    echo "Error creating table: " . mysqli_error($conn);
-  }
  
   
 mysqli_close($conn);

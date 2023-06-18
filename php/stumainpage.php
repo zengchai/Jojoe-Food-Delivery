@@ -82,7 +82,6 @@ if ($_SESSION["Login"] != "YES") {
         $sql = "SELECT * FROM menu ORDER BY menu_code";
         $res = mysqli_query($conn, $sql);
     }
-    $i = 0;
     if (mysqli_num_rows($res) > 0) {
             while ($row = mysqli_fetch_assoc($res)) { 
             
@@ -99,7 +98,7 @@ if ($_SESSION["Login"] != "YES") {
 </form>";
 } } 
     ?>
-
+<a href="stuorder.php">Order</a>
     <a href="logout.php">Log out</a>
 </body>
 </html>
