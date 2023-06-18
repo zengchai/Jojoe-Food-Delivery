@@ -38,27 +38,30 @@ $menu = "CREATE TABLE menu(
     menu_description VARCHAR(200) NOT NULL,
     CONSTRAINT menu_pk PRIMARY KEY(menu_code))";
 
+$order = "CREATE TABLE orders(
+  order_id INT(10),
+  total_price FLOAT(8) NOT NULL,
+  CONSTRAINT orderid_pk PRIMARY KEY(order_id))";
+
 $payment = "CREATE TABLE payment(
-  order_no VARCHAR(8) NOT NULL,
+  order_id INT(10) NOT NULL,
   user_id VARCHAR(10) NOT NULL,
   payment_no VARCHAR(10) NOT NULL,
   payment_status VARCHAR(15) NOT NULL,
   payment_amount FLOAT(8) NOT NULL,
   payment_date DATE NOT NULL,
-  CONSTRAINT makeorder_pk PRIMARY KEY(order_no),
+  CONSTRAINT makeorder_pk PRIMARY KEY (order_id,payment_no),
+  CONSTRAINT makeorder_fk FOREIGN KEY (order_id) REFERENCES orders(order_id),
   CONSTRAINT mo_fk FOREIGN KEY (user_id) REFERENCES user(user_id))";
 
-$orders = "CREATE TABLE orders(
-    order_no VARCHAR(8) NOT NULL,
+$orderdetail = "CREATE TABLE orderdetail(
+    order_id INT(10) NOT NULL,
     order_date DATE NOT NULL,
-    menu_code VARCHAR(4) NOT NULL,
+    menu_code VARCHAR(10) NOT NULL,
     order_quantity INT(4) NOT NULL,
-    total_price FLOAT(8) NOT NULL,
-    delivery_date DATE NOT NULL,
-    delivery_status VARCHAR(15) NOT NULL,
-    CONSTRAINT order_pk PRIMARY KEY(order_no, menu_code),
-    CONSTRAINT od_fk FOREIGN KEY (menu_code) REFERENCES menu(menu_code),
-    CONSTRAINT order_fk FOREIGN KEY (order_no) REFERENCES payment(order_no))";
+    order_price FLOAT(8) NOT NULL,
+    CONSTRAINT order_fk FOREIGN KEY (order_id) REFERENCES orders(order_id),
+    CONSTRAINT od_fk FOREIGN KEY (menu_code) REFERENCES menu(menu_code))";
 
 
 
@@ -73,19 +76,25 @@ if (mysqli_query($conn, $menu)) {
   } else {
     echo "Error creating table: " . mysqli_error($conn);
   }
- 
-  if (mysqli_query($conn, $payment)) {
-    echo "Table payment created successfully";
-  } else {
-    echo "Error creating table: " . mysqli_error($conn);
-  }
 
-if (mysqli_query($conn, $orders)) {
+if (mysqli_query($conn, $order)) {
     echo "Table order created successfully";
   } else {
     echo "Error creating table: " . mysqli_error($conn);
   }
 
+if (mysqli_query($conn, $orderdetail)) {
+    echo "Table orderdetail created successfully";
+  } else {
+    echo "Error creating table: " . mysqli_error($conn);
+  }
+
+  
+  if (mysqli_query($conn, $payment)) {
+    echo "Table payment created successfully";
+  } else {
+    echo "Error creating table: " . mysqli_error($conn);
+  }
  
   
 mysqli_close($conn);
