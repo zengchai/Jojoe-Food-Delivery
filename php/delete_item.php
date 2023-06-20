@@ -2,15 +2,16 @@
 
 require_once ("config.php");
 
-$menu_code = $_GET["menucode"];
+$pass = $_GET["pass"];
 
-if (isset($_GET["menucode"])) {
-    $menu_code = $_GET["menucode"];
+if (isset($_GET["pass"])) {
+    $pass = $_GET["pass"];
 }
 
 
 //Q2: delete guest according to id using DELETE FROM
-$sql = "DELETE FROM menu WHERE menu_code = '$menu_code'";
+if($_SESSION['LEVEL']==1){
+$sql = "DELETE FROM menu WHERE menu_code = '$pass'";
 
 if (mysqli_query($conn, $sql)) {
    $em = "Record deleted successfully";
@@ -18,6 +19,18 @@ if (mysqli_query($conn, $sql)) {
    } else {
     $em = "Error deleting record: " . mysqli_error($conn);
     header("Location: selmainpage.php?sub=$em");
+}}
+
+else if($_SESSION['LEVEL']==0){
+    $sql = "DELETE FROM orderdetail WHERE item_id = '$pass'";
+
+    if (mysqli_query($conn, $sql)) {
+       $em = "Record deleted successfully";
+        header("Location: stuorder.php?sub=$em");
+       } else {
+        $em = "Error deleting record: " . mysqli_error($conn);
+        header("Location: stuorder.php?sub=$em");
+    }
 }
 mysqli_close($conn);
 ?>

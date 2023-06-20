@@ -8,6 +8,7 @@ if ($_SESSION["Login"] != "YES") {
 	header("Location: guest_form.php");
 }
 
+
 ?>
 <html>
 <head>
@@ -63,9 +64,10 @@ if ($_SESSION["Login"] != "YES") {
             
     <?php echo "<p> $row[menu_price] </p>
     <p> $row[menu_description] </p>
-	<a href='delete_item.php?menucode=$row[menu_code]'>Delete</a>
+	<a href='delete_item.php?pass=$row[menu_code]'>Delete</a>
 	<a href='edit_item.php?menucode=$row[menu_code]'>Edit</a>";
     } } ?>
+    <a href="selorderhistory.php">Order History</a>
 <a href="logout.php">Log out</a>
 </body>
 </html>
