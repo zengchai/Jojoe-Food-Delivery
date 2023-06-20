@@ -1,4 +1,19 @@
-<!DOCTYPE html>
+<html>
+<head>
+<?php
+session_start();
+
+// If the user is not logged in send him/her to the login form
+if(isset($_SESSION["Login"])){
+if ($_SESSION["Login"] == "NO") {
+    echo "hi";
+}
+
+unset($_SESSION["Login"]);}
+
+
+?>
+
 <html>
 <head>
 <title>Jojoe food ordering system login page</title>
@@ -38,15 +53,15 @@
 
     <div class="container">
         <div class="leftcontainer">
-            <form action="">
+            <form method="post" action="check_login.php">
                 <div class="logina">LOGIN </div>
                 <div class="userid">User ID: <br>
-                <input class="inputtype" type="text" id="userid" size="30", placeholder="Create a userid" maxlength="10"><br></div>                               
+                <input class="inputtype" type="text" id="userid" name="username" size="30", placeholder="Create a userid" maxlength="10"><br></div>                               
                 <div class="password">Password: <br>
-                <input class="inputtype" type="password" id="password" size="30", placeholder="Enter your password" maxlength="10"></div>
+                <input class="inputtype" type="password" id="password" name="password" size="30", placeholder="Enter your password" maxlength="10"></div>
                <div class="resetpwd"> <a href="#"onclick="ResetPwd()">Forgot password?<br></a></div>
-               <div class="signup"> <a href="register.html"onclick="signup()">Existing account??<br>SignupNow</a> </div> <!-- link to sign up page-->
-                <input class="inputtype" type="button" id="login" value="Login" onclick="location.href='serviceCustomerPage.html'">
+               <div class="signup"> <a href="signup.php">Existing account??<br>SignupNow</a> </div> <!-- link to sign up page-->
+                <input class="inputtype" type="submit" id="login" value="Login">
             </form>
             
         </div>
@@ -58,10 +73,10 @@
     
     <div class="position">
       <a data-active="customer" href="serviceCustomerPage.html">Customer</a>
-      /
       <a data-active="seller" href="serviceSellerPage.html">Seller</a>
     </div>
 
 
 </body>
 </html>
+<a href="signup.php">SignUp</a>
