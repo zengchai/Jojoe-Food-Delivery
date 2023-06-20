@@ -64,7 +64,7 @@
 
       <div class="cart">
         <span class="count">
-          <div id="total-count"></div>
+          <div id="total-count">0</div>
         </span>
         <a data-active="cart" class="material-icons" href="cart.html"><img src="servicePageImage/shopping-cart.png" style="height: 40px; width: 40px; margin-right: 10px"></a></i>
       </div>
@@ -72,63 +72,91 @@
     </div>
 
       <div class="grid-container2" id="grid-container2">
-
+        
         <!--place to insert food-->
-        <!-- <div class="food">
+        <div class="food">
           <div class="thumb">
-            <div class="image"></div>
+            <div class="image"><img src="servicePageImage/sweetSourChicken.png"></div>
           </div>
-          
           <div class="details">
-            <div class="name"></div>
-            <div class="engName"></div>
-            <div class="price"></div>
-            <div class="edit"></div>
-            <div class="delete"></div>
-          </div>  
-          
-        </div>-->
-        <!--place to insert food-->
+            <div class="foodID">A.</div>
+            <div class="name">酸甜鸡丁</div>
+            <div class="engName">Sweet & Sour Chicken</div>
+            <div class="price">RM3.00</div>
+            <button type="button" class="addToCart allbutton">Add to Cart</button>
+          </div>
+        </div>
+
+        <div class="food">
+          <div class="thumb">
+            <div class="image"><img src="servicePageImage/sweetSourChicken.png"></div>
+          </div>
+          <div class="details">
+            <div class="foodID">A.</div>
+            <div class="name">酸甜鸡丁</div>
+            <div class="engName">Sweet & Sour Chicken</div>
+            <div class="price">RM3.00</div>
+            <button type="button" class="addToCart allbutton">Add to Cart</button>
+          </div>
+        </div>
+
+        <div class="food">
+          <div class="thumb">
+            <div class="image"><img src="servicePageImage/sweetSourChicken.png"></div>
+          </div>
+          <div class="details">
+            <div class="foodID">A.</div>
+            <div class="name">酸甜鸡丁</div>
+            <div class="engName">Sweet & Sour Chicken</div>
+            <div class="price">RM3.00</div>
+            <button type="button" class="addToCart allbutton">Add to Cart</button>
+          </div>
+        </div>
+
+        <div class="food">
+          <div class="thumb">
+            <div class="image"><img src="servicePageImage/sweetSourChicken.png"></div>
+          </div>
+          <div class="details">
+            <div class="foodID">A.</div>
+            <div class="name">酸甜鸡丁</div>
+            <div class="engName">Sweet & Sour Chicken</div>
+            <div class="price">RM3.00</div>
+            <button type="button" class="addToCart allbutton">Add to Cart</button>
+          </div>
+        </div>
+
+        <div class="food">
+          <div class="thumb">
+            <div class="image"><img src="servicePageImage/sweetSourChicken.png"></div>
+          </div>
+          <div class="details">
+            <div class="foodID">A.</div>
+            <div class="name">酸甜鸡丁</div>
+            <div class="engName">Sweet & Sour Chicken</div>
+            <div class="price">RM3.00</div>
+            <button type="button" class="addToCart allbutton">Add to Cart</button>
+          </div>
+        </div>
+
+        <div class="food">
+          <div class="thumb">
+            <img src="servicePageImage/sweetSourChicken.png">
+          </div>
+          <div class="details">
+            <div class="foodID">A.</div>
+            <div class="name">酸甜鸡丁</div>
+            <div class="engName">Sweet & Sour Chicken</div>
+            <div class="price">RM3.00</div>
+            <button type="button" class="addToCart allbutton">Add to Cart</button>
+          </div>
+        </div>
       </div>
-      
   </div>
 </div>  
 
 <!--==============================================================-->
-<button id="plusButton" class="allbutton" onclick="document.getElementById('id01').style.display='block'" style="width:auto;"> + </button>
 
-<div id="id01" class="modal">
-  
-  <form class="modal-content animate" action="/action_page.php" method="post">
-    <div class="imgcontainer">
-      <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
-      <h1>Add Item</h1>
-    </div>
-
-    <div class="input-container">
-      <label for="foodCname"><b>Food's Image: </b></label>
-      <input type="file" accept="image/jpeg, image/png, image/jpg"><br><br>
-
-      <label for="foodID"><b>Food's ID</b></label>
-      <input type="foodID" placeholder="" id="foodid" >
-      
-      <label for="foodCname"><b>Food's Chinese Name</b></label>
-      <input type="foodCname" placeholder="" id="foodCName" >
-
-      <label for="foodEngName"><b>Food's English Name</b></label>
-      <input type="foodEngName" placeholder="" id="foodEngName" >
-        
-      <label for="foodPrice"><b>Food Price:</b></label>
-      <input type="foodPrice" placeholder="" id="foodPrice" >
-
-      <!--ltr need to change to submit-->
-      <button type="button" class="allbutton" id="addButton">ADD</button>
-      <!--<input type="button" id="addButton" value="ADD" >-->
-      
-    </div>
-
-  </form>
-</div>
   
 <div class="position">
   <a data-active="customer" href="serviceCustomerPage.html">Customer</a>
