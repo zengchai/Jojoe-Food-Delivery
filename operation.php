@@ -1,12 +1,13 @@
 <?php
-
+session_start();
 require_once ("config.php");
 
-$pass = $_GET["pass"];
+if ($_SESSION["Login"] != "YES") {
+    header("Location: guest_form.php");
+}
 
 if (isset($_GET["pass"])) {
     $pass = $_GET["pass"];
-}
 
 
 //Q2: delete guest according to id using DELETE FROM
@@ -33,4 +34,7 @@ else if($_SESSION['LEVEL']==0){
     }
 }
 mysqli_close($conn);
+}
+
+
 ?>
