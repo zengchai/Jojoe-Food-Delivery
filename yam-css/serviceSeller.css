@@ -51,10 +51,10 @@
 }
 
 .thumb{
-    border: 5px solid green;
+    
 }
 .image{
-    border: 5px solid rgb(0, 99, 191);
+    
 }
 
 .details {
@@ -63,7 +63,6 @@
     grid-template-rows: repeat(3, 0.7fr);
     gap: 10px;
     margin: 10px 0;
-    border: 5px solid red;
 }
 
 .details .foodID {
