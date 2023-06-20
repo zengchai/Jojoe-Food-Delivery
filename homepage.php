@@ -70,9 +70,9 @@ if ($_SESSION["Login"] != "YES") {
                   echo "<a class='btn signUpNow' href='servicespage.php'>ORDER NOW</a>";
                   }?>
               </div>
-            </div>
-            <div class="two">
-                <img src="image/platefood.png" class="image1">
+              <div class="two">
+                  <img src="image/platefood.png" class="image1">
+              </div>
             </div>
             <div class="three">
                 <img src="image/cendolbanner.png" class="image2">
