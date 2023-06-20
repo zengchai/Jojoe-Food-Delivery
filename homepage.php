@@ -1,3 +1,13 @@
+<?php
+// Start up your PHP Session
+session_start();
+
+include("config.php");
+
+if ($_SESSION["Login"] != "YES") {
+	header("Location: guest_form.php");
+}
+?>
 <html>
     <head>
         <title>Jojoe Food</title>
@@ -12,9 +22,9 @@
                   <img src="headerImage/IMG_4380 1.png" style="height: 50px; width: 50px; text-align: center">
                 </div>  
                 <div class="header1"> 
-                  <div class="header"><a data-active="home" href="home.html">HOME</a></div> 
-                  <div class="header"><a data-active="service" href="serviceCustomerPage.html">SERVICE</a></div> 
-                  <div class="header"><a data-active="order" href="orderhistory.html">ORDER</a></div> 
+                  <div class="header"><a data-active="home" href="homepage.php">HOME</a></div> 
+                  <div class="header"><a data-active="service" href="serviceSellerPage.html">SERVICE</a></div> 
+                  <div class="header"><a data-active="order" href="orderhistorySeller.html">ORDER</a></div> 
                   <div class="header"><a data-active="about" href="about.html">ABOUT</a></div> 
                 </div> 
                 <div class="login">
@@ -33,7 +43,7 @@
                     
                         <div class="logoutContainer">
                             <div class="logoutButton">
-                              <button type="button" id="logoutButton" onclick="location.href='mainPage.html'">Logout</button>
+                              <button type="button" id="logoutButton" onclick="location.href='login.php'">Logout</button>
                               <button type="button"	id="cancelButton" onclick="document.getElementById('id03').style.display='none'">Cancel</button>
                           </div>
                         </div>
@@ -51,7 +61,12 @@
                 <h1>JOJOE FOOD</h1><br><br>
                 <p>is a food ordering and delivering</p>
                 <p>platform inside UTM</p><br><br>
-                <a class="btn signUpNow" onclick="location.href='serviceCustomerPage.html'">ORDER NOW</a>
+                <?php
+                if($_SESSION['LEVEL']== 1)
+                echo "<a class='btn signUpNow' href='servicespage.php'>EDIT NOW</a>";
+                else{
+                echo "<a class='btn signUpNow' href='servicespage.php'>ORDER NOW</a>";
+                }?>
             </div>
             <div class="two">
                 <img src="image/platefood.png" class="image1">
