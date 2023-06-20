@@ -1,0 +1,170 @@
+* {
+  margin: 0;
+   padding: 0; 
+   box-sizing: border-box;
+   font-family: Verdana, Geneva, Tahoma, sans-serif
+ }
+ 
+ .container {
+   
+   background: #fff;
+   margin: auto;
+   display: flex;
+   flex:1;
+   justify-content: center;
+   padding-top: 8rem;
+   padding-bottom: 8rem;
+   margin-left: 5rem;
+   margin-right: 5rem;
+   
+ 
+ }
+
+
+  /* nav {
+    float:right;
+
+    display: flex;
+    justify-content: left;
+    float: left;
+  }
+
+  nav ul{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    
+  }
+
+  nav li {
+    display: inline-block;
+    margin: left 70px;
+    padding-top: 25px;
+    position: relative;
+  }
+  nav a{
+    color: #000000; 
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 14px;
+  }
+  nav a:hover{
+    color: #d7d7d7;
+  }
+  nav a::before{
+    content: '';
+    display: block;
+    height: 5px;
+    width: 0%;
+   
+    background-color: bisque;
+
+    position: absolute;
+    
+  }
+  nav a:hover::before{
+    width: 100%;
+  } */
+
+  
+  
+  /* .login-section{
+    display: flex;
+    text-align: center;
+  }
+
+  .login-section img {
+    float: right;
+    padding: 10px 0;
+    
+  } */
+ 
+
+
+
+.leftcontainer{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    width: 40%;
+    display: flex;
+    justify-content: center;
+
+  }
+  
+  #signup {
+    display: block;
+    margin: 0 auto;
+    padding: 8px 80px;
+    background-color: #ffffff;
+    color: rgb(0, 0, 0);
+    font-size: 25px;
+   
+    border-radius: 0.5rem;
+    cursor: pointer;
+  }
+  
+  #signup:hover {
+    background-color: #ebeaea;
+  }
+
+.rightcontainer{
+    /* padding-top: 100px; */
+    margin: 0 0;
+    text-align: center;
+    margin-top:auto;
+    margin-bottom:auto;
+    /* margin: 0 auto; */
+    /* padding-left: 50px; */
+    /* float: right; */
+    width: 40%;
+  }
+ 
+  .signup{
+    font-size: 3rem;
+    margin-bottom: 1.3rem;
+  }
+  .username {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+  .userid{
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+  .emailaddress{
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+  .matricno{
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+  .phonenumber{
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+  .password{
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+  .tandc {
+    font-size: 1rem;
+    padding-bottom: 0.5rem;
+    margin-top: 0rem;
+  }
+.inputtype{
+    padding: 0.5rem;
+    border-radius: 5rem;;
+}
+
+
+.foodlogo{
+    width: 90%;
+
+}
+
+.footercontainer{
+    display: flex;
+    justify-content: center;
+    
+    
+  }
