@@ -40,11 +40,26 @@ if ($_SESSION["Login"] != "YES") {
         }
     
     unset($_SESSION["ADDTOCART"]);
-    // $file = 'counter.txt';
-    // file_put_contents($file, $_SESSION['counter']);
+}
 
-    // // Access the value from the file
-    // $counter = file_get_contents($file);
+if(isset($_SESSION["PAID"])){
+    if($_SESSION["PAID"] == "YES")
+        if (isset($_GET['sub'])){
+            echo $_GET['sub'];
+        }
+    
+    unset($_SESSION["PAID"]);
+    
+}
+if(!isset($_SESSION['COUNTER'])){
+    $createOrder = "insert into orders (user_id) VALUES ('{$_SESSION['ID']}');";
+    mysqli_query($conn,$createOrder);
+    $findOrderID = "SELECT * FROM orders WHERE user_id = '{$_SESSION['ID']}'";
+    $orderID = mysqli_query($conn,$findOrderID);
+    if (mysqli_num_rows($orderID) > 0) {
+    while($order_ID = mysqli_fetch_assoc($orderID)){
+    $_SESSION['COUNTER'] = $order_ID['order_id'];
+    }}
 }
  ?>
  
@@ -93,12 +108,14 @@ if ($_SESSION["Login"] != "YES") {
     <?php echo "<p> $row[menu_price] </p>
     <p> $row[menu_description] </p>
     <form method='POST' action='updateOrder.php'>
-<input type='hidden' name='food' value='$row[menu_code]' />
+<input type='hidden' name='menu_code[]' value='{$row['menu_code']}'/>
+<input type='number' name='quantity[]' value='1' />
 <button type='submit'> Submit </button></p>
 </form>";
 } } 
     ?>
 <a href="stuorder.php">Order</a>
+<a href="stuorderhistory.php">Order History</a>
     <a href="logout.php">Log out</a>
 </body>
 </html>

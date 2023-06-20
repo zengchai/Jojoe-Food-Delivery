@@ -40,7 +40,16 @@ if ($_SESSION['LEVEL']==1){
 else if ($_SESSION['LEVEL']==0){
     header("Location: stumainpage.php");
 }
+else if ($_SESSION['LEVEL']==2){
+	$sql = "SELECT * FROM user WHERE user_id = '{$_SESSION['ID']}'";
+	$res = mysqli_query($conn, $sql);
+    if (mysqli_num_rows($res) > 0) {
+        while ($row = mysqli_fetch_assoc($res)) { 
+			$_SESSION['COUNTER']= $row['order_counter'];
+		}
+    header("Location: stumainpage.php");
 }
+}}
 
 //if wrong username and password
 else {
@@ -51,7 +60,3 @@ header("Location: guest_form.php");
 }
 
 ?>
-		 
-	  
-
- 
