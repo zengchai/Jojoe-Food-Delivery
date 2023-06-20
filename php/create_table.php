@@ -28,6 +28,7 @@ $user = "CREATE TABLE user(
     user_address VARCHAR(30),
     user_level INT(3) NOT NULL,
     user_password VARCHAR(20) NOT NULL,
+    order_counter INT(10),
     CONSTRAINT user_pk PRIMARY KEY(user_id))";
 
 $menu = "CREATE TABLE menu(
@@ -39,16 +40,17 @@ $menu = "CREATE TABLE menu(
     CONSTRAINT menu_pk PRIMARY KEY(menu_code))";
 
 $order = "CREATE TABLE orders(
-  order_id INT(10),
+  order_id INT(10) AUTO_INCREMENT,
   user_id VARCHAR(10) NOT NULL,
   payment_status VARCHAR(15) NOT NULL,
-  payment_date DATE NOT NULL,
+  payment_date DATETIME NOT NULL,
   total_price FLOAT(8) NOT NULL,
   CONSTRAINT orderid_pk PRIMARY KEY(order_id,user_id),
   CONSTRAINT user_fk FOREIGN KEY(user_id) REFERENCES user(user_id))";
 
 
 $orderdetail = "CREATE TABLE orderdetail(
+    item_id INT AUTO_INCREMENT PRIMARY KEY,
     order_id INT(10) NOT NULL,
     menu_code VARCHAR(10) NOT NULL,
     order_quantity INT(4) NOT NULL,

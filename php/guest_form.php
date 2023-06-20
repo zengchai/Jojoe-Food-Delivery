@@ -18,7 +18,7 @@ unset($_SESSION["Login"]);}
 <p>Username: <input type="text" name="username" /></p>
 <p>Password: <input type="password" name="password" /></p>
 <p><input type="submit" value="Let me in" /></p>
-
+<a href="signup.php">SignUp</a>
 </form>
 </body>
 </html>
