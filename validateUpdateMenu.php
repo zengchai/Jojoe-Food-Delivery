@@ -30,14 +30,14 @@ if (isset($_POST['upload']) && isset($_FILES['uploadfile'])) {
                 $sql = "insert into menu (menu_img, menu_code, menu_name, menu_price, menu_description) values ('$new_img_name','$menu_code','$menu_name','$menu_price','$menu_description')";
                 mysqli_query($conn,$sql);
                 $em = "Updated Successfully";
-                header("Location: selmainpage.php?sub=$em");
+                header("Location: servicespage.php?sub=$em");
             }else{
                 $em = "You can't upload files of this type";
-                header("Location: selmainpage.php?sub=$em");
+                header("Location: servicespage.php?sub=$em");
             }
     }else {
         $em = "Unknown error occured!";
-        header("Location: selmainpage.php?sub=$em");
+        header("Location: servicespage.php?sub=$em");
     }
 }
 

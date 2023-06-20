@@ -5,7 +5,7 @@ session_start();
 include("config.php");
 
 if ($_SESSION["Login"] != "YES") {
-	header("Location: guest_form.php");
+	header("Location: login.php");
 }
 ?>
 <html>
@@ -63,7 +63,7 @@ if ($_SESSION["Login"] != "YES") {
                 <p>platform inside UTM</p><br><br>
                 <?php
                 if($_SESSION['LEVEL']== 1)
-                echo "<a class='btn signUpNow' href='servicespage.php'>EDIT NOW</a>";
+                echo "<button class='btn signUpNow'><a href='servicespage.php'>EDIT NOW</a><button>";
                 else{
                 echo "<a class='btn signUpNow' href='servicespage.php'>ORDER NOW</a>";
                 }?>

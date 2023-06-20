@@ -79,4 +79,3 @@ unset($_SESSION["Login"]);}
 
 </body>
 </html>
-<a href="signup.php">SignUp</a>
