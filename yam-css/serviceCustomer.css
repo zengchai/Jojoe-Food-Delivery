@@ -86,8 +86,8 @@
 
 .details {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(3, 0.7fr);
+    grid-template-columns: repeat(3, 0.8fr);
+    grid-template-rows: repeat(3, 0.8fr);
     gap: 10px;
     margin: 10px 0;
 }
