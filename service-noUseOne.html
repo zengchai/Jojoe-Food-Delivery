@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+<head>
+   <title>Some Web Page</title>
+   <link rel='stylesheet' href='yam-css/navigationbar&body.css'/>
+   <link rel='stylesheet' href='yam-css/service1.css'/>
+   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!--windows size responsive-->
+ </head>
+
+<body id="service">
+
+<div class='menu-container'>
+  <div class='menu'>
+      <div class="logo">
+        <img src="headerImage/IMG_4380 1.png" style="height: 50px; width: 50px; text-align: center">
+      </div>  
+      <div class="header1"> 
+        <div class="header"><a data-active="Home" href="home.html">HOME</a></div> 
+        <div class="header"><a data-active="Service" href="service.html">SERVICE</a></div> 
+        <div class="header"><a data-active="Order" href="order.html">ORDER</a></div> 
+        <div class="header"><a data-active="About" href="about.html">ABOUT</a></div> 
+      </div> 
+      <div class="login">
+        <img src="headerImage/login (1) 1.png" style="text-align: center; padding: 10px 0;">
+        <button id="logoutButton" onclick="document.getElementById('id03').style.display='block'" style="background-color: white; width:auto; cursor: pointer">LOGOUT</button>
+        <div id="id03" class="modal">
+
+          <form class="modal-content animate" action="/action_page.php" method="post">
+            <div class="imgcontainer">
+              <span onclick="document.getElementById('id03').style.display='none'" class="close" title="Close Modal">&times;</span>
+            </div>
+            
+            <div class = "logoutText">
+              <p>Are you sure you want to logout?</p>
+            </div>
+        
+            <div class="logoutContainer">
+                <div class="logoutButton">
+                  <button type="button" id="logoutButton" onclick="location.href='mainPage.html'">Logout</button>
+                  <button type="button"	id="cancelButton" onclick="document.getElementById('id03').style.display='none'">Cancel</button>
+              </div>
+            </div>
+        
+            <div class="logoutContainer" style="background-color:#f1f1f1"></div>
+        
+          </form>
+        </div>
+      </div>                  
+  </div>
+</div>
+
+<div class="body-container">
+  <div class="grid-container">
+    <div class="editMenu">
+      <h2><u>EDIT MENU</u></h2>
+    </div>
+
+    <div class="date">
+      <div><img src="servicePageImage/calendar.png" style="height: 30px; width: 30px; margin-right: 10px"></div>
+      <div><text style="font-size: 1.1rem;">dd/mm/yyyy</text></div>
+    </div>
+
+    <div class="cart">
+      <a data-active="cart" href="serviceCheckout.html"><img src="servicePageImage/shopping-cart.png" style="height: 40px; width: 40px; margin-right: 10px"></a>
+    </div>
+
+    <div class="sweetSourChicken">
+        <img src="servicePageImage/sweetSourChicken.png">
+        <div class="details">
+          <div class="name">A. 酸甜鸡丁</div>
+          <div class="quantity">100pc</div>
+          <div class="engName">Sweet & Sour Chicken</div>
+          <div class="price">RM3.00</div>
+          <div class="addMinus">
+          <form action="" style="display: flex; justify-content: space-around">
+            <div><img src="servicePageImage/minus.png" style="height: 20px; width: 20px;"></div>
+            <div><input type="number"id="quantity" name="quantity" min="1" max="5" style="height: 20px; width: 30px;"></div>
+            <div><img src="servicePageImage/add.png" style="height: 20px; width: 20px"></div>
+          </form>
+          </div>
+        </div>
+
+    </div>
+
+    <div class="buttermilkChicken">
+        <img src="servicePageImage/buttermilkChicken.png">
+        <div class="details">
+          <div class="name">B. 奶油鸡丁</div>
+          <div class="quantity">100pc</div>
+          <div class="engName">Buttermilk Chicken</div>
+          <div class="price">RM3.00</div>
+          <div class="addMinus">
+            <form action="" style="display: flex; justify-content: space-around">
+            <div><img src="servicePageImage/minus.png" style="height: 20px; width: 20px;"></div>
+            <div><input type="number"id="quantity" name="quantity" min="1" max="5" style="height: 20px; width: 30px;"></div>
+            <div><img src="servicePageImage/add.png" style="height: 20px; width: 20px"></div>
+          </form>
+          </div>
+        </div>
+    
+      </div>
+
+    <div class="marmiteChicken">
+        <img src="servicePageImage/marmiteChicken.png">
+        <div class="details">
+          <div class="name">C. 妈蜜鸡丁</div>
+          <div class="quantity">100pc</div>
+          <div class="engName">Marmite Chicken</div>
+          <div class="price">RM3.00</div>
+          <div class="addMinus">
+            <form action="" style="display: flex; justify-content: space-around">
+            <div><img src="servicePageImage/minus.png" style="height: 20px; width: 20px;"></div>
+            <div><input type="number"id="quantity" name="quantity" min="1" max="5" style="height: 20px; width: 30px;"></div>
+            <div><img src="servicePageImage/add.png" style="height: 20px; width: 20px"></div>
+          </form>
+          </div>
+        </div>
+    
+      </div>
+
+    <div class="stirFriedCabbage">
+      <img src="servicePageImage/stirFriedCabbage.png">
+      <div class="details">
+        <div class="name">1. 清炒包菜</div>
+        <div class="quantity">100pc</div>
+        <div class="engName">Stir-Fried Cabbage</div>
+        <div class="price">RM3.00</div>
+        <div class="addMinus">
+          <form action="" style="display: flex; justify-content: space-around">
+            <div><img src="servicePageImage/minus.png" style="height: 20px; width: 20px;"></div>
+            <div><input type="number"id="quantity" name="quantity" min="1" max="5" style="height: 20px; width: 30px;"></div>
+            <div><img src="servicePageImage/add.png" style="height: 20px; width: 20px"></div>
+          </form>
+        </div>
+      </div>
+    
+    </div>
+
+    <div class="stirFriedChoySum">
+      <img src="servicePageImage/stirFriedChoySum.png">
+      <div class="details">
+        <div class="name">2. 清炒菜心</div>
+        <div class="quantity">100pc</div>
+        <div class="engName">Stir-Fried Choy Sum</div>
+        <div class="price">RM2.00</div>
+        <div class="addMinus">
+          <form action="" style="display: flex; justify-content: space-around">
+            <div><img src="servicePageImage/minus.png" style="height: 20px; width: 20px;"></div>
+            <div><input type="number"id="quantity" name="quantity" min="1" max="5" style="height: 20px; width: 30px;"></div>
+            <div><img src="servicePageImage/add.png" style="height: 20px; width: 20px"></div>
+          </form>
+        </div>
+      </div>
+    
+    </div>
+
+    <div class="stirFriedBeansprout">
+      <img src="servicePageImage/stirFriedBeansprout.png">
+      <div class="details">
+        <div class="name">3. 清炒豆芽</div>
+        <div class="quantity">100pc</div>
+        <div class="engName">Stir-Fried Bean Sprout</div>
+        <div class="price">RM2.00</div>
+        <div class="addMinus">
+          <form action="" style="display: flex; justify-content: space-around">
+            <div><img src="servicePageImage/minus.png" style="height: 20px; width: 20px;"></div>
+            <div><input type="number"id="quantity" name="quantity" min="1" max="5" style="height: 20px; width: 30px;"></div>
+            <div><img src="servicePageImage/add.png" style="height: 20px; width: 20px"></div>
+          </form>
+        </div>
+      </div>
+    
+    </div>
+
+    <div class="whiteRice">
+      <img src="servicePageImage/whiteRice.png">
+      <div class="details">
+        <div class="name">白饭</div>
+        <div class="quantity"></div>
+        <div class="engName">White Rice</div>
+        <div class="price">RM1.00</div>
+        <div class="addMinus">
+          <form action="" style="display: flex; justify-content: space-around">
+            <div><img src="servicePageImage/minus.png" style="height: 20px; width: 20px;"></div>
+            <div><input type="number"id="quantity" name="quantity" min="1" max="5" style="height: 20px; width: 30px;"></div>
+            <div><img src="servicePageImage/add.png" style="height: 20px; width: 20px"></div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <div class="riceBall">
+      <img src="servicePageImage/riceBall.png">
+      <div class="details">
+        <div class="name">汤圆</div>
+        <div class="quantity">100pc</div>
+        <div class="engName">Glutinous Rice Ball</div>
+        <div class="price">RM1.00</div>
+        <div class="addMinus">
+          <form action="" style="display: flex; justify-content: space-around">
+            <div><img src="servicePageImage/minus.png" style="height: 20px; width: 20px;"></div>
+            <div><input type="number"id="quantity" name="quantity" min="1" max="5" style="height: 20px; width: 30px;"></div>
+            <div><img src="servicePageImage/add.png" style="height: 20px; width: 20px"></div>
+          </form>
+        </div>
+      </div>
+    
+    </div>
+
+    <div class="herbalTea">
+      <img src="servicePageImage/herbalTea.png">
+      <div class="details">
+        <div class="name">凉茶</div>
+        <div class="quantity">100pc</div>
+        <div class="engName">Herbal Tea</div>
+        <div class="price">RM2.00</div>
+        <div class="addMinus">
+          <form action="" style="display: flex; justify-content: space-around">
+            <div><img src="servicePageImage/minus.png" style="height: 20px; width: 20px;"></div>
+            <div><input type="number"id="quantity" name="quantity" min="1" max="5" style="height: 20px; width: 30px;"></div>
+            <div><img src="servicePageImage/add.png" style="height: 20px; width: 20px"></div>
+          </form>
+        </div>
+      </div>
+    
+    </div>
+
+  <button class="mybutton" onclick="location.href='serviceCheckout.html'">ADD TO CART</a></button>
+
+
+
+  </div>  
+</div>  
+  
+<div class="position">
+  <a data-active="customer" href="serviceCustomerPage.html">Customer</a>
+  /
+  <a data-active="seller" href="serviceSellerPage.html">Seller</a>
+</div>
+
+<script type="text/javascript" src="yam-script/script.js"></script>
+
+</body>
+</html>
