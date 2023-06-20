@@ -1,12 +1,3 @@
-<?php
-
-session_start();
-include("config.php");
-
-if ($_SESSION["Login"] != "YES") {
-    header("Location: login.php");
-}
-?>
 <html lang="en">
     
 <head>
@@ -19,7 +10,7 @@ if ($_SESSION["Login"] != "YES") {
 <body id="service">
 
 <?php 
-include("logout.php");
+include("header.php");
 ?>
 
 <?php if($_SESSION['LEVEL']==1):?>
@@ -53,15 +44,19 @@ include("logout.php");
     <div class='engName'> $row[menu_description] </div>
     <div class='price'> RM$row[menu_price] </div>
     <div class='addMinus'>
-	<a href='delete_item.php?pass=$row[menu_code]'>Delete</a>
+	<a href='php/delete_item.php?pass=$row[menu_code]'>Delete</a>
 	<a href='edit_item.php?menucode=$row[menu_code]'>Edit</a>
   </div></div>";
     } } ?>
+    <?php
+    if (isset($_GET['sub'])){
+      echo $_GET['sub'];
+        unset($_GET['sub']);}?>
 <button id="plusButton" class="allbutton" onclick="document.getElementById('id01').style.display='block'" style="width:auto;"> + </button>
 
 <div id="id01" class="modal">
   
-  <form class="modal-content animate" action="validateUpdateMenu.php" method="post">
+  <form class="modal-content animate" action="validateUpdateMenu.php" method="post" enctype="multipart/form-data">
     <div class="imgcontainer">
       <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
       <h1>Add Item</h1>
@@ -84,7 +79,7 @@ include("logout.php");
       <input type="foodPrice" name="menuprice" placeholder="" id="foodPrice" >
 
       <!--ltr need to change to submit-->
-      <button type="upload" class="allbutton" id="addButton">ADD</button>
+      <button type="submit" name="upload" class="allbutton" id="addButton">ADD</button>
       <!--<input type="button" id="addButton" value="ADD" >-->
       
     </div>

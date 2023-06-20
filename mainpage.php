@@ -13,7 +13,7 @@
                   <img src="headerImage/IMG_4380 1.png" style="height: 50px; width: 50px; text-align: center">
                 </div>  
                 <div class="header1"> 
-                  <div class="header"><a data-active="home" href="#">HOME</a></div> 
+                  <div class="header"><a data-active="home" href="mainpage.php">HOME</a></div> 
                   <div class="header"><a data-active="service" href="#">SERVICE</a></div> 
                   <div class="header"><a data-active="order" href="#">ORDER</a></div> 
                   <div class="header"><a data-active="about" href="#">ABOUT</a></div> 
