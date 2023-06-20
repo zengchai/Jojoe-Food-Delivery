@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Jojoe food ordering system login page</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lato:wght@700&display=swap" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="css/style2.css" id="stylesheet">
+<script>
+    function isNumberKey(event) {
+      var charCode = (event.which) ? event.which : event.keyCode;
+      if (charCode > 31 && (charCode < 48 || charCode > 57)) {
+        return false;
+      }
+      return true;
+    }
+    </script>
+</head>
+<!-- <body> 
+    <header>
+    <div class="header-bar">
+    <div class="logo">
+      <img src="logo.png" alt="Logo">
+    </div>
+    <nav>
+      <ul >
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Service</a></li>
+        <li><a href="#">Order</a></li>
+        <li><a href="#">About</a></li>
+      </ul>
+    </nav>
+    <div class="login-section">
+        <h1><img src="login.png" alt="Login Icon">
+      Login</h1>
+    </div>
+    </div>
+    </header> -->
+
+    <div class="container">
+        <div class="leftcontainer">
+            <form action="">
+                <p class="login">LOGIN </p>
+                <p class="userid">User ID: <br>
+                <input class="inputtype" type="text" id="userid" size="30", placeholder="Create a userid" maxlength="10"><br></p>                               
+                <p class="password">Password: <br>
+                <input class="inputtype" type="password" id="password" size="30", placeholder="Enter your password" maxlength="10"></p>
+               <p class="resetpwd"> <a href="#"onclick="ResetPwd()">Forgot password?<br></a></p>
+               <p class="signup"> <a href="#"onclick="signup()">Existing account??<br>SignupNow</a> </p> <!-- link to sign up page-->
+                <input class="inputtype" type="button" id="login" value="Login">
+            </form>
+            
+        </div>
+        <div class="rightcontainer">
+            <img class="foodlogo" src="png/Foodlogo.png">
+            <h1>Jojoe Food</h1>
+        </div>
+    </div>
+        <div class="footercontainer">
+            <p>
+            <a href="#"onclick="CusFunction()">Customer</a>/
+            <a href="#"onclick="SelFunction()">Seller</a>
+            </p>
+        </div>
+
+
+</body>
+</html>
