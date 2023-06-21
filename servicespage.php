@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 include("config.php");
 if (isset($_GET["pass"])) {
     $pass = $_GET["pass"];}
@@ -18,13 +18,49 @@ if (isset($_GET["menucode"])) {
                   $menu_description = $row["menu_description"]; 
       } } 
   }
+
+if ($_SESSION['LEVEL']==2||$_SESSION['LEVEL']==0){
+  if(isset($_SESSION["ADDTOCART"])){
+    if($_SESSION["ADDTOCART"] == "NO")
+        if (isset($_GET['sub'])){
+            echo $_GET['sub'];
+        }
+    
+    unset($_SESSION["ADDTOCART"]);
+}
+
+if(isset($_SESSION["PAID"])){
+    if($_SESSION["PAID"] == "YES")
+        if (isset($_GET['sub'])){
+            echo $_GET['sub'];
+        }
+    
+    unset($_SESSION["PAID"]);
+    
+}
+if(!isset($_SESSION['COUNTER'])){
+    $createOrder = "insert into orders (user_id) VALUES ('{$_SESSION['ID']}');";
+    mysqli_query($conn,$createOrder);
+    $findOrderID = "SELECT * FROM orders WHERE user_id = '{$_SESSION['ID']}'";
+    $orderID = mysqli_query($conn,$findOrderID);
+    if (mysqli_num_rows($orderID) > 0) {
+    while($order_ID = mysqli_fetch_assoc($orderID)){
+    $_SESSION['COUNTER'] = $order_ID['order_id'];
+    }}
+}
+}
 ?>
 
 <html lang="en">   
 <head>
    <title>Some Web Page</title>
    <link rel='stylesheet' href='yam-css/navigationbar&body.css'/>
+   <?php if($_SESSION['LEVEL']==1):?>
    <link rel='stylesheet' href='yam-css/serviceSeller.css'/>
+   <?php endif;?>
+   <?php if($_SESSION['LEVEL']==2||$_SESSION['LEVEL']==0):?>
+   <link rel='stylesheet' href='yam-css/serviceCustomer.css'/>
+   <?php endif;?>
     <script>
       function display(){
         document.getElementById('id02').style.display='block';
@@ -71,9 +107,7 @@ include("header.php");
     <div class='foodID'> $row[menu_code]   $row[menu_name]</div>
     <div class='engName'> $row[menu_description] </div>
     <div class='price'> RM$row[menu_price] </div>
-
-    <a class='edit allbutton' onclick='document.getElementById('id02').style.display='block'' href='#.php?menucode=$row[menu_code]'>Edit</a>
-
+    <a class='edit allbutton' onclick='display()' href='servicespage.php?menucode=$row[menu_code]'>Edit</a>
 	<a class='delete allbutton' href='operation.php?pass=$row[menu_code]'>Delete</a>
   </div></div>";
     } } ?>
@@ -114,12 +148,11 @@ include("header.php");
 
   </form></div>
   <?php if (isset($_GET["menucode"])):?>
-
     <div id="id02" class="modal">
   <form class="modal-content animate" action="validateUpdateMenu.php" method="post" enctype="multipart/form-data">
     <div class="imgcontainer">
       <span onclick="document.getElementById('id02').style.display='none'" class="close" title="Close Modal">&times;</span>
-      <h1>Edit Item</h1>
+      <h1>Add Item</h1>
     </div>
 
     <div class="input-container">
@@ -139,7 +172,7 @@ include("header.php");
       <input type="foodPrice" name="menuprice" placeholder="" id="foodPrice" >
 
       <!--ltr need to change to submit-->
-      <button type="submit" name="upload" class="allbutton" id="addButton">EDIT</button>
+      <button type="submit" name="upload" class="allbutton" id="addButton">ADD</button>
       <!--<input type="button" id="addButton" value="ADD" >-->
       
     </div>
@@ -149,31 +182,66 @@ include("header.php");
 </div></div> </div> 
   <?php endif;?>
 
-  <?php if($_SESSION['LEVEL']==2):?>
+  <?php if($_SESSION['LEVEL']==2||$_SESSION['LEVEL']==0):?>
+  <div class="body-container">
+    <div>
+    <div class="grid-container">
+      <div class="editMenu">
+        <h2><u>MENU</u></h2>
+      </div>
 
-    <?php 
+      <div class="date">
+        <div><img src="servicePageImage/calendar.png" style="height: 30px; width: 30px; margin-right: 10px"></div>
+        <div><text style="font-size: 1.1rem;" id="currentDate">dd/mm/yyyy</text></div>
+      </div>
+
+      <div class="cart">
+        <span class="count">
+          <div id="total-count">0</div>
+        </span>
+        <a data-active="cart" class="material-icons" href="cart.html"><img src="servicePageImage/shopping-cart.png" style="height: 40px; width: 40px; margin-right: 10px"></a></i>
+      </div>
+
+    </div>
+
+      <div class="grid-container2" id="grid-container2">
+        
+        <!--place to insert food-->
+        <?php 
     $sql = "SELECT * FROM menu";
     $res = mysqli_query($conn, $sql);
         if (mysqli_num_rows($res) > 0) {
             while ($row = mysqli_fetch_assoc($res)) { 
             
             echo "
+            <form method='post' action='updateOrder.php'>
             <div class='food'>
-            <div class='thumb'>";?>
+            <div class='images'>";?>
 
-            <img class="image" src="menuimages/<?=$row['menu_img']?>">
+            <img class="picturesize" src="menuimages/<?=$row['menu_img']?>">
             
-    <?php echo "</div><div class='details'>
-    <div class='foodID'> $row[menu_code]   $row[menu_name]</div>
-    <div class='engName'> $row[menu_description] </div>
-    <div class='price'> RM$row[menu_price] </div>
-  
-    <a class='edit allbutton' onclick='document.getElementById('id02').style.display='block'' href='#.php?menucode=$row[menu_code]'>Edit</a>
+        <?php echo "</div><div class='details'>
+        <div class='foodIDs'>
+        <p class='foodcode'>$row[menu_code]</p>
+        <p>$row[menu_name]</p></div>
+        <div class='engName'> $row[menu_description] </div>
+        <div class='lastrow'><div class='price'> RM $row[menu_price] </div>
+        <div class='num'>
+        <input type='hidden' name='menu_code[]' value='{$row['menu_code']}'/>
+        <input type='number' name='quantity' class='quantity'/></div></div>
+        <div class='addfunction'>
+        <button type='submit' class='addcart addToCart allbutton'>Add to Cart</button>
+        </div>
+      </div></div></form>";
+        } } ?>
+          
+        </div>
+      </div>
 
 
-	<a class='delete allbutton' href='operation.php?pass=$row[menu_code]'>Delete</a>
-  </div></div>";
-    } } ?>
+      
+  </div> 
+ 
   <?php endif;?>
 <script type="text/javascript" src="yam-script/script.js"></script>
 
