@@ -118,8 +118,9 @@
     grid-template-rows: 1fr;
     
   }
-
- 
+  .foodcontainer{
+    display: grid;
+    }
   .signup{
     font-size: 3rem;
     margin-bottom: 1.3rem;
@@ -132,6 +133,9 @@
     font-size: 1.2rem;
     margin-bottom: 1rem;
   }
+  .error-msg {
+    color: red;
+    font-size: 14px;}
   .emailaddress{
     font-size: 1.2rem;
     margin-bottom: 1rem;
