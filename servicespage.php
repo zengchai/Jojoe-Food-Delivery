@@ -71,10 +71,9 @@ include("header.php");
     <div class='foodID'> $row[menu_code]   $row[menu_name]</div>
     <div class='engName'> $row[menu_description] </div>
     <div class='price'> RM$row[menu_price] </div>
-    <div><form>
-      <input name='menucode' type='hidden' value='$row[menu_code]'/>
-      <a class='edit allbutton' onclick=document.getElementById('id02').style.display='block' href='#'>Edit</a>
-    </form></div>
+
+      <a id='edit' class='edit allbutton' onclick=document.getElementById('id02').style.display='block' href='#?$row[menu_name]'>Edit</a>
+
 	<a class='delete allbutton' href='operation.php?pass=$row[menu_code]'>Delete</a>
   </div></div>";
     } } ?>
@@ -168,10 +167,9 @@ include("header.php");
     <div class='foodID'> $row[menu_code]   $row[menu_name]</div>
     <div class='engName'> $row[menu_description] </div>
     <div class='price'> RM$row[menu_price] </div>
-    <div><form>
-      <input name='menucode' type='hidden' value='$row[menu_code]'/>
-      <a class='edit allbutton' onclick=document.getElementById('id02').style.display='block' href='#'>Edit</a>
-    </form></div>
+  
+      <a id='edit' class='edit allbutton' onclick=document.getElementById('id02').style.display='block' href='#?$row[menu_name]'>Edit</a>
+
 	<a class='delete allbutton' href='operation.php?pass=$row[menu_code]'>Delete</a>
   </div></div>";
     } } ?>
