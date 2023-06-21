@@ -9,14 +9,14 @@
   
   background: #fff;
   margin: auto;
-  display: flex;
-  flex:1;
+  display: grid;
+  grid-template-columns: 0.6fr 1.4fr 2fr;
   justify-content: center;
   padding-top: 8rem;
   padding-bottom: 8rem;
   margin-left: 5rem;
   margin-right: 5rem;
-
+  
 }
 
 
@@ -24,8 +24,8 @@
     font-size: 25px;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     width: 40%;
-    display: flex;
-    justify-content: center;
+  grid-column-start: 2;
+    grid-column-end: 3;
   }
   .logina{
     font-size: 3rem;
@@ -71,23 +71,34 @@
     background-color: #ebeaea;
   }
 
-.rightcontainer{
-  
+  .rightcontainer{
+
     margin: 0 0;
-    text-align: center;
+   text-align: center;
     margin-top:auto;
     margin-bottom:auto;
-  
+    grid-column-start: 3;
+    grid-column-end: 5;
+
     width: 40%;
+    grid-template-rows: 1fr;
+    
   }
-.inputtype{
+
+  .inputtype{
     padding: 0.5rem;
-    border-radius: 5rem;;
+    border-radius: 5rem;
+    margin-top: 0.5rem;
 }
-
+.button{
+}
 .foodlogo{
-    width: 90%;
-
+  align-items: center;
+  padding-left: 3rem;
+  padding-bottom: 1.5rem;
+}
+.foodcontainer{
+display: grid;
 }
 
 .footercontainer{

@@ -21,7 +21,7 @@ unset($_SESSION["Login"]);}
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Lato:wght@700&display=swap" rel="stylesheet">
 <link rel='stylesheet' href='yam-css/navigationbar&body.css'/>
-<link rel="stylesheet" type="text/css" href="ks-css/style2.css" id="stylesheet">
+<link rel="stylesheet" type="text/css" href="css/style2.css" id="stylesheet">
 <script>
     function isNumberKey(event) {
       var charCode = (event.which) ? event.which : event.keyCode;
@@ -30,6 +30,26 @@ unset($_SESSION["Login"]);}
       }
       return true;
     }
+        
+    
+    function resetPwd() {
+    var email = prompt("Please enter your email address:");
+
+     if (email) {
+      if (!isValidEmail(email)) {
+      alert("Please enter a valid email address.");
+        return;
+      }
+
+      var resetUrl = "https://example.com/reset-password?email=" + encodeURIComponent(email);
+      window.location.href = resetUrl;
+  }
+}
+
+function isValidEmail(email) {
+  var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  return emailRegex.test(email);
+}
     </script>
 </head>
 <body> 
@@ -46,33 +66,38 @@ unset($_SESSION["Login"]);}
         </div> 
         <div class="login">
           <img src="headerImage/login (1) 1.png" style="text-align: center; padding: 10px 0;">
-          <a href="#">LOGIN</a>
+          <a href="check_login.php">LOGIN</a>
         </div>          
     </div>
   </div>
 
-    <div class="container">
+  <div class="container">
         <div class="leftcontainer">
             <form method="post" action="check_login.php">
-                <div class="logina">LOGIN </div>
-                <div class="userid">User ID: <br>
-                <input class="inputtype" type="text" id="userid" name="username" size="30", placeholder="Create a userid" maxlength="10"><br></div>                               
-                <div class="password">Password: <br>
-                <input class="inputtype" type="password" id="password" name="password" size="30", placeholder="Enter your password" maxlength="10"></div>
-               <div class="resetpwd"> <a href="#"onclick="ResetPwd()">Forgot password?<br></a></div>
-               <div class="signup"> <a href="signup.php">Existing account??<br>SignupNow</a> </div> <!-- link to sign up page-->
-                <input class="inputtype" type="submit" id="login" value="Login">
-            </form>
-            
+                <p class="login">LOGIN </p>
+                <p class="userid">User ID: <br>
+                <input class="inputtype" type="text" name="username" size="30", placeholder="Create a userid" maxlength="10"><br></p>                               
+                <p class="password">Password: <br>
+                <input class="inputtype" type="password" name="password" size="30", placeholder="Enter your password" maxlength="10"></p>              
+               <p class="loginbutton">
+                <input class="inputtype" type="submit" name="login" value="Login"></p>
+                <div class="line-container">
+                  <hr class="line">
+                  <span class="line-text">Or</span>
+                  <hr class="line">
+                </div>
+              <p class="resetpwd"> <a href="#"onclick="resetPwd()">Forgot password?<br></a></p>
+              <p class="signup"> Don't have an account? <a href="signup.php">SignupNow</a> </p> <!-- link to sign up page-->
+              </form>
+
         </div>
         <div class="rightcontainer">
-            <img class="foodlogo" src="image/platefood.png">
-            <h1>Jojoe Food</h1>
-        </div>
+          <div class="foodcontainer" ><img class="foodlogo" src="image/platefood.png">
+            <h1>Jojoe Food</h1></div>
     </div>
     
     <div class="position">
-      <a data-active="customer" href="serviceCustomerPage.html">Customer</a>
+      <a data-active="customer" href="logins.php">Customer</a>
       <a data-active="seller" href="serviceSellerPage.html">Seller</a>
     </div>
 

@@ -17,7 +17,8 @@ if (mysqli_query($conn, $sql)) {
   echo "Error creating database: " . mysqli_error($conn);
 }
 
-require_once("config.php");
+
+mysqli_select_db($conn, "jojoe");
 
 $user = "CREATE TABLE user(
     user_id VARCHAR(10) NOT NULL,
@@ -84,13 +85,13 @@ if (mysqli_query($conn, $orderdetail)) {
     echo "Error creating table: " . mysqli_error($conn);
   }
 
-$sql = "insert into user(user_id, user_password, user_level , user_name) values ('zengchai','pass1',1,'Tan Zeng Chai')";
-  if (mysqli_query($conn, $sql)) {
-   echo "New record created successfully";
-  } else {
-   echo "Error: " . $sql . "<br>" . mysqli_error($conn);
-  }
-  
+  $sql = "insert into user(user_id, user_password, user_level , user_name) values ('zengchai','pass1',1,'Tan Zeng Chai')";
+		 if (mysqli_query($conn, $sql)) {
+			echo "New record created successfully";
+		} else {
+			echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+		}
+    
 mysqli_close($conn);
-header("Location: mainpage.php");
+header("Location: mainpage.php")
 ?>
