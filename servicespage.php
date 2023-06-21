@@ -107,7 +107,14 @@ include("header.php");
     <div class='foodID'> $row[menu_code]   $row[menu_name]</div>
     <div class='engName'> $row[menu_description] </div>
     <div class='price'> RM$row[menu_price] </div>
+<<<<<<< HEAD
     <a class='edit allbutton' onclick=document.getElementById('id02').style.display='block' href='servicePage.php?menucode=$row[menu_code]'>Edit</a>
+=======
+    <div class='edit allbutton'><form>
+      <input name='menucode' type='hidden' value='$row[menu_code]'/>
+      <a class='edit allbutton' onclick='display()' href='#'>Edit</a>
+    </form></div>
+>>>>>>> main
 	<a class='delete allbutton' href='operation.php?pass=$row[menu_code]'>Delete</a>
   </div></div>";
     } } ?>
