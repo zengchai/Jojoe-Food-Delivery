@@ -279,8 +279,6 @@ input[type=foodCname], input[type=foodEngName], input[type=foodPrice], input[typ
 /*edit add to cart*/
 /*======================================================================*/
 .details .addToCart {
-  grid-column: 2 / 4;
-  grid-row: 3 / 4;
   text-align: center;
   border-radius: 25px;
   display: flex;
