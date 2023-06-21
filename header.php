@@ -56,8 +56,6 @@ exit;
               </div>
             </div>
         
-            <div class="logoutContainer" style="background-color:#f1f1f1"></div>
-        
           </form>
         </div>
       </div>

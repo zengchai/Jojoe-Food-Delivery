@@ -40,9 +40,7 @@ if ($_SESSION["Login"] != "YES") {
             
         <div class="grid-container">
             <div class="orderDetailsTable">
-                <div class="table no">NO</div>
                 <div class="table order">ORDER</div>
-                <div class="table price">PRICE</div>
                 <div class="table foodList">
                     <div class=" food">
                         <div class="foodNum">
@@ -54,16 +52,8 @@ if ($_SESSION["Login"] != "YES") {
                         <div class="foodNameEnglish">
                             A2 + White Rice
                         </div>
-                    </div>
-                    <div class=" food">
-                        <div class="foodNum">
-                            1 x 
-                        </div>
-                        <div class="foodNameChinese">
-                            A2 + 白饭
-                        </div>
-                        <div class="foodNameEnglish">
-                            A2 + White Rice
+                        <div class="foodPrice">
+                            RM6.00
                         </div>
                     </div>
                     <div class=" food">
@@ -76,14 +66,26 @@ if ($_SESSION["Login"] != "YES") {
                         <div class="foodNameEnglish">
                             A2 + White Rice
                         </div>
+                        <div class="foodPrice">
+                            RM6.00
+                        </div>
                     </div>
+                    <div class=" food">
+                        <div class="foodNum">
+                            1 x 
+                        </div>
+                        <div class="foodNameChinese">
+                            A2 + 白饭
+                        </div>
+                        <div class="foodNameEnglish">
+                            A2 + White Rice
+                        </div>
+                        <div class="foodPrice">
+                            RM6.00
+                        </div>
+                    </div>
+      
                     
-                </div>
-                
-                <div class="table foodPriceList">
-                    <div class="foodPrice">RM6.00</div>
-                    <div class="foodPrice">RM6.00</div>
-                    <div class="foodPrice">RM6.00</div>    
                 </div>
                 
                 <div class="table total">Total Price</div>
