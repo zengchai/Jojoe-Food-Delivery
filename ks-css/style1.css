@@ -108,16 +108,12 @@
   }
 
 .rightcontainer{
-    /* padding-top: 100px; */
     margin: 0 0;
    text-align: center;
     margin-top:auto;
     margin-bottom:auto;
     grid-column-start: 3;
     grid-column-end: 5;
-    /* margin: 0 auto; */
-    /* padding-left: 50px; */
-    /* float: right; */
     width: 40%;
     grid-template-rows: 1fr;
     
