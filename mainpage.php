@@ -25,27 +25,29 @@
             </div>
         </div>
 
-        <div class="grid-container">
-            <div class="one">
-                <h1>JOJOE FOOD</h1><br><br>
-                <p>is a food ordering and delivering</p>
-                <p>platform inside UTM</p><br><br>
-                <button class="btn signUpNow" onclick="location.href='signup.php'">SIGN UP NOW</a></button>
+        <div class="outside">
+            <div class="grid-container">
+            <div class="oneTwo">
+                    <div class="one">
+                        <h1>JOJOE FOOD</h1><br><br>
+                        <p>is a food ordering and delivering</p>
+                        <p>platform inside UTM</p><br><br>
+                        <button class="btn signUpNow" onclick="location.href='signup.php'">SIGN UP NOW</a></button>
+                    </div>
+                    <div class="two">
+                        <img src="image/platefood.png" class="image1">
+                    </div>
             </div>
-            <div class="two">
-                <img src="image/platefood.png" class="image1">
+                <div class="three">
+                    <img src="image/cendolbanner.png" class="image2">
+                </div>
+                <div class="four">
+                    <br><br><br>
+                    <p>Good food within minutes</p>
+                    <p>Your favourite food delivery partner</p>
+                    <p>The food of your choice</p>
+                </div>
             </div>
-            <div class="three">
-                <img src="image/cendolbanner.png" class="image2">
-            </div>
-            <div class="four"></div>
-            <div class="five">
-                <br><br><br>
-                <p>Good food within minutes</p>
-                <p>Your favourite food delivery partner</p>
-                <p>The food of your choice</p>
-            </div>
-            <div class="six"></div>
         </div>
 
         <div class="position">
