@@ -20,7 +20,7 @@ if (mysqli_query($conn, $sql)) {
 	echo "New record created successfully";
     $_SESSION['USER'] = $userName;
     $_SESSION['ID'] = $userId;
-    $_SESSION['LEVEL'] = 0;
+    $_SESSION['LEVEL'] = 2;
     $_SESSION["Login"] = "YES";
     header("Location: homepage.php");
 } else {
@@ -52,14 +52,14 @@ if (mysqli_query($conn, $sql)) {
             <img src="headerImage/IMG_4380 1.png" style="height: 50px; width: 50px; text-align: center">
           </div>  
           <div class="header1"> 
-            <div class="header"><a data-active="home" href="mainPage.html">HOME</a></div> 
+            <div class="header"><a data-active="home" href="mainpage.php">HOME</a></div> 
             <div class="header"><a data-active="service" href="#">SERVICE</a></div> 
             <div class="header"><a data-active="order" href="#">ORDER</a></div> 
             <div class="header"><a data-active="about" href="#">ABOUT</a></div> 
           </div> 
           <div class="login">
             <img src="headerImage/login (1) 1.png" style="text-align: center; padding: 10px 0;">
-            <a href="#">LOGIN</a>
+            <a href="login.php">LOGIN</a>
           </div>          
       </div>
     </div>
