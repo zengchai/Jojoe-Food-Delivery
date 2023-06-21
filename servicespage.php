@@ -96,7 +96,6 @@ include("header.php");
     $res = mysqli_query($conn, $sql);
         if (mysqli_num_rows($res) > 0) {
             while ($row = mysqli_fetch_assoc($res)) { 
-            
             echo "
             <div class='food'>
             <div class='thumb'>";?>
@@ -107,7 +106,10 @@ include("header.php");
     <div class='foodID'> $row[menu_code]   $row[menu_name]</div>
     <div class='engName'> $row[menu_description] </div>
     <div class='price'> RM$row[menu_price] </div>
-    <a class='edit allbutton' onclick='display()' href='servicespage.php?menucode=$row[menu_code]'>Edit</a>
+    <div><form>
+    <input name='menucode' type='hidden' value='$row[menu_code]'/>
+    <a class='edit allbutton' onclick='display()' href='#'>Edit</a>
+    </form></div>
 	<a class='delete allbutton' href='operation.php?pass=$row[menu_code]'>Delete</a>
   </div></div>";
     } } ?>
@@ -199,7 +201,7 @@ include("header.php");
         <span class="count">
           <div id="total-count">0</div>
         </span>
-        <a data-active="cart" class="material-icons" href="cart.html"><img src="servicePageImage/shopping-cart.png" style="height: 40px; width: 40px; margin-right: 10px"></a></i>
+        <a data-active="cart" class="material-icons" href="cart.php"><img src="servicePageImage/shopping-cart.png" style="height: 40px; width: 40px; margin-right: 10px"></a></i>
       </div>
 
     </div>

@@ -6,7 +6,7 @@ session_start();
     <head>
         <title>Jojoe Food</title>
         <link rel='stylesheet' href='yam-css/navigationbar&body.css'/>
-        <link rel="stylesheet" href="darren-css/cart.css">
+        <link rel="stylesheet" href='darren-css/cart.css'/>
     </head>
 
     <body>
@@ -14,6 +14,7 @@ session_start();
     <?php
     include("header.php");
     ?>
+
     <div class = "body-container">
     <div>
         <div class="grid-container1">
@@ -34,43 +35,33 @@ session_start();
             
         <div class="grid-container">
             <div class="orderDetailsTable">
-                <div class="table no">NO</div>
                 <div class="table order">ORDER</div>
-                <div class="table price">PRICE</div>
-                <div class="table foodList">
-                    <div class=" food">
-                        <div class="foodNum">
-                            1 x 
+                <div class="price">PRICE</div>
+                <div class="foodList">
+                    <?php
+                    $total_price = 0;
+                    $sqlz = "SELECT * FROM orders WHERE user_id = '{$_SESSION['ID']}' ";
+                    $resz = mysqli_query($conn, $sqlz);
+                    if (mysqli_num_rows($resz) > 0) {
+                        while ($rowz = mysqli_fetch_assoc($resz)) { 
+                    $sql = "SELECT * FROM orderdetail where order_id = '{$rowz['order_id']}'";
+                    $res = mysqli_query($conn, $sql);
+                    if (mysqli_num_rows($res) > 0) {while ($row = mysqli_fetch_assoc($res)) { 
+                            if($row['order_id']==$_SESSION['COUNTER']){
+                        $menu_name = "SELECT * FROM menu WHERE menu_code = '$row[menu_code]'";
+                        $query_menu_name = mysqli_query($conn, $menu_name);
+                        $res_menu_name = mysqli_fetch_assoc($query_menu_name);
+                        $total_order_price = $row['order_quantity'] * $row['order_price'];
+                        $total_price += $row['order_price'] * $row['order_quantity'];
+                        echo "<div class='food'>
+                        <div class='delete'> <a href='operation.php?pass=$row[item_id]'>Delete</a></div>
+                        <div class='foodNum'> $row[order_quantity] </div>
+                        <div class='foodNameChinese'> $row[menu_code] $res_menu_name[menu_name] </div>
+                        <div class='foodNameEnglish'> $res_menu_name[menu_description] </div>
                         </div>
-                        <div class="foodNameChinese">
-                            A2 + 白饭
-                        </div>
-                        <div class="foodNameEnglish">
-                            A2 + White Rice
-                        </div>
-                    </div>
-                    <div class=" food">
-                        <div class="foodNum">
-                            1 x 
-                        </div>
-                        <div class="foodNameChinese">
-                            A2 + 白饭
-                        </div>
-                        <div class="foodNameEnglish">
-                            A2 + White Rice
-                        </div>
-                    </div>
-                    <div class=" food">
-                        <div class="foodNum">
-                            1 x 
-                        </div>
-                        <div class="foodNameChinese">
-                            A2 + 白饭
-                        </div>
-                        <div class="foodNameEnglish">
-                            A2 + White Rice
-                        </div>
-                    </div>
+                        ";
+                } }}}}
+                    ?>
                     
                 </div>
                 
