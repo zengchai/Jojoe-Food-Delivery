@@ -30,7 +30,7 @@ if ($_SESSION["Login"] != "YES") {
                   </div> 
               </div>
                 <div class="login">
-                    <img src="headerImage/login (1) 1.png" style="text-align: center; padding: 10px 0;">
+                    <img src="headerImage/login (1) 1.png" style="text-align: center; padding: 18px 0;">
                     <button id="logoutButton" onclick="document.getElementById('id03').style.display='block'" style="width:auto; cursor: pointer">LOGOUT</button>
                     <div id="id03" class="modal">
             
