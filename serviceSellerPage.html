@@ -103,7 +103,7 @@
           <div class="name">酸甜鸡丁</div>
           <div class="engName">Sweet & Sour Chicken</div>
           <div class="price">RM3.00</div>
-          <button type="button" class="edit allbutton">Edit</button>
+          <a class="edit allbutton" onclick="document.getElementById('id02').style.display='block'" style="width:auto;">Edit</a>
           <button type="button" class="delete allbutton">Delete</button>
         </div>
       </div>
@@ -149,6 +149,38 @@
 
   </form>
 </div>
+
+
+<div id="id02" class="modal">
+  <form class="modal-content animate" action="validateUpdateMenu.php" method="post" enctype="multipart/form-data">
+    <div class="imgcontainer">
+      <span onclick="document.getElementById('id02').style.display='none'" class="close" title="Close Modal">&times;</span>
+      <h1>Edit Item</h1>
+    </div>
+
+    <div class="input-container">
+      <label for="foodCname"><b>Food's Image: </b></label>
+      <input type="file" name="uploadfile" accept="image/jpeg, image/png, image/jpg"><br><br>
+
+      <label for="foodID"><b>Food's ID</b></label>
+      <input type="foodID" name="menucode" placeholder="" id="foodid" >
+
+      <label for="foodCname"><b>Food's Chinese Name</b></label>
+      <input type="foodCname" name="menuname" placeholder="" id="foodCName" >
+
+      <label for="foodEngName"><b>Food's English Name</b></label>
+      <input type="foodEngName" name="menudesc" placeholder="" id="foodEngName" >
+        
+      <label for="foodPrice"><b>Food Price:</b></label>
+      <input type="foodPrice" name="menuprice" placeholder="" id="foodPrice" >
+
+      <!--ltr need to change to submit-->
+      <button type="submit" name="upload" class="allbutton" id="addButton">EDIT</button>
+      <!--<input type="button" id="addButton" value="ADD" >-->
+      
+    </div>
+
+  </form></div>
 
 
 <!--<input type="file" accept="image/jpeg, image/png, image/jpg"> -->
