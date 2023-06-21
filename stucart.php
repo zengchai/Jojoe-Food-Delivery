@@ -76,7 +76,8 @@ session_start();
             </div>
 
             <div class="checkoutButton">
-                <button class="btn checkout" onclick="location.href='orderDetails.html'">CHECKOUT</button>
+                <?php
+                echo "<a class='btn checkout' href='orderDetails.php?totalprice=$total_price'>CHECKOUT</a>";?>
             </div>
         </div>
     </div>
