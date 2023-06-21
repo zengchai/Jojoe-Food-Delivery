@@ -71,7 +71,8 @@ include("header.php");
     <div class='foodID'> $row[menu_code]   $row[menu_name]</div>
     <div class='engName'> $row[menu_description] </div>
     <div class='price'> RM$row[menu_price] </div>
-    <a class='edit allbutton' onclick='display()' href='servicespage.php?menucode=$row[menu_code]'>Edit</a>
+    <a class='edit allbutton' href='servicespage.php?menucode=$row[menu_code]'> Edit </a>
+
 	<a class='delete allbutton' href='operation.php?pass=$row[menu_code]'>Delete</a>
   </div></div>";
     } } ?>
@@ -112,11 +113,12 @@ include("header.php");
 
   </form></div>
   <?php if (isset($_GET["menucode"])):?>
+
     <div id="id02" class="modal">
   <form class="modal-content animate" action="validateUpdateMenu.php" method="post" enctype="multipart/form-data">
     <div class="imgcontainer">
       <span onclick="document.getElementById('id02').style.display='none'" class="close" title="Close Modal">&times;</span>
-      <h1>Add Item</h1>
+      <h1>Edit Item</h1>
     </div>
 
     <div class="input-container">
@@ -136,7 +138,7 @@ include("header.php");
       <input type="foodPrice" name="menuprice" placeholder="" id="foodPrice" >
 
       <!--ltr need to change to submit-->
-      <button type="submit" name="upload" class="allbutton" id="addButton">ADD</button>
+      <button type="submit" name="upload" class="allbutton" id="addButton">EDIT</button>
       <!--<input type="button" id="addButton" value="ADD" >-->
       
     </div>
@@ -164,7 +166,7 @@ include("header.php");
     <div class='foodID'> $row[menu_code]   $row[menu_name]</div>
     <div class='engName'> $row[menu_description] </div>
     <div class='price'> RM$row[menu_price] </div>
-    <a class='edit allbutton' onclick='display()' href='servicespage.php?menucode=$row[menu_code]'>Edit</a>
+    <a class='edit allbutton' href='servicespage.php?menucode=$row[menu_code]'> Edit </a>
 	<a class='delete allbutton' href='operation.php?pass=$row[menu_code]'>Delete</a>
   </div></div>";
     } } ?>
