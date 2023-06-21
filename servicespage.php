@@ -101,19 +101,9 @@ include("header.php");
     <div class='foodID'> $row[menu_code]   $row[menu_name]</div>
     <div class='engName'> $row[menu_description] </div>
     <div class='price'> RM$row[menu_price] </div>
-<<<<<<< HEAD
     <div class='edit allbutton'><form>
       <input name='menucode' type='hidden' value='$row[menu_code]'/>
-<<<<<<< HEAD
       <a class='edit allbutton' onclick='display()' href='#'>Edit</a>
-=======
-    <div><form>
-    <input name='menucode' type='hidden' value='$row[menu_code]'/>
-    <a class='edit allbutton' onclick='display()' href='#'>Edit</a>
->>>>>>> d206186013c4c7bf98cc1b9b453a1fe13f10f793
-=======
-      <a class='edit allbutton' onclick=document.getElementById('id02').style.display='block' href='#'>Edit</a>
->>>>>>> lazyyam
     </form></div>
 	<a class='delete allbutton' href='operation.php?pass=$row[menu_code]'>Delete</a>
   </div></div>";
