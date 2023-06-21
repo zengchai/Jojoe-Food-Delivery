@@ -71,7 +71,7 @@ include("header.php");
     <div class='foodID'> $row[menu_code]   $row[menu_name]</div>
     <div class='engName'> $row[menu_description] </div>
     <div class='price'> RM$row[menu_price] </div>
-    <a class='edit allbutton' href='servicespage.php?menucode=$row[menu_code]'> Edit </a>
+    <a class='edit allbutton' onclick="document.getElementById('id02').style.display='block'" href='servicespage.php?menucode=$row[menu_code]'> Edit </a>
 
 	<a class='delete allbutton' href='operation.php?pass=$row[menu_code]'>Delete</a>
   </div></div>";
@@ -166,7 +166,7 @@ include("header.php");
     <div class='foodID'> $row[menu_code]   $row[menu_name]</div>
     <div class='engName'> $row[menu_description] </div>
     <div class='price'> RM$row[menu_price] </div>
-    <a class='edit allbutton' href='servicespage.php?menucode=$row[menu_code]'> Edit </a>
+    <a class='edit allbutton' onclick="document.getElementById('id02').style.display='block'" href='servicespage.php?menucode=$row[menu_code]'> Edit </a>
 	<a class='delete allbutton' href='operation.php?pass=$row[menu_code]'>Delete</a>
   </div></div>";
     } } ?>
