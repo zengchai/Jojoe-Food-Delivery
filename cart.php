@@ -1,6 +1,12 @@
 <?php
-
 session_start();
+
+include("config.php");
+
+if ($_SESSION["Login"] != "YES") {
+    header("Location: guest_form.php");
+}
+
 ?>
 <html>
     <head>
@@ -85,7 +91,7 @@ session_start();
             </div>
 
             <div class="checkoutButton">
-                <button class="btn checkout" onclick="location.href='orderDetails.html'">CHECKOUT</button>
+                <button class="btn checkout" onclick="location.href='orderDetails.php'">CHECKOUT</button>
             </div>
         </div>
     </div>
