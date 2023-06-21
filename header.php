@@ -1,9 +1,4 @@
 <?php
-include("config.php");
-
-if ($_SESSION["Login"] != "YES") {
-  header("Location: login.php");
-}
 
 if(isset($_POST['logout'])){
 
