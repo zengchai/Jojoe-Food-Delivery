@@ -6,14 +6,13 @@
 }
 
 .menu-container {
-  background-color: rgb(255, 255, 255);
+  background-color: #ddd8d8;
   padding: 0 40px;
   width: 100%;
-  height: 70px;
+  height: 80px;
   position: fixed;  
   display: flex;
   justify-content: center;
-  
 }
   
 .menu {
@@ -21,7 +20,12 @@
   text-align: center;
   display: flex;
   justify-content: space-between;
-  /*margin: 0 10px;*/
+}
+
+.left_menu{
+  display: flex;
+  align-items: center;
+  width:800px;
 }
 
 .logo {
@@ -29,37 +33,40 @@
   text-decoration: none;
   text-align: center;
   color: black;
-  margin-top: 10px; 
 }
-
 
 .header1 {
   display: flex;
-  margin-left: 70px;
+  justify-content: space-evenly;
+  height: 80px;
+  width: 680px;
+  margin-left: 10px;
 }
-  
+
 .header {
+  display:flex;
+  text-align: center;
+  justify-content: center;
   text-decoration: none;
-  max-height: 20px;
-  max-width: 120px;
-  padding: 20px 0;
+  align-items: center;
   text-align:center;
 }
 
 .header a{
-  align-items: center;
-  text-decoration: none;
-  color: black;
-  border-radius: 23px;
-  padding: 15px 35px;
-  transition: all 0.3ms;
+  font-size: 20px;
+align-items: center;
+text-decoration: none;
+color: black;
+border-radius: 23px;
+padding: 0px 30px;
+transition: ease 0.3s;
 }
 
 .header a:hover, 
 .header a:active {
+  text-decoration: underline;
+  font-size: 23px;
   background-color: rgb(232, 232, 232);
-
-
 }
 
 .login {
@@ -68,14 +75,6 @@
   text-align: center;
   color: black;
   padding-right: 10px;
-}
-
-.login a{
-  display: flex; 
-  text-decoration: none; 
-  margin-left: 15px; 
-  margin-top: 23px; 
-  color: black;
 }
 
 
@@ -100,16 +99,30 @@
 
 
 /*=========================================================================*/
+.logoutButton {
+  display: grid;
+  grid-template-columns: 3fr 0.5fr 3fr;
+  }
+
 #logoutButton {
-  background-color: rgb(20, 170, 229);
+<<<<<<< HEAD
+  background-color:#ddd8d8;
+  padding: 10px;
+=======
+  grid-column: 1 / 2;
+  background-color: rgb(199, 199, 199);
   color: rgb(0, 0, 0);
   padding: 14px 20px;
+>>>>>>> a5e5421bffd885e537bbdd8a24ef3577f9cb16a9
   margin: 8px 0;
   border: none;
   cursor: pointer;
+  font-size: 20px;
+  margin-left: 15px;
 }
 
 #cancelButton {
+  grid-column: 3 / 4;
   background-color: #f44336;
   color: rgb(0, 0, 0);
   padding: 14px 20px;
@@ -144,6 +157,8 @@
 
 .logoutContainer {
   padding: 12px;
+  padding-bottom: 1.5rem;
+  padding-top: 2.3rem;
   text-align: center;
 }
 
@@ -168,14 +183,14 @@
   background-color: #fefefe;
   margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
   border: 1px solid #888;
-  width: 80%; /* Could be more or less, depending on screen size */
+  width: 35%; /* Could be more or less, depending on screen size */
 }
 
 /* The Close Button (x) */
 .close {
   position: absolute;
-  right: 25px;
-  top: 0;
+  right: 1rem;
+  top: -1rem;
   color: #000;
   font-size: 35px;
   font-weight: bold;

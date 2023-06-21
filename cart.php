@@ -1,3 +1,13 @@
+<?php
+session_start();
+
+include("config.php");
+
+if ($_SESSION["Login"] != "YES") {
+    header("Location: guest_form.php");
+}
+
+?>
 <html>
     <head>
         <title>Jojoe Food</title>
@@ -23,16 +33,14 @@
             </div>
         
             <div class="addOrder">
-                <button type=button class="add" style="font-size: 18px;" onclick="location.href='serviceCustomerPage.html'">ADD ORDER</button>
+                <button type=button class="add" style="font-size: 18px;" onclick="location.href='servicespage.php'">ADD ORDER</button>
             </div>
         </div>
     
             
         <div class="grid-container">
             <div class="orderDetailsTable">
-                <div class="table no">NO</div>
                 <div class="table order">ORDER</div>
-                <div class="table price">PRICE</div>
                 <div class="table foodList">
                     <div class=" food">
                         <div class="foodNum">
@@ -44,16 +52,8 @@
                         <div class="foodNameEnglish">
                             A2 + White Rice
                         </div>
-                    </div>
-                    <div class=" food">
-                        <div class="foodNum">
-                            1 x 
-                        </div>
-                        <div class="foodNameChinese">
-                            A2 + 白饭
-                        </div>
-                        <div class="foodNameEnglish">
-                            A2 + White Rice
+                        <div class="foodPrice">
+                            RM6.00
                         </div>
                     </div>
                     <div class=" food">
@@ -66,14 +66,26 @@
                         <div class="foodNameEnglish">
                             A2 + White Rice
                         </div>
+                        <div class="foodPrice">
+                            RM6.00
+                        </div>
                     </div>
+                    <div class=" food">
+                        <div class="foodNum">
+                            1 x 
+                        </div>
+                        <div class="foodNameChinese">
+                            A2 + 白饭
+                        </div>
+                        <div class="foodNameEnglish">
+                            A2 + White Rice
+                        </div>
+                        <div class="foodPrice">
+                            RM6.00
+                        </div>
+                    </div>
+      
                     
-                </div>
-                
-                <div class="table foodPriceList">
-                    <div class="foodPrice">RM6.00</div>
-                    <div class="foodPrice">RM6.00</div>
-                    <div class="foodPrice">RM6.00</div>    
                 </div>
                 
                 <div class="table total">Total Price</div>
@@ -81,7 +93,7 @@
             </div>
 
             <div class="checkoutButton">
-                <button class="btn checkout" onclick="location.href='orderDetails.html'">CHECKOUT</button>
+                <button class="btn checkout" onclick="location.href='orderDetails.php'">CHECKOUT</button>
             </div>
         </div>
     </div>
