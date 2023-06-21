@@ -26,7 +26,7 @@
           <div class="header1"> 
             <div class="header"><a data-active="home" href="mainPage.html">HOME</a></div> 
             <div class="header"><a data-active="service" href="#">SERVICE</a></div> 
-            <div class="header"><a data-active="order" href="#">ORDER</a></div> 
+            <div class="header"><a data-active="order" href="#">ORDER</a></div>  
             <div class="header"><a data-active="about" href="#">ABOUT</a></div> 
           </div> 
           <div class="login">
@@ -38,29 +38,29 @@
 
     <div class="container">
         <div class="leftcontainer">
-            <form action="">
+            <form method="post" action="validatesignup.php">
                 <p class="signup">SIGN UP</p>
                 
                 <p class="username">Username: <br>
-                <input class="inputtype" type="text" id="username" size="30", placeholder="Create a username" maxlength="10"  ><br></p>
+                <input class="inputtype" type="text" name="username" size="30", placeholder="Create a username" maxlength="10"  ><br></p>
                 <p class="userid">User ID: <br>
-                  <input class="inputtype" type="text" id="userid" size="30", placeholder="Create a userid" maxlength="10"  ><br></p>
+                  <input class="inputtype" type="text" name="userid" size="30", placeholder="Create a userid" maxlength="10"  ><br></p>
                 <p class="emailaddress"> Email Address: <br>
-                <input class="inputtype" type="text" id="emailaddress" size="30", placeholder="Enter your email address" maxlength="30"><br></p>
+                <input class="inputtype" type="text" name="email" size="30", placeholder="Enter your email address" maxlength="30"><br></p>
                 <p class="matricno">Matric Number: <br>
-                <input class="inputtype" type="text" id="matricnumber" size="30", placeholder="Enter your matricno" maxlength="10"><br></p>
+                <input class="inputtype" type="text" name="matric" size="30", placeholder="Enter your matricno" maxlength="10"><br></p>
                 <p class="phonenumber" >Phone Number: <br>
-                <input class="inputtype" type="text" id="phonenumber" size="30", placeholder="Enter your phone number" maxlength="15" onkeypress="return isNumberKey(event)"><br></p>
+                <input class="inputtype" type="text" name="phone" size="30", placeholder="Enter your phone number" maxlength="15" onkeypress="return isNumberKey(event)"><br></p>
                 <p class="password">Password: <br>
-                <input class="inputtype" type="password" id="password" size="30", placeholder="Enter your password" maxlength="10"><br></p>
-                <p class="tandc"><input class="inputtype" type="radio" name="T&C" value="Terms & Condition"> Terms & Condition<br></p>
-                <p class="button"><input class="inputtype" type="button" id="signup" onclick="location.href='mainPage.html'" value="Sign Up"></p>
+                <input class="inputtype" type="password" name="password" size="30", placeholder="Enter your password" maxlength="10"><br></p>
+                <p class="tandc"><input class="inputtype" type="radio" name="T&C" value="Terms & Condition" required> Terms & Condition<br></p>
+                <p class="button"><input class="inputtype" type="submit" name="signup" value="Sign Up" id="signup"></p>
             </form>
             
         </div>
         <div class="rightcontainer">
-            <img class="foodlogo" src="image/platefood.png">
-            <h1>Jojoe Food</h1>
+          <div class="foodcontainer" ><img class="foodlogo" src="image/platefood.png">
+            <h1>Jojoe Food</h1></div>
         </div>
     </div>
     

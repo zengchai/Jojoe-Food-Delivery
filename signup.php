@@ -22,7 +22,7 @@ if (mysqli_query($conn, $sql)) {
     $_SESSION['ID'] = $userId;
     $_SESSION['LEVEL'] = 0;
     $_SESSION["Login"] = "YES";
-    header("Location: ../homeSeller.php");
+    header("Location: homepage.php");
 } else {
 	echo "Error: " . $sql . "<br>" . mysqli_error($conn);
 }}
@@ -33,7 +33,7 @@ if (mysqli_query($conn, $sql)) {
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Lato:wght@700&display=swap" rel="stylesheet">
-<link rel="stylesheet" type="text/css" href="css/style1.css" id="stylesheet">
+<link rel="stylesheet" type="text/css" href="ks-css/style1.css" id="stylesheet">
 <link rel='stylesheet' href='yam-css/navigationbar&body.css'/>
 <script>
     function isNumberKey(event) {
@@ -66,7 +66,7 @@ if (mysqli_query($conn, $sql)) {
 
     <div class="container">
         <div class="leftcontainer">
-            <form method="post" action="validatesignup.php">
+            <form method="post" action="signup.php">
                 <p class="signup">SIGN UP</p>
                 
                 <p class="username">Username: <br>
@@ -90,12 +90,6 @@ if (mysqli_query($conn, $sql)) {
             <img class="foodlogo" src="image/platefood.png">
             <h1>Jojoe Food</h1>
         </div>
-    </div>
-    
-    <div class="position">
-      <a data-active="customer" href="serviceCustomerPage.html">Customer</a>
-      /
-      <a data-active="seller" href="serviceSellerPage.html">Seller</a>
     </div>
 
 

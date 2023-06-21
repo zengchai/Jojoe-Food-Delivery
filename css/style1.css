@@ -1,27 +1,24 @@
-* {
-  margin: 0;
-   padding: 0; 
-   box-sizing: border-box;
-   font-family: Verdana, Geneva, Tahoma, sans-serif
- }
- 
- .container {
+body{
+    margin:0;
+    background-color: #fff;
+}
+.header-bar {
+    color: #fff;
+    padding: 10px;
    
-   background: #fff;
-   margin: auto;
-   display: grid;
-   grid-template-columns: 0.6fr 1.4fr 2fr;
-   justify-content: center;
-   padding-top: 8rem;
-   padding-bottom: 8rem;
-   margin-left: 5rem;
-   margin-right: 5rem;
+
    
- 
- }
-
-
-  /* nav {
+  }
+header::after{
+    content: '';
+    display: table;
+    clear: both;
+  }
+.logo{
+    float: left;
+    padding: 10px 0;
+}
+  nav {
     float:right;
 
     display: flex;
@@ -64,11 +61,11 @@
   }
   nav a:hover::before{
     width: 100%;
-  } */
+  }
 
   
   
-  /* .login-section{
+  .login-section{
     display: flex;
     text-align: center;
   }
@@ -77,29 +74,34 @@
     float: right;
     padding: 10px 0;
     
-  } */
- 
+  }
 
+.container{
+    display: flex;
+    flex:1;
+    justify-content: center;
+    margin-left: 5rem;
+    margin-right: 5rem;
 
+}
 
 .leftcontainer{
+    font-size: 25px;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    width:100%;
-    grid-column-start: 2;
-    grid-column-end: 3;
-   
-   
-
+    width: 40%;
+    display: flex;
+    justify-content: center;
   }
   
   #signup {
     display: block;
-    /* margin: 0 auto; */
+    margin: 0 auto;
     padding: 8px 80px;
     background-color: #ffffff;
     color: rgb(0, 0, 0);
-    font-size: 25px; 
-    border-radius: 0.8rem;
+    font-size: 25px;
+   
+    border-radius: 0.5rem;
     cursor: pointer;
   }
   
@@ -110,47 +112,19 @@
 .rightcontainer{
     /* padding-top: 100px; */
     margin: 0 0;
-   text-align: center;
+    text-align: center;
     margin-top:auto;
     margin-bottom:auto;
-    grid-column-start: 3;
-    grid-column-end: 5;
     /* margin: 0 auto; */
     /* padding-left: 50px; */
     /* float: right; */
     width: 40%;
-    grid-template-rows: 1fr;
-    
   }
-
- 
-  .signup{
-    font-size: 3rem;
-    margin-bottom: 1.3rem;
-  }
-  .username {
-    font-size: 1.2rem;
-    margin-bottom: 1rem;
-  }
-  .userid{
-    font-size: 1.2rem;
-    margin-bottom: 1rem;
-  }
-  .emailaddress{
-    font-size: 1.2rem;
-    margin-bottom: 1rem;
-  }
-  .matricno{
-    font-size: 1.2rem;
-    margin-bottom: 1rem;
-  }
-  .phonenumber{
-    font-size: 1.2rem;
-    margin-bottom: 1rem;
+  .username{
+   
   }
   .password{
-    font-size: 1.2rem;
-    margin-bottom: 1rem;
+    margin-bottom: 0.4rem;
   }
   .tandc {
     font-size: 1rem;
@@ -159,24 +133,20 @@
   }
 .inputtype{
     padding: 0.5rem;
-    border-radius: 5rem;
-    margin-top: 0.5rem;
+    border-radius: 5rem;;
 }
-.button{
-  margin-left: 0rem;
+.rightcontainer {
+    
 }
 
 .foodlogo{
-    align-items: center;
-    padding-left: 3rem;
-    padding-bottom: 1.5rem;
+    width: 90%;
+
 }
-.foodcontainer{
-  display: grid;
-}
+
 .footercontainer{
     display: flex;
     justify-content: center;
-    
+    clear: both;
     
   }
