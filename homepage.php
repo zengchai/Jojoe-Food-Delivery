@@ -18,18 +18,20 @@ if ($_SESSION["Login"] != "YES") {
     <body>
         <div class='menu-container'>
             <div class='menu'>
-                <div class="logo">
-                  <img src="headerImage/IMG_4380 1.png" style="height: 50px; width: 50px; text-align: center">
-                </div>  
-                <div class="header1"> 
-                  <div class="header"><a data-active="home" href="homepage.php">HOME</a></div> 
-                  <div class="header"><a data-active="service" href="serviceSellerPage.html">SERVICE</a></div> 
-                  <div class="header"><a data-active="order" href="orderhistorySeller.html">ORDER</a></div> 
-                  <div class="header"><a data-active="about" href="about.html">ABOUT</a></div> 
-                </div> 
+              <div class ='left_menu'>
+                  <div class="logo">
+                    <img src="headerImage/IMG_4380 1.png" style="height: 50px; width: 50px; text-align: center">
+                  </div>  
+                  <div class="header1"> 
+                    <div class="header"><a data-active="home" href="homeSeller.html">HOME</a></div> 
+                    <div class="header"><a data-active="service" href="serviceSellerPage.html">SERVICE</a></div> 
+                    <div class="header"><a data-active="order" href="orderhistorySeller.html">ORDER</a></div> 
+                    <div class="header"><a data-active="about" href="about.html">ABOUT</a></div> 
+                  </div> 
+              </div>
                 <div class="login">
-                    <img src="headerImage/login (1) 1.png" style="text-align: center; padding: 10px 0;">
-                    <button id="logoutButton" onclick="document.getElementById('id03').style.display='block'" style="background-color: white; width:auto; cursor: pointer">LOGOUT</button>
+                    <img src="headerImage/login (1) 1.png" style="text-align: center; padding: 18px 0;">
+                    <button id="logoutButton" onclick="document.getElementById('id03').style.display='block'" style="width:auto; cursor: pointer">LOGOUT</button>
                     <div id="id03" class="modal">
             
                       <form class="modal-content animate" action="/action_page.php" method="post">
@@ -43,16 +45,16 @@ if ($_SESSION["Login"] != "YES") {
                     
                         <div class="logoutContainer">
                             <div class="logoutButton">
-                              <button type="button" id="logoutButton" onclick="location.href='login.php'">Logout</button>
+                              <button type="button" id="logoutButton" onclick="location.href='login.php'"><a>Logout</a></button>
                               <button type="button"	id="cancelButton" onclick="document.getElementById('id03').style.display='none'">Cancel</button>
-                          </div>
+                            </div>
                         </div>
                     
-                        <div class="logoutContainer" style="background-color:#f1f1f1"></div>
+                          <div class="logoutContainer" style="background-color:#f1f1f1"></div>
                     
                       </form>
                     </div>
-                  </div>                  
+                </div>                  
             </div>
         </div>
 
@@ -91,7 +93,6 @@ if ($_SESSION["Login"] != "YES") {
             /
             <a data-active="seller" href="serviceSellerPage.html">Seller</a>
         </div>
-
     </body>
 
 </html>

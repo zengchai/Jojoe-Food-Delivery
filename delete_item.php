@@ -1,13 +1,12 @@
 <?php
-session_start();
+
 require_once ("config.php");
 
-if ($_SESSION["Login"] != "YES") {
-    header("Location: guest_form.php");
-}
+$pass = $_GET["pass"];
 
 if (isset($_GET["pass"])) {
     $pass = $_GET["pass"];
+}
 
 
 //Q2: delete guest according to id using DELETE FROM
@@ -16,10 +15,10 @@ $sql = "DELETE FROM menu WHERE menu_code = '$pass'";
 
 if (mysqli_query($conn, $sql)) {
    $em = "Record deleted successfully";
-    header("Location: servicespage.php?sub=$em");
+    header("Location: selmainpage.php?sub=$em");
    } else {
     $em = "Error deleting record: " . mysqli_error($conn);
-    header("Location: servicespage.php?sub=$em");
+    header("Location: selmainpage.php?sub=$em");
 }}
 
 else if($_SESSION['LEVEL']==0){
@@ -34,7 +33,4 @@ else if($_SESSION['LEVEL']==0){
     }
 }
 mysqli_close($conn);
-}
-
-
 ?>
