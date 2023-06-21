@@ -104,4 +104,3 @@ function isValidEmail(email) {
 
 </body>
 </html>
-<a href="signup.php">SignUp</a>

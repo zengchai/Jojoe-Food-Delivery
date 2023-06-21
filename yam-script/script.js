@@ -19,3 +19,7 @@ window.onclick = function(event) {
         modal.style.display = "none";
     }
 }
+
+function display(){
+    document.getElementById('id01').style.display='block';
+}
