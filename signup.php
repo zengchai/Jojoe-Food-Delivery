@@ -22,7 +22,7 @@ if (mysqli_query($conn, $sql)) {
     $_SESSION['ID'] = $userId;
     $_SESSION['LEVEL'] = 0;
     $_SESSION["Login"] = "YES";
-    header("Location: homeSeller.php");
+    header("Location: homepage.php");
 } else {
 	echo "Error: " . $sql . "<br>" . mysqli_error($conn);
 }}
@@ -90,12 +90,6 @@ if (mysqli_query($conn, $sql)) {
             <img class="foodlogo" src="image/platefood.png">
             <h1>Jojoe Food</h1>
         </div>
-    </div>
-    
-    <div class="position">
-      <a data-active="customer" href="serviceCustomerPage.html">Customer</a>
-      /
-      <a data-active="seller" href="serviceSellerPage.html">Seller</a>
     </div>
 
 
