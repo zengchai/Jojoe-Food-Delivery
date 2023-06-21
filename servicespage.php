@@ -61,11 +61,6 @@ if(!isset($_SESSION['COUNTER'])){
    <?php if($_SESSION['LEVEL']==2||$_SESSION['LEVEL']==0):?>
    <link rel='stylesheet' href='yam-css/serviceCustomer.css'/>
    <?php endif;?>
-    <script>
-      function display(){
-        document.getElementById('id02').style.display='block';
-      }
-    </script>
    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!--windows size responsive-->
  </head>
 
@@ -107,10 +102,9 @@ include("header.php");
     <div class='foodID'> $row[menu_code]   $row[menu_name]</div>
     <div class='engName'> $row[menu_description] </div>
     <div class='price'> RM$row[menu_price] </div>
-    <a class='edit allbutton' onclick=document.getElementById('id02').style.display='block' href='servicePage.php?menucode=$row[menu_code]'>Edit</a>
     <div class='edit allbutton'><form>
       <input name='menucode' type='hidden' value='$row[menu_code]'/>
-      <a class='edit allbutton' onclick='display()' href='#'>Edit</a>
+      <a class='edit allbutton' onclick=document.getElementById('id02').style.display='block' href='#'>Edit</a>
     </form></div>
 	<a class='delete allbutton' href='operation.php?pass=$row[menu_code]'>Delete</a>
   </div></div>";
@@ -152,6 +146,7 @@ include("header.php");
 
   </form></div>
   <?php if (isset($_GET["menucode"])):?>
+    
     <div id="id02" class="modal">
   <form class="modal-content animate" action="validateUpdateMenu.php" method="post" enctype="multipart/form-data">
     <div class="imgcontainer">
