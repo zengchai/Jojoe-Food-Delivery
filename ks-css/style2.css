@@ -1,110 +1,147 @@
 * {
- margin: 0;
-  padding: 0; 
-  box-sizing: border-box;
-  font-family: Verdana, Geneva, Tahoma, sans-serif
-}
-
-.container {
-  
-  background: #fff;
-  margin: auto;
-  display: grid;
-  grid-template-columns: 0.6fr 1.4fr 2fr;
-  justify-content: center;
-  padding-top: 8rem;
-  padding-bottom: 8rem;
-  margin-left: 5rem;
-  margin-right: 5rem;
-  
-}
-
-
-.leftcontainer{
-    font-size: 25px;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    width: 40%;
-  grid-column-start: 2;
-    grid-column-end: 3;
-  }
-  .logina{
-    font-size: 3rem;
-    margin-bottom: 1.3rem;
-  }
-  .userid{
-   font-size: larger;
-   margin-bottom: 1.0rem;
-  }
-  .resetpwd{
-    margin-top: 1rem;
-    font-size: 1rem;
-    margin-bottom: 1.3rem;
-    
-  }
-  /* a:{
-    color: black;
-    cursor: pointer;
-    text-decoration: underline;
-} */
-  .password{
-    margin-bottom:0;
-  }
-  .signup{
-    margin-bottom: 0.5rem;
-    font-size: 1.0rem;
-    margin-top: 0.5rem;
-  }
+  margin: 0;
+   padding: 0; 
+   box-sizing: border-box;
+   font-family: Verdana, Geneva, Tahoma, sans-serif
+ }
  
-  #login {
-    display: block;
-    margin: 0 auto;
-    padding: 8px 80px;
-    background-color: #ffffff;
-    color: rgb(0, 0, 0);
-    font-size: 25px;
+ .container {
    
-    border-radius: 0.5rem;
-    cursor: pointer;
+   background: #fff;
+   margin: auto;
+   display: grid;
+   grid-template-columns: 0.6fr 1.4fr 2fr;
+   justify-content: center;
+   padding-top: 8rem;
+   padding-bottom: 8rem;
+   margin-left: 5rem;
+   margin-right: 5rem;
+   
+ }
+ 
+ 
+ .leftcontainer{
+     font-size: 25px;
+     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+     width: 40%;
+   grid-column-start: 2;
+     grid-column-end: 3;
+   }
+   .login{
+     font-size: 3rem;
+     margin-bottom: 3rem;
+   }
+   .userid{
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+   }
+   .password{
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+   }
+   .resetpwd{
+    padding-left: 3.5rem;
+     margin-top: 0.5rem;
+     font-size: 1rem;
+     margin-bottom: 1.3rem;    
+     width:20rem; 
+   }
+   .resetpwd a {
+    text-decoration: none;
+    color: blue;
+  }
+
+  .resetpwd a:hover {
+    text-decoration: underline;
+  }
+  .signup a{
+  text-decoration: none;
+  color: blue;
+  }
+.signup a:hover{
+  text-decoration: underline;
+}
+
+   .line-container {
+    text-align: left;
+    width: 20rem;
+    
   }
   
-  #login:hover {
-    background-color: #ebeaea;
+  .line {
+    display: inline-block;
+    width: 30%;
+    margin: 0 6px;
+    border: none;
+    border-top: 1px solid black;
   }
-
-  .rightcontainer{
-
-    margin: 0 0;
-   text-align: center;
-    margin-top:auto;
-    margin-bottom:auto;
-    grid-column-start: 3;
-    grid-column-end: 5;
-
-    width: 40%;
-    grid-template-rows: 1fr;
-    
+  
+  .line-text {
+    display: inline-block;
+    vertical-align: middle;
+    font-weight: bold;
+    line-height: 1;
   }
-
-  .inputtype{
-    padding: 0.5rem;
-    border-radius: 5rem;
-    margin-top: 0.5rem;
-}
-.button{
-}
-.foodlogo{
-  align-items: center;
-  padding-left: 3rem;
-  padding-bottom: 1.5rem;
-}
-.foodcontainer{
-display: grid;
-}
-
-.footercontainer{
-
-    display: flex;
-    justify-content: center;
+  
+   .signup{
+     margin-bottom: 0.5rem;
+     font-size: 1.0rem;
+     margin-top: 0.5rem;
+     width: 20rem;
+   }
+   .loginbutton{
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+   }
+   #login {
+     display: block;
+     margin: 0 auto;
+     padding: 8px 80px;
+     background-color: #ffffff;
+     color: rgb(0, 0, 0);
+     font-size: 25px;
     
-    
-  }
+     border-radius: 0.5rem;
+     cursor: pointer;
+   }
+   
+   #login:hover {
+     background-color: #ebeaea;
+   }
+ 
+   .rightcontainer{
+ 
+     margin: 0 0;
+    text-align: center;
+     margin-top:auto;
+     margin-bottom:auto;
+     grid-column-start: 3;
+     grid-column-end: 5;
+ 
+     width: 40%;
+     grid-template-rows: 1fr;
+     
+   }
+ 
+   .inputtype{
+     padding: 0.5rem;
+     border-radius: 5rem;
+     margin-top: 0.5rem;
+ }
+
+ .foodlogo{
+   align-items: center;
+   padding-left: 3rem;
+   padding-bottom: 1.5rem;
+ }
+ .foodcontainer{
+ display: grid;
+ }
+ 
+ .footercontainer{
+ 
+     display: flex;
+     justify-content: center;
+     
+     
+   }
