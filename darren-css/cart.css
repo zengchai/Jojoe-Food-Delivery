@@ -38,8 +38,10 @@
     grid-row: 2 / 3;
     text-align: right;
     padding: 20px 20px;
+}
 
-    
+.table{
+    border: 0.1rem solid black;
 }
 
 .add{
@@ -58,55 +60,40 @@
     grid-row: 2 / 3;
     display: grid;
     grid-template-columns: 0.5fr 2.5fr 1fr;
-    /* grid-template-rows: 1fr 1.5fr 1fr;  */
-    border: solid black;
+    /* grid-template-rows: auto;  */
+    border: 0.1rem solid black;
     width: 53rem;
     /* height: 26rem;  */
-    height: 100%;
-}
-
-.no{
-    grid-column: 1 / 2;
-    grid-row: 1 / 2;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 1.6rem;
+    
 }
 
 .order{
-    grid-column: 2 / 3;
+    grid-column: 1 / 4;
     grid-row: 1 / 2;
     display: flex;
     justify-content: left;
-    padding-left: 2rem;
+    padding-left: 5.5rem;
     align-items: center;
     font-size: 1.6rem;
+    padding-top: 0.8rem;
+    padding-bottom: 0.8rem;
 }
 
-.price{
-    grid-column: 3 / 4;
-    grid-row: 1 / 2;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 1.6rem;
-}
 
 .foodList{
-    grid-column: 1 / 3;
+    grid-column: 1 / 4;
     grid-row: 2 / 3;
+    align-items: center;
+    
 }
 
 .food{
-    grid-column: 1 / 3;
-    grid-row: 2 / 3;
-    display: grid;
     justify-content: left;
     padding-left: 3.5rem;
     align-items: center;
     font-size: 1.3rem;
-    grid-template-columns: 1fr 3fr;
+    display: grid;
+    grid-template-columns: 1fr 3fr 1fr;
     grid-template-rows: 1fr 1fr;
 }
 
@@ -129,21 +116,11 @@
     padding-bottom: 1.5rem;
 }
 
-.foodPriceList{
-    grid-column: 3 / 4;
-    grid-row: 2 / 3;
-
-}
-
 .foodPrice{
     grid-column: 3 / 4;
-    grid-row: 2 / 3;
-    display: grid;
-    justify-content: center;
+    grid-row: 1 / 3;
     align-items: center;
-    font-size: 1.3rem;
-    padding-top: 2.4rem;
-    padding-bottom: 2.6rem;
+    padding-left: 0.8rem;
 }
 
 .total{
@@ -154,6 +131,8 @@
     padding-right: 4rem;
     align-items: center;
     font-size: 1.6rem;
+    padding-top: 0.8rem;
+    padding-bottom: 0.8rem;
 }
 
 .totalPrice{
@@ -163,6 +142,8 @@
     justify-content: center;
     align-items: center;
     font-size: 1.3rem;
+    padding-top: 0.8rem;
+    padding-bottom: 0.8rem;
 }
 
 .checkoutButton{
