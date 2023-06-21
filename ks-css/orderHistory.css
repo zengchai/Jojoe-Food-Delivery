@@ -13,27 +13,104 @@
   text-align: left;
   padding-top: 10px;
 }
+.grid-container{
+
+  margin-top: 1rem;
+  padding: 10px;
+}
+
 
 .infobox{
   display: grid;
-  grid-template-columns: repeat(3, 1fr) ;
-  grid-template-rows: repeat(3, 0.1fr);
+  grid-template-columns: 2fr 4fr;
+  grid-template-rows: 4fr auto;
   border-radius: 1rem;
   border: 1px solid black;
-  /* display: flex; */
-  /* border: 1px solid rgba(97, 97, 97); */
   margin-top: 1rem;
   padding: 10px;
-  width: min-content; 
 }
 
+.order-container{
+  display: grid;
+  grid-column: 2/3;
+  grid-row: 1/2;
+  grid-template-rows:auto auto;
+  grid-template-columns: 3.5fr 1.2fr;
+}
+.orderno{
+  grid-row: 1 / 2;
+  margin: 10px 0;
+  font-size: 1.8rem;
+  height: 2rem;
+}
+.orderDetails{
+  grid-row: 2/3;
+  grid-column: 1/3;
+  display: grid;
+  padding-bottom: 0.5rem;
+}
+.orderitem{
+  display:grid;
+  margin-top: 0.5rem;
+  grid-template-columns: 1fr 3fr 0.5fr 1fr;
+  grid-template-rows:1;
+}
+.menucode{
+  grid-column: 1/2;
+  grid-row: 1/2;
+  text-align: left;
+  font-size: 1.5rem;
+}
+.menuname{
+  grid-column: 2/3;
+  grid-row: 1/2;
+  font-size: 1.2rem;
+  padding-bottom: 0.5rem;
+}
+.engName{
+  grid-column: 2/3;
+  grid-row: 2/3;
+  font-size: 1.2rem;
+}
+.quantityorder{
+  grid-column: 3/4;
+  grid-row: 1/2;
+  text-align: center;
+}
+.price{
+  grid-column: 4/5;
+  text-align: center;
+}
+.line{
+  border-top: 1rem;
+  border-top: 1px solid black;
+  grid-row: 2/3;
+  grid-column: 1/3;
+
+}
+.total{
+  grid-row: 2/3;
+  grid-column: 2/3;
+  text-align: center;
+   margin: 10px 0;
+   padding-left: 4rem;
+  font-size: 1.4rem;
+}
+.TotalPrice{
+  grid-row: 2/3;
+  grid-column: 2/3;
+  padding-left: 1.5rem;
+  text-align: right;
+  margin: 10px 0;
+  font-size: 1.4rem;
+}
 .foodimg{
-  display: flex;
+  grid-column-start: 1;
+  grid-column-end: 2; 
+  grid-row: 1/2; 
+  display:flex;
   justify-content: center;
   align-items: center;
-  grid-column: 1 / 2;
-  grid-row: 1 / 4;
-
 }
 
 .foodimg img{
@@ -43,67 +120,10 @@
   
 }
 
-  /*.orderinfo{
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 1.1fr 2fr;
-    padding-left: 1rem;
-  }*/
 
-  .orderno{
-    grid-column: 2 / 3;
-    grid-row: 1 / 2;
-    margin: 10px 0;
-    max-width: 40rem;
-    font-size: 1.8rem;
 
-  }
-
-  .deliveryStatus{
-    grid-column: 2 / 3;
-    grid-row: 2 / 3;
-    margin: 10px 0;
-    max-width: 40rem;
-    font-size: 1.5rem;
-  }
-
- .deliveryDate{
-  grid-column: 2 / 3;
-  grid-row: 3 / 4;
-  max-width: 40rem;
-  margin: 10px 0;
-  width: 40rem;
-  font-size: 1.5rem;
-    
-  }
   
-  .editicon{
-    grid-column: 3 / 4;
-    grid-row: 1 / 2;
-    align-items: center;
-    margin: 10px;
-
-   }
-
 
   
   
   
-  .collapsible-content {
-    display: none;
-    overflow: hidden;
-    background-color: #f1f1f1;
-  }
-
-
-
-
-
-
-  
-  .footercontainer{
-    display: flex;
-    justify-content: center;
-    
-    
-  }
