@@ -1,4 +1,13 @@
-<!DOCTYPE html>
+<?php
+// Start up your PHP Session
+session_start();
+
+include("config.php");
+
+if ($_SESSION["Login"] != "YES") {
+	header("Location: login.php");
+}
+?>
 <html>
     <head>
         <title>Jojoe Food</title>
@@ -13,7 +22,7 @@
                   <img src="headerImage/IMG_4380 1.png" style="height: 50px; width: 50px; text-align: center">
                 </div>  
                 <div class="header1"> 
-                  <div class="header"><a data-active="home" href="homeSeller.html">HOME</a></div> 
+                  <div class="header"><a data-active="home" href="homepage.php">HOME</a></div> 
                   <div class="header"><a data-active="service" href="serviceSellerPage.html">SERVICE</a></div> 
                   <div class="header"><a data-active="order" href="orderhistorySeller.html">ORDER</a></div> 
                   <div class="header"><a data-active="about" href="about.html">ABOUT</a></div> 
@@ -34,7 +43,7 @@
                     
                         <div class="logoutContainer">
                             <div class="logoutButton">
-                              <button type="button" id="logoutButton" onclick="location.href='mainPage.html'">Logout</button>
+                              <button type="button" id="logoutButton" onclick="location.href='login.php'">Logout</button>
                               <button type="button"	id="cancelButton" onclick="document.getElementById('id03').style.display='none'">Cancel</button>
                           </div>
                         </div>
@@ -54,7 +63,12 @@
                   <h1>JOJOE FOOD</h1><br><br>
                   <p>is a food ordering and delivering</p>
                   <p>platform inside UTM</p><br><br>
-                  <button class="btn signUpNow" onclick="location.href='serviceSellerPage.html'">EDIT NOW</a></button>
+                  <?php
+                  if($_SESSION['LEVEL']== 1)
+                  echo "<a class='btn signUpNow' href='servicespage.php'>EDIT NOW</a>";
+                  else{
+                  echo "<a class='btn signUpNow' href='servicespage.php'>ORDER NOW</a>";
+                  }?>
               </div>
               <div class="two">
                   <img src="image/platefood.png" class="image1">
