@@ -26,9 +26,8 @@ if (isset($_GET["menucode"])) {
    <link rel='stylesheet' href='yam-css/navigationbar&body.css'/>
    <link rel='stylesheet' href='yam-css/serviceSeller.css'/>
     <script>
-      function display(event){
+      function display(){
         document.getElementById('id02').style.display='block';
-        event.preventDefault();
       }
     </script>
    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!--windows size responsive-->
@@ -72,7 +71,10 @@ include("header.php");
     <div class='foodID'> $row[menu_code]   $row[menu_name]</div>
     <div class='engName'> $row[menu_description] </div>
     <div class='price'> RM$row[menu_price] </div>
-    <a class='edit allbutton' onclick='display()'; href='servicespage.php?menucode=$row[menu_code]'> Edit </a>
+    <div><form>
+      <input name='menucode' type='hidden' value='$row[menu_code]'/>
+      <a class='edit allbutton' onclick=document.getElementById('id02').style.display='block' href='#'>Edit</a>
+    </form></div>
 	<a class='delete allbutton' href='operation.php?pass=$row[menu_code]'>Delete</a>
   </div></div>";
     } } ?>
@@ -166,7 +168,10 @@ include("header.php");
     <div class='foodID'> $row[menu_code]   $row[menu_name]</div>
     <div class='engName'> $row[menu_description] </div>
     <div class='price'> RM$row[menu_price] </div>
-    <a class='edit allbutton' onclick='display()' href='servicespage.php?menucode=$row[menu_code]'> Edit </a>
+    <div><form>
+      <input name='menucode' type='hidden' value='$row[menu_code]'/>
+      <a class='edit allbutton' onclick=document.getElementById('id02').style.display='block' href='#'>Edit</a>
+    </form></div>
 	<a class='delete allbutton' href='operation.php?pass=$row[menu_code]'>Delete</a>
   </div></div>";
     } } ?>
