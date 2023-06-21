@@ -4,7 +4,7 @@ session_start();
 
 include('config.php');
 
-// username and password sent from form login.php
+// username and password sent from form guest_form.php
 $myusername=$_POST['username'];
 $mypassword=$_POST['password'];
 

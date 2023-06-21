@@ -43,6 +43,30 @@ if (mysqli_query($conn, $sql)) {
       }
       return true;
     }
+    function validateUserID(input) {
+    const value = input.value.trim();
+
+    if (/\s/.test(value)) {
+      input.setCustomValidity('Spaces are not allowed in the User ID.');
+    } else {
+      input.setCustomValidity('');
+    }
+  }
+  function validateEmail(input) {
+    const value = input.value.trim();
+
+    if (!isValidEmail(value)) {
+      input.setCustomValidity('Please enter a valid email address.');
+    } else {
+      input.setCustomValidity('');
+    }
+  }
+
+  function isValidEmail(email) {
+    // Regular expression pattern to validate email address
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailPattern.test(email);
+  }
     </script>
 </head>
 <body> 
@@ -70,11 +94,12 @@ if (mysqli_query($conn, $sql)) {
                 <p class="signup">SIGN UP</p>
                 
                 <p class="username">Username: <br>
-                <input class="inputtype" type="text" name="username" size="30", placeholder="Create a username" maxlength="10"  ><br></p>
+                <input class="inputtype" type="text" name="username" size="30", placeholder="Create a username" maxlength="20"  ><br></p>
                 <p class="userid">User ID: <br>
-                  <input class="inputtype" type="text" name="userid" size="30", placeholder="Create a userid" maxlength="10"  ><br></p>
-                <p class="emailaddress"> Email Address: <br>
-                <input class="inputtype" type="text" name="email" size="30", placeholder="Enter your email address" maxlength="30"><br></p>
+                  <input class="inputtype" type="text" name="userid" size="30", placeholder="Create a userid" maxlength="10"  oninput="validateUserID(this)" ><br></p>
+                  <span id="userid-error" class="error-msg"></span>
+                  <p class="emailaddress"> Email Address: <br>
+                <input class="inputtype" type="text" name="email" size="30", placeholder="Enter your email address" maxlength="30"oninput="validateEmail(this)"><br></p>
                 <p class="matricno">Matric Number: <br>
                 <input class="inputtype" type="text" name="matric" size="30", placeholder="Enter your matricno" maxlength="10"><br></p>
                 <p class="phonenumber" >Phone Number: <br>
@@ -82,13 +107,13 @@ if (mysqli_query($conn, $sql)) {
                 <p class="password">Password: <br>
                 <input class="inputtype" type="password" name="password" size="30", placeholder="Enter your password" maxlength="10"><br></p>
                 <p class="tandc"><input class="inputtype" type="radio" name="T&C" value="Terms & Condition"> Terms & Condition<br></p>
-                <p class="button"><input class="inputtype" type="submit" name="signup" value="Sign Up"></p>
+                <p class="button"><input class="inputtype" type="submit" name="signup" value="Sign Up" id="signup"><br></p>
             </form>
             
         </div>
         <div class="rightcontainer">
-            <img class="foodlogo" src="image/platefood.png">
-            <h1>Jojoe Food</h1>
+        <div class="foodcontainer" ><img class="foodlogo" src="image/platefood.png">
+            <h1>Jojoe Food</h1></div>
         </div>
     </div>
 
