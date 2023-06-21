@@ -10,7 +10,7 @@ if ($_SESSION["Login"] != "YES") {
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $sort = $_POST['sort'];
-    $sql = "SELECT * FROM menu WHERE user_id $sort";
+    $sql = "SELECT * FROM menu WHERE user_id = '$sort'";
     $res = mysqli_query($conn, $sql);
 }
 else{

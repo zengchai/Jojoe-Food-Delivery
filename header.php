@@ -1,9 +1,4 @@
 <?php
-include("config.php");
-
-if ($_SESSION["Login"] != "YES") {
-  header("Location: login.php");
-}
 
 if(isset($_POST['logout'])){
 
@@ -60,8 +55,6 @@ exit;
                   <button type="button"	id="cancelButton" onclick="document.getElementById('id03').style.display='none'">Cancel</button>
               </div>
             </div>
-        
-            <div class="logoutContainer" style="background-color:#f1f1f1"></div>
         
           </form>
         </div>
