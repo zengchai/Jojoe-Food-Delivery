@@ -99,9 +99,21 @@ transition: ease 0.3s;
 
 
 /*=========================================================================*/
+.logoutButton {
+  display: grid;
+  grid-template-columns: 3fr 0.5fr 3fr;
+  }
+
 #logoutButton {
+<<<<<<< HEAD
   background-color:#ddd8d8;
   padding: 10px;
+=======
+  grid-column: 1 / 2;
+  background-color: rgb(199, 199, 199);
+  color: rgb(0, 0, 0);
+  padding: 14px 20px;
+>>>>>>> a5e5421bffd885e537bbdd8a24ef3577f9cb16a9
   margin: 8px 0;
   border: none;
   cursor: pointer;
@@ -110,6 +122,7 @@ transition: ease 0.3s;
 }
 
 #cancelButton {
+  grid-column: 3 / 4;
   background-color: #f44336;
   color: rgb(0, 0, 0);
   padding: 14px 20px;
@@ -144,6 +157,8 @@ transition: ease 0.3s;
 
 .logoutContainer {
   padding: 12px;
+  padding-bottom: 1.5rem;
+  padding-top: 2.3rem;
   text-align: center;
 }
 
@@ -168,14 +183,14 @@ transition: ease 0.3s;
   background-color: #fefefe;
   margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
   border: 1px solid #888;
-  width: 80%; /* Could be more or less, depending on screen size */
+  width: 35%; /* Could be more or less, depending on screen size */
 }
 
 /* The Close Button (x) */
 .close {
   position: absolute;
-  right: 25px;
-  top: 0;
+  right: 1rem;
+  top: -1rem;
   color: #000;
   font-size: 35px;
   font-weight: bold;
