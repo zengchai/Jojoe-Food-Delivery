@@ -41,20 +41,20 @@ include("header.php");
 
 <?php if($_SESSION['LEVEL']==1):?>
 <div class="body-container">
-  <div class="grid-container">
-    <div class="editMenu">
-      <h2><u>EDIT MENU</u></h2>
+<div class="body-container">
+  <div>
+    <div class="grid-container">
+      <div class="editMenu">
+        <h2><u>EDIT MENU</u></h2>
+      </div>
+
+      <div class="date">
+        <div><img src="servicePageImage/calendar.png" style="height: 30px; width: 30px; margin-right: 10px"></div>
+        <div><text style="font-size: 1.1rem;" id="currentDate">dd/mm/yyyy</text></div>
+      </div>
     </div>
 
-    <div class="date">
-      <div><img src="servicePageImage/calendar.png" style="height: 30px; width: 30px; margin-right: 10px"></div>
-      <div><text style="font-size: 1.1rem;">dd/mm/yyyy</text></div>
-    </div>
-
-    <div class="cart">
-      <a data-active="cart" href="serviceCheckout.html"><img src="servicePageImage/shopping-cart.png" style="height: 40px; width: 40px; margin-right: 10px"></a>
-    </div>
-  
+    <div class="grid-container2" id="grid-container2">
 <?php 
     $sql = "SELECT * FROM menu";
     $res = mysqli_query($conn, $sql);
