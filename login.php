@@ -21,7 +21,7 @@ unset($_SESSION["Login"]);}
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Lato:wght@700&display=swap" rel="stylesheet">
 <link rel='stylesheet' href='yam-css/navigationbar&body.css'/>
-<link rel="stylesheet" type="text/css" href="ks-css/style2.css" id="stylesheet">
+<link rel="stylesheet" type="text/css" href="css/style2.css" id="stylesheet">
 <script>
     function isNumberKey(event) {
       var charCode = (event.which) ? event.which : event.keyCode;
@@ -66,7 +66,7 @@ function isValidEmail(email) {
         </div> 
         <div class="login">
           <img src="headerImage/login (1) 1.png" style="text-align: center; padding: 10px 0;">
-          <a href="#">LOGIN</a>
+          <a href="check_login.php">LOGIN</a>
         </div>          
     </div>
   </div>
@@ -76,11 +76,11 @@ function isValidEmail(email) {
             <form method="post" action="check_login.php">
                 <p class="login">LOGIN </p>
                 <p class="userid">User ID: <br>
-                <input class="inputtype" type="text" id="userid" size="30", placeholder="Create a userid" maxlength="10"><br></p>                               
+                <input class="inputtype" type="text" name="username" size="30", placeholder="Create a userid" maxlength="10"><br></p>                               
                 <p class="password">Password: <br>
-                <input class="inputtype" type="password" id="password" size="30", placeholder="Enter your password" maxlength="10"></p>              
+                <input class="inputtype" type="password" name="password" size="30", placeholder="Enter your password" maxlength="10"></p>              
                <p class="loginbutton">
-                <input class="inputtype" type="button" id="login" value="Login"></p>
+                <input class="inputtype" type="submit" name="login" value="Login"></p>
                 <div class="line-container">
                   <hr class="line">
                   <span class="line-text">Or</span>
@@ -97,7 +97,7 @@ function isValidEmail(email) {
     </div>
     
     <div class="position">
-      <a data-active="customer" href="serviceCustomerPage.html">Customer</a>
+      <a data-active="customer" href="logins.php">Customer</a>
       <a data-active="seller" href="serviceSellerPage.html">Seller</a>
     </div>
 
