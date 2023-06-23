@@ -50,11 +50,6 @@
             </div>
         </div>
 
-        <div class="position">
-            <a data-active="customer" href="serviceCustomerPage.html">Customer</a>
-            /
-            <a data-active="seller" href="serviceSellerPage.html">Seller</a>
-        </div>
 
     </body>
 

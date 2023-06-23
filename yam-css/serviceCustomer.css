@@ -181,7 +181,7 @@
 
 /*pop up menu for input data*/
 /*======================================================================*/
-input[type=foodCname], input[type=foodEngName], input[type=foodPrice], input[type=foodid] {
+.foodCname, .foodEngName, .foodPrice, .foodid {
   width: 100%;
   padding: 12px 20px;
   margin: 8px 0;
