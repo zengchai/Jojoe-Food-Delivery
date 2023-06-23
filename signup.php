@@ -20,7 +20,7 @@ if (mysqli_query($conn, $sql)) {
 	echo "New record created successfully";
     $_SESSION['USER'] = $userName;
     $_SESSION['ID'] = $userId;
-    $_SESSION['LEVEL'] = 2;
+    $_SESSION['LEVEL'] = 0;
     $_SESSION["Login"] = "YES";
     header("Location: homepage.php");
 } else {
