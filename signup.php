@@ -82,7 +82,7 @@ if (mysqli_query($conn, $sql)) {
             <div class="header"><a data-active="about" href="#">ABOUT</a></div> 
           </div> 
           <div class="login">
-            <img src="headerImage/login (1) 1.png" style="text-align: center; padding: 10px 0;">
+            <img src="headerImage/login (1) 1.png" style="text-align: center; padding: 15px 0;">
             <a href="login.php">LOGIN</a>
           </div>          
       </div>
