@@ -125,6 +125,10 @@ echo "</div>
           <h2><u>ORDER HISTORY</u></h2>
       </div>
     </div>
+    <form method='get' action='orderhistory.php'>
+  <input type='text' value='' name='userid' placeholder='Enter the user id'/>
+  <input type='submit' value='Submit'/>
+</form>
       <table class="table-container" style="min-width: 800px;">
       <tr>
            <th>Order ID </th>
