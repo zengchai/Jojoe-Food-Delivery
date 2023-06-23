@@ -1,4 +1,15 @@
-<!DOCTYPE html>
+<?php
+// Check if the visitor count cookie exists
+if (!isset($_COOKIE['visitor_count'])) {
+    // Create a new cookie with an initial count of 1
+    $count = 1;
+    setcookie('visitor_count', $count, time() + 86400); // Expires in 24 hours
+} else {
+    // Increment the visitor count by 1
+    $count = $_COOKIE['visitor_count'] + 1;
+    setcookie('visitor_count', $count, time() + 86400); // Expires in 24 hours
+}
+?>
 <html>
     <head>
         <title>Jojoe Food</title>
