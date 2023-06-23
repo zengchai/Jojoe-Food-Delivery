@@ -70,6 +70,25 @@ transition: ease 0.3s;
   color: #000;
 }
 
+.headermain a{
+  margin-left: 80px;
+  font-size: 20px;
+align-items: center;
+text-decoration: none;
+color:white;
+border-radius: 23px;
+padding: 0px 30px;
+transition: ease 0.3s;
+}
+
+.headermain a:hover, 
+.headermain a:active {
+  text-decoration: underline;
+  font-size: 23px;
+  background-color: rgb(232, 232, 232);
+  color: #000;
+}
+
 .login {
   background-color: black;
   display: flex;

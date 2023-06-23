@@ -22,12 +22,8 @@ if (!isset($_COOKIE['visitor_count'])) {
               <div class ='left_menu'>
                   <div class="logo">
                     <img src="headerImage/image (1).png" style="height: 50px; width: 50px; text-align: center">
-                  </div>  
-                  <div class="header1"> 
-                    <div class="header"><a data-active="home" href="mainpage.php">HOME</a></div> 
-                    <div class="header"><a data-active="service" href="serviceSellerPage.html">SERVICE</a></div> 
-                    <div class="header"><a data-active="order" href="orderhistorySeller.html">ORDER</a></div> 
-                  </div> 
+                  </div>   
+                    <div class="headermain"><a data-active="home" href="mainpage.php" >HOME</a></div> 
               </div>
                 <div class="login">
                     <img src="headerImage/image.png" style="text-align: center; padding: 15px 0;">
