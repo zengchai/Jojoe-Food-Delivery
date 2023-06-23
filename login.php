@@ -76,7 +76,7 @@ function isValidEmail(email) {
             <form method="post" action="check_login.php">
                 <p class="logina">LOGIN </p>
                 <p class="userid">User ID: <br>
-                <input class="inputtype" type="text" name="username" size="30", placeholder="Enter an userid" maxlength="10"><br></p>                               
+                <input class="inputtype" type="text" name="username" size="30", placeholder="Enter your user ID" maxlength="10"><br></p>                               
                 <p class="password">Password: <br>
                 <input class="inputtype" type="password" name="password" size="30", placeholder="Enter your password" maxlength="10"></p>              
                <p class="loginbutton">
