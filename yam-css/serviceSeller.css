@@ -241,4 +241,10 @@ input[type=foodCname], input[type=foodEngName], input[type=foodPrice], input[typ
   min-width: 20px;
 }
 
+.position{
+  display: block;
+}
+
+
+
 
