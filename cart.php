@@ -42,58 +42,54 @@ if ($_SESSION["Login"] != "YES") {
             <div class="orderDetailsTable">
                 <div class="table order">ORDER</div>
                 <div class="table foodList">
-                    <div class=" food">
-                        <div class="foodNum">
-                            1 x 
+                    <?php
+                    $total_price = 0;
+                    $sqlz = "SELECT * FROM orders WHERE user_id = '{$_SESSION['ID']}' ";
+                    $resz = mysqli_query($conn, $sqlz);
+                    if (mysqli_num_rows($resz) > 0) {
+                        while ($rowz = mysqli_fetch_assoc($resz)) { 
+                    $sql = "SELECT * FROM orderdetail where order_id = '{$rowz['order_id']}'";
+                    $res = mysqli_query($conn, $sql);
+                    if (mysqli_num_rows($res) > 0) {while ($row = mysqli_fetch_assoc($res)) { 
+                            if($row['order_id']==$_SESSION['COUNTER']){
+                        $menu_name = "SELECT * FROM menu WHERE menu_code = '$row[menu_code]'";
+                        $query_menu_name = mysqli_query($conn, $menu_name);
+                        $res_menu_name = mysqli_fetch_assoc($query_menu_name);
+                        $total_order_price = $row['order_quantity'] * $row['order_price'];
+                        $total_price += $row['order_price'] * $row['order_quantity'];
+                        echo "<div class='food'>
+                        <div class='foodNum'> $row[order_quantity] x</div>
+                        <div class='foodNameChinese'> $row[menu_code] $res_menu_name[menu_name] </div>
+                        <div class='foodNameEnglish'> $res_menu_name[menu_description] </div>
+                        <div class='foodPrice'>RM $total_order_price </div>
+                        <div class='deletebutton'> <a href='operation.php?pass=$row[item_id]'>Delete</a></div>
                         </div>
-                        <div class="foodNameChinese">
-                            A2 + 白饭
-                        </div>
-                        <div class="foodNameEnglish">
-                            A2 + White Rice
-                        </div>
-                        <div class="foodPrice">
-                            RM6.00
-                        </div>
-                    </div>
-                    <div class=" food">
-                        <div class="foodNum">
-                            1 x 
-                        </div>
-                        <div class="foodNameChinese">
-                            A2 + 白饭
-                        </div>
-                        <div class="foodNameEnglish">
-                            A2 + White Rice
-                        </div>
-                        <div class="foodPrice">
-                            RM6.00
-                        </div>
-                    </div>
-                    <div class=" food">
-                        <div class="foodNum">
-                            1 x 
-                        </div>
-                        <div class="foodNameChinese">
-                            A2 + 白饭
-                        </div>
-                        <div class="foodNameEnglish">
-                            A2 + White Rice
-                        </div>
-                        <div class="foodPrice">
-                            RM6.00
-                        </div>
-                    </div>
-      
+                        ";
+                } }}}}
+                    ?>     
                     
+                    <!-- <div class=" food">
+                        <div class="foodNum">
+                            1 x 
+                        </div>
+                        <div class="foodNameChinese">
+                            A2 + 白饭
+                        </div>
+                        <div class="foodNameEnglish">
+                            A2 + White Rice
+                        </div>
+                        <div class="foodPrice">
+                            RM6.00
+                        </div>
+                    </div> -->
                 </div>
                 
                 <div class="table total">Total Price</div>
-                <div class="table totalPrice">RM6.00</div>
+                <div class="table totalPrice">RM <?php echo $total_price?></div>
             </div>
 
-            <div class="checkoutButton">
-                <button class="btn checkout" onclick="location.href='orderDetails.php'">CHECKOUT</button>
+            <div class="checkoutButton"><?php
+                echo "<a class='btn checkout' href='orderDetails.php?totalprice=$total_price'>CHECKOUT</a>"?>
             </div>
         </div>
     </div>

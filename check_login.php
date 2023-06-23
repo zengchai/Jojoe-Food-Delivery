@@ -3,7 +3,27 @@
 session_start();
 
 include('config.php');
+if(isset($_POST['logout'])){
 
+if (isset($_SESSION['USER'])) 
+{   
+    if($_SESSION['LEVEL'] == 0)
+    {$sql = "UPDATE user SET order_counter={$_SESSION['COUNTER']},user_level = 2 WHERE user_id = '{$_SESSION['ID']}'";
+	mysqli_query($conn,$sql);
+    }
+	else if($_SESSION['LEVEL'] == 2){
+		$sql = "UPDATE user SET order_counter={$_SESSION['COUNTER']} WHERE user_id = '{$_SESSION['ID']}'";
+		mysqli_query($conn,$sql);
+	}
+	unset($_SESSION['USER']); 
+} 
+session_destroy(); //destroy the session
+
+header("Location: login.php");
+// go to login page 
+exit;
+}
+else{
 // username and password sent from form login.php
 $myusername=$_POST['username'];
 $mypassword=$_POST['password'];
@@ -57,6 +77,6 @@ else {
 $_SESSION["Login"] = "NO";
 header("Location: login.php");
 
-}
+}}
 
 ?>

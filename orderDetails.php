@@ -6,30 +6,15 @@ if ($_SESSION["Login"] != "YES") {
     header("Location: guest_form.php");
 }
 date_default_timezone_set('Asia/Kuala_Lumpur');
-$today = date('Y-m-d H:i:s');
 
+$today = date('Y-m-d H:i:s');
 if(isset($_POST['address'])){
     $post_address = $_POST['address'];
     $sqlz = "UPDATE user SET user_address = '$post_address' WHERE user_id = '{$_SESSION['ID']}'";
     mysqli_query($conn, $sqlz);
 }
 
-if(isset($_GET['totalprice'])){
-    $total_price = $_GET['totalprice'];
-}
-$total_price = 23;
-if (isset($_GET["tp"])) {
-    $tp = $_GET["tp"];
 
-    $sqls = "UPDATE orders SET payment_status='PAID',payment_date='$today',total_price = $tp WHERE order_id = {$_SESSION['COUNTER']}";
-    if(mysqli_query($conn, $sqls)){
-        echo "Paid Successfully - Order Number: " . $_SESSION['COUNTER'];
-        unset($_SESSION['COUNTER']);
-        $_SESSION['PAID'] = "YES";}
-        else{
-        echo "Error: ". mysqli_error($conn);
-    }
-}
 ?>
 <html>
     <head>
@@ -86,7 +71,10 @@ if (isset($_GET["tp"])) {
 
             <div class="payButton">
                 <?php
-                echo "<a class='btn pay' href='orderDetails.php?tp=$total_price'>PAY</a>";
+                if(isset($_GET['totalprice'])){
+                    $_SESSION['TOTALPRICE'] = $_GET['totalprice'];
+                }
+                echo "<a class='btn pay' href='orderhistory.php?tp=pay'>PAY</a>";
                 ?>
             </div>
         </div>
