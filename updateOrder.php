@@ -16,17 +16,13 @@ $row = mysqli_fetch_assoc($result);
 $sql = "insert into orderdetail (order_id,menu_code,order_quantity,order_price) values ({$_SESSION['COUNTER']},'$menuCode',$quantity,'{$row['menu_price']}')";
 if (mysqli_query($conn, $sql)) {
     $em = "Add to Cart Successfully - Order Number: " . $_SESSION['COUNTER'];
-    header("Location: servicespage.php?em=$em");
 
 } else {
     $em = "Error: " . mysqli_error($conn) . $menu_code;
-    echo "<script>
-            // Display error message as a popup
-            alert('$em');
-            // Reload the current page
-            window.location.href = 'servicespage.php';
-          </script>";
 }
 
 }}
+
+$_SESSION['alert_message'] = $em; 
+header("Location: servicespage.php");
 ?>
