@@ -12,26 +12,13 @@ if (isset($_GET["pass"])) {
 if($_SESSION['LEVEL']==1){
 $sql = "DELETE FROM menu WHERE menu_code = '$pass'";
 unset($_GET["pass"]);
-if (mysqli_query($conn, $sql)) {
-   $em = "Record deleted successfully";
-   } else {
-    $em = "Error deleting record: " . mysqli_error($conn);
-}
-
-$_SESSION['alert_message'] = $em; 
+mysqli_query($conn, $sql);
 header("Location: servicespage.php");
 }
 
 else if($_SESSION['LEVEL']==2|$_SESSION['LEVEL']==0){
     $sql = "DELETE FROM orderdetail WHERE item_id = '$pass'";
-
-    if (mysqli_query($conn, $sql)) {
-       $em = "Record deleted successfully";
-       } else {
-        $em = "Error deleting record: " . mysqli_error($conn);
-    }
-
-    $_SESSION['alert_message'] = $em; 
+mysqli_query($conn, $sql);
     header("Location: cart.php");
 }
 mysqli_close($conn);
