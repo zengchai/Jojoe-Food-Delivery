@@ -70,23 +70,24 @@ if (mysqli_query($conn, $sql)) {
     </script>
 </head>
 <body> 
-    <div class='menu-container'>
-      <div class='menu'>
-          <div class="logo">
-            <img src="headerImage/IMG_4380 1.png" style="height: 50px; width: 50px; text-align: center">
-          </div>  
-          <div class="header1"> 
-            <div class="header"><a data-active="home" href="mainpage.php">HOME</a></div> 
-            <div class="header"><a data-active="service" href="#">SERVICE</a></div> 
-            <div class="header"><a data-active="order" href="#">ORDER</a></div> 
-            <div class="header"><a data-active="about" href="#">ABOUT</a></div> 
-          </div> 
-          <div class="login">
-            <img src="headerImage/login (1) 1.png" style="text-align: center; padding: 10px 0;">
-            <a href="login.php">LOGIN</a>
-          </div>          
-      </div>
+<div class='menu-container'>
+            <div class='menu'>
+              <div class ='left_menu'>
+                  <div class="logo">
+                    <img src="headerImage/image (1).png" style="height: 50px; width: 50px; text-align: center">
+                  </div>  
+                  <div class="header1"> 
+                    <div class="header"><a data-active="home" href="mainpage.php">HOME</a></div> 
+                    <div class="header"><a data-active="service" href="serviceSellerPage.html">SERVICE</a></div> 
+                    <div class="header"><a data-active="order" href="orderhistorySeller.html">ORDER</a></div> 
+                  </div> 
+              </div>
+                <div class="login">
+                    <img src="headerImage/image.png" style="text-align: center; padding: 15px 0;">
+          <a href="login.php">LOGIN</a>
+      </div>          
     </div>
+</div>
 
     <div class="container">
         <div class="leftcontainer">

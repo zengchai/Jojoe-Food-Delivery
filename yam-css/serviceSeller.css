@@ -117,9 +117,12 @@
     width: 100%;
 }
 
+.filebox{
+  display:flex;
+}
 /*pop up menu for input data*/
 /*======================================================================*/
-input[type=foodCname], input[type=foodEngName], input[type=foodPrice], input[type=foodid] {
+.foodCname, .foodEngName, .foodPrice, .foodids {
     width: 100%;
     padding: 12px 20px;
     margin: 8px 0;
@@ -150,6 +153,9 @@ input[type=foodCname], input[type=foodEngName], input[type=foodPrice], input[typ
     position: relative;
   }
   
+  .menuimg{
+    margin-left:1rem;
+  }
   .input-container {
     padding: 16px;
   }
@@ -240,5 +246,11 @@ input[type=foodCname], input[type=foodEngName], input[type=foodPrice], input[typ
   max-height: 3px;
   min-width: 20px;
 }
+
+.position{
+  display: block;
+}
+
+
 
 
