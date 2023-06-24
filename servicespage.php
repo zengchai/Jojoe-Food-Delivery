@@ -106,7 +106,7 @@ if (isset($_SESSION['alert_message'])) {
 <button id="plusButton" class="allbutton" onclick="document.getElementById('id01').style.display='block'" style="width:auto;"> + </button>
 
 <div id="id01" class="modal">
-  <form class="modal-content animate" action="validateUpdateMenu.php" method="post" enctype="multipart/form-data">
+  <form class="modal-content1 animate" action="validateUpdateMenu.php" method="post" enctype="multipart/form-data">
     <div class="imgcontainer">
       <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
       <h1>Add Item</h1>
@@ -139,7 +139,7 @@ if (isset($_SESSION['alert_message'])) {
     $menu_code = $_GET["menucode"];
     unset($_GET["menucode"]);?>
     <div id="id02" class="modal2" >
-  <form class="modal-content animate" action="operation.php" method="post" enctype="multipart/form-data">
+  <form class="modal-content1 animate" action="operation.php" method="post" enctype="multipart/form-data">
     <div class="imgcontainer">
       <span  onclick="document.getElementById('id02').style.display='none';" class="close" title="Close Modal"><a href="servicespage.php" style="text-decoration: none;">&times;</a></span>
       <h1>Edit Item</h1>
@@ -261,7 +261,7 @@ if (isset($_SESSION['alert_message'])) {
         <div class='lastrow'><div class='price'> RM $row[menu_price] </div>
         <div class='num'>
         <input type='hidden' name='menu_code[]' value='{$row['menu_code']}'/>
-        <input type='number' name='quantity' class='quantity' value='0' min='0'/></div></div>
+        <input type='number' name='quantity' class='quantity' value='0' min='1'/></div></div>
         <div class='addfunction'>
         <button type='submit' class='addcart addToCart allbutton'>Add to Cart</button>
         </div>
