@@ -12,10 +12,16 @@ $today = date('Y-m-d H:i:s');
 if(isset($_SESSION['COUNTER'])){
 if (isset($_SESSION['TOTALPRICE'])) {
   $orderID = $_SESSION['COUNTER'];
+  function function_alert($message) {
+    // Display the alert box 
+    echo "<script>alert('Paid Successfully - Order Number: ' + '$message');</script>";
+  }
   $sqls = "UPDATE orders SET payment_status='PAID',payment_date='$today',total_price = {$_SESSION['TOTALPRICE']}  WHERE order_id = {$_SESSION['COUNTER']}";
   unset($_GET["curaddr"]);
   if(mysqli_query($conn, $sqls)){
-      echo "Paid Successfully - Order Number: " . $_SESSION['COUNTER'];
+    $em = "Paid Successfully - Order Number: " . $_SESSION['COUNTER'];
+    echo '<script>window.onload = function() { alert("' . $em . '"); }</script>'; // Display the alert message
+
       unset($_SESSION['COUNTER']);
       unset($_SESSION['TOTALPRICE']);
       $_SESSION['PAID'] = "YES";
@@ -35,7 +41,6 @@ if (isset($_SESSION['TOTALPRICE'])) {
   
   
 }}?>
-
 
 <html>
 <head>
@@ -91,6 +96,7 @@ $res = mysqli_query($conn, $sql);
 if (mysqli_num_rows($res) > 0) {
     while ($row = mysqli_fetch_assoc($res)) { 
         echo "<div class='infobox'>
+        <div class='orderupper'>
         <div class='foodimg'><img src='image/platefood.png'></div>
           <div class='order-container'>
           <div class='orderno'> ORDER ID {$row['order_id']} </div>
@@ -111,10 +117,10 @@ if (mysqli_num_rows($res) > 0) {
     <div class='price'> RM $total_order_price </div>
     </div>";} }
 echo "</div>
-</div>
+</div></div><div><div class='line'>
 <div class='total'>Total :</div>
 <div class='TotalPrice'>RM $row[total_price]</div>
-<div class='line'></div></div>";}}
+</div></div></div>";}}
 ?>
     </div>
   </div>
@@ -181,16 +187,16 @@ if (mysqli_num_rows($res) > 0) {
             $res_menu_name = mysqli_fetch_assoc($query_menu_name);
             $total_order_price = $rowi['order_quantity'] * $rowi['order_price'];
     echo "<tr colspan='3'>
-    <td style='padding-left: 0.5rem;'> $rowi[menu_code] </td>
-    <td> $res_menu_name[menu_name] </td>
-    <td style='padding-left: 0.5px;padding-right: 0.5rem; text-align: right;'> x$rowi[order_quantity] </td>
+    <td style='padding-left: 1rem;'> $rowi[menu_code] </td>
+    <td style='padding-right: 20px;'> $res_menu_name[menu_name] </td>
+    <td style='padding-left: 20px;'> $rowi[order_quantity] </td>
     </tr>
     ";} }
 echo "</table>
 </td>
 <td>RM $row[total_price] </td>
 <td colspan='3'>$rowa[user_address]</td>
-<td width='15%'>$row[payment_date]</td>
+<td width='16%'>$row[payment_date]</td>
 </tr>";}}}}?>
 </table>
 

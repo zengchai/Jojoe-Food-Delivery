@@ -95,10 +95,10 @@
   #signup {
     display: block;
     /* margin: 0 auto; */
-    padding: 8px 80px;
+    padding: 8px 100.19px;
     background-color: #ffffff;
     color: rgb(0, 0, 0);
-    font-size: 25px; 
+    font-size: 1.2rem; 
     border-radius: 0.8rem;
     cursor: pointer;
   }
@@ -148,21 +148,22 @@
     font-size: 1.2rem;
     margin-bottom: 1rem;
   }
-  .password{
+  .address{
     font-size: 1.2rem;
     margin-bottom: 1rem;
   }
-  .tandc {
-    font-size: 1rem;
-    padding-bottom: 0.5rem;
-    margin-top: 0rem;
+  .password{
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
   }
+ 
 .inputtype{
     padding: 0.5rem;
-    border-radius: 5rem;
+    border-radius: 0.5rem;
     margin-top: 0.5rem;
 }
 .button{
+
   margin-left: 0rem;
 }
 
