@@ -95,7 +95,7 @@
   #signup {
     display: block;
     /* margin: 0 auto; */
-    padding: 8px 80px;
+    padding: 8px 89px;
     background-color: #ffffff;
     color: rgb(0, 0, 0);
     font-size: 25px; 
@@ -148,6 +148,10 @@
     font-size: 1.2rem;
     margin-bottom: 1rem;
   }
+  .address{
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+  }
   .password{
     font-size: 1.2rem;
     margin-bottom: 1rem;
@@ -159,7 +163,7 @@
   }
 .inputtype{
     padding: 0.5rem;
-    border-radius: 5rem;
+    border-radius: 0.5rem;
     margin-top: 0.5rem;
 }
 .button{
