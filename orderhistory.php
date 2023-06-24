@@ -94,6 +94,7 @@ $res = mysqli_query($conn, $sql);
 if (mysqli_num_rows($res) > 0) {
     while ($row = mysqli_fetch_assoc($res)) { 
         echo "<div class='infobox'>
+        <div class='orderupper'>
         <div class='foodimg'><img src='image/platefood.png'></div>
           <div class='order-container'>
           <div class='orderno'> ORDER ID {$row['order_id']} </div>
@@ -114,10 +115,10 @@ if (mysqli_num_rows($res) > 0) {
     <div class='price'> RM $total_order_price </div>
     </div>";} }
 echo "</div>
-</div>
+</div></div><div><div class='line'>
 <div class='total'>Total :</div>
 <div class='TotalPrice'>RM $row[total_price]</div>
-<div class='line'></div></div>";}}
+</div></div></div>";}}
 ?>
     </div>
   </div>
@@ -184,9 +185,9 @@ if (mysqli_num_rows($res) > 0) {
             $res_menu_name = mysqli_fetch_assoc($query_menu_name);
             $total_order_price = $rowi['order_quantity'] * $rowi['order_price'];
     echo "<tr colspan='3'>
-    <td style='padding-left: 0.5rem;'> $rowi[menu_code] </td>
-    <td> $res_menu_name[menu_name] </td>
-    <td style='padding-left: 0.5px;padding-right: 0.5rem; text-align: right;'> x$rowi[order_quantity] </td>
+    <td style='padding-right: 20px;'> $rowi[menu_code] </td>
+    <td style='padding-right: 20px;'> $res_menu_name[menu_name] </td>
+    <td style='padding-left: 20px;'> $rowi[order_quantity] </td>
     </tr>
     ";} }
 echo "</table>

@@ -62,7 +62,7 @@ include("header.php");
 
 <?php if($_SESSION['LEVEL']==1):?>
 <div class="body-container">
-  <div>
+  <div class="edit-container">
     <div class="grid-container">
       <div class="editMenu">
         <h2><u>EDIT MENU</u></h2>
@@ -199,7 +199,6 @@ include("header.php");
       <div class="editMenu">
         <h2><u>MENU</u></h2>
       </div>
-
       <div class="filter">
         <form method="post" action="servicespage.php">
         <select name="sort" id="sort">
@@ -277,7 +276,12 @@ include("header.php");
           
         </div>
       </div>
-
+<?php
+if (isset($_SESSION['alert_message'])) {
+  $em = $_SESSION['alert_message'];
+  unset($_SESSION['alert_message']); // Clear the session variable
+  echo '<script>window.onload = function() { alert("' . $em . '"); }</script>'; // Display the alert message
+}?>
 
       
   </div> 
