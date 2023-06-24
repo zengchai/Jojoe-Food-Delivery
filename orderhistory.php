@@ -19,8 +19,6 @@ if (isset($_SESSION['TOTALPRICE'])) {
   $sqls = "UPDATE orders SET payment_status='PAID',payment_date='$today',total_price = {$_SESSION['TOTALPRICE']}  WHERE order_id = {$_SESSION['COUNTER']}";
   unset($_GET["curaddr"]);
   if(mysqli_query($conn, $sqls)){
-    $em = "Paid Successfully - Order Number: " . $_SESSION['COUNTER'];
-    echo '<script>window.onload = function() { alert("' . $em . '"); }</script>'; // Display the alert message
 
       unset($_SESSION['COUNTER']);
       unset($_SESSION['TOTALPRICE']);
@@ -36,7 +34,8 @@ if (isset($_SESSION['TOTALPRICE'])) {
     }
   }
   else{
-    echo mysqli_error($conn);
+    $em = "Error: " . mysqli_error($conn);
+    echo '<script>window.onload = function() { alert("' . $em . '"); }</script>'; // Display the alert message
   }
   
   

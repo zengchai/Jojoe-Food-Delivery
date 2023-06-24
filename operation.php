@@ -57,8 +57,6 @@ if(isset($_POST["menucode"])){
                 $em = "You can't upload files of this type";
             }
         
-        $_SESSION['alert_message'] = $em; 
-        header("Location: servicespage.php");
         }
     
     else{
@@ -69,9 +67,9 @@ if(isset($_POST["menucode"])){
             $em = "Error updating record: ". mysqli_error($conn);
         }
         
+    }
     $_SESSION['alert_message'] = $em; 
     header("Location: servicespage.php");
-    }
 mysqli_close($conn);
 }
 

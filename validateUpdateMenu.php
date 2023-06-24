@@ -1,4 +1,5 @@
 <?php
+session_start();
 require_once("config.php");
 
 if (isset($_POST['upload']) && isset($_FILES['uploadfile'])) {
@@ -28,16 +29,21 @@ if (isset($_POST['upload']) && isset($_FILES['uploadfile'])) {
 
                 // Insert into database
                 $sql = "insert into menu (menu_img, menu_code, menu_name, menu_price, menu_description) values ('$new_img_name','$menu_code','$menu_name','$menu_price','$menu_description')";
-                mysqli_query($conn,$sql);
-                $em = "Updated Successfully";
+                if(mysqli_query($conn,$sql)){
+                $em = "Updated Successfully";}
+                else{
+                    $em = "Error: " . mysqli_error($conn);
+                    $_SESSION['alert_message'] = $em; 
+                }
             }else{
                 $em = "You can't upload files of this type";
+                $_SESSION['alert_message'] = $em; 
             }
     }else {
         $em = "Unknown error occured!";
+        $_SESSION['alert_message'] = $em; 
     }
 }
-$_SESSION['alert_message'] = $em; 
 header("Location: servicespage.php");
 
 
