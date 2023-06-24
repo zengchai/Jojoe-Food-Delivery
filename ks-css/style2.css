@@ -12,7 +12,7 @@
    display: grid;
    grid-template-columns: 0.6fr 1.4fr 2fr;
    justify-content: center;
-   padding-top: 8rem;
+   padding-top: 12rem;
    padding-bottom: 8rem;
    margin-left: 5rem;
    margin-right: 5rem;
@@ -125,6 +125,7 @@
    padding-left: 3rem;
    padding-bottom: 1.5rem;
  }
+
  .foodcontainer{
  display: grid;
  }
