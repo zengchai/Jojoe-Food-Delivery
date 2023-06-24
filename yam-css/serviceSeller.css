@@ -266,8 +266,12 @@
   background-color: rgba(0,0,0,0.4); /* Black background with opacity */
 }
 
-.modal-content {
+.modal-content1 {
   background-color: #fefefe;
+<<<<<<< HEAD
+=======
+  margin: 2rem auto; /* 15% from the top and centered */
+>>>>>>> ef95c4ae742f1e9f4c2e04d3a5574ff6facfdf37
   padding: 20px;
   border: 1px solid #888;
 }
