@@ -23,17 +23,36 @@ if ($_SESSION["Login"] != "YES") {
         <div class="outside">
           <div class="grid-container">
             <div class="oneTwo">
-              <div class="one">
-                  <h1>JOJOE FOOD</h1><br><br>
-                  <p>is a food ordering and delivering</p>
-                  <p>platform inside UTM</p><br><br>
-                  <?php
-                  if($_SESSION['LEVEL']== 1)
-                  echo "<a class='btn signUpNow' href='servicespage.php'>EDIT NOW</a>";
-                  else{
-                  echo "<a class='btn signUpNow' href='servicespage.php'>ORDER NOW</a>";
-                  }?>
-              </div>
+            <div class="one">
+    <h1>JOJOE FOOD</h1><br><br>
+    <p>is a food ordering and delivering</p>
+    <p>platform inside UTM</p><br><br>
+    
+<?php
+    if ($_SESSION['LEVEL'] == 1) {
+        echo "<a class='btn signUpNow' href='servicespage.php'>EDIT NOW</a>";
+        ?>
+        <div id="visitor-count">
+            <?php
+            // Check if the visitor count cookie exists
+            if (isset($_COOKIE['visitor_count'])) {
+                $count = $_COOKIE['visitor_count'];
+                echo nl2br("\n");
+                echo nl2br("\n");
+                echo $count. " person visited your website today";
+            } else {
+                echo nl2br("\n");
+                echo nl2br("\n");
+                echo "No visitor yet ";
+            }
+            ?> 
+        </div>
+        <?php
+    } else {
+        echo "<a class='btn signUpNow' href='servicespage.php'>ORDER NOW</a>";
+    }
+    ?>
+</div>
               <div class="two">
                   <img src="image/platefood.png" class="image1">
               </div>
