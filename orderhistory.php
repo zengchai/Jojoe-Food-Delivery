@@ -15,7 +15,9 @@ if (isset($_SESSION['TOTALPRICE'])) {
   $sqls = "UPDATE orders SET payment_status='PAID',payment_date='$today',total_price = {$_SESSION['TOTALPRICE']}  WHERE order_id = {$_SESSION['COUNTER']}";
   unset($_GET["curaddr"]);
   if(mysqli_query($conn, $sqls)){
-      echo "Paid Successfully - Order Number: " . $_SESSION['COUNTER'];
+    $em = "Paid Successfully - Order Number: " . $_SESSION['COUNTER'];
+    echo '<script>window.onload = function() { alert("' . $em . '"); }</script>'; // Display the alert message
+
       unset($_SESSION['COUNTER']);
       unset($_SESSION['TOTALPRICE']);
       $_SESSION['PAID'] = "YES";
