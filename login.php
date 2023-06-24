@@ -6,7 +6,9 @@ session_start();
 // If the user is not logged in send him/her to the login form
 if(isset($_SESSION["Login"])){
 if ($_SESSION["Login"] == "NO") {
-    echo "hi";
+  echo "<script>
+          alert('Invalid login');
+       </script>";
 }
 
 unset($_SESSION["Login"]);}
@@ -82,11 +84,8 @@ function isValidEmail(email) {
                   <span class="line-text">Or</span>
                   <hr class="line">
                 </div>
-<<<<<<< HEAD
               
 
-=======
->>>>>>> 859ec78a7110304b48a40c6e062b2b17c81f218c
               <p class="signup"> Don't have an account? <a href="signup.php">Sign Up Now</a> </p> <!-- link to sign up page-->
               </form>
 
