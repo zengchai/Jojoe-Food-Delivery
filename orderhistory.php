@@ -11,6 +11,7 @@ date_default_timezone_set('Asia/Kuala_Lumpur');
 $today = date('Y-m-d H:i:s');
 if(isset($_SESSION['COUNTER'])){
 if (isset($_SESSION['TOTALPRICE'])) {
+  $orderID = $_SESSION['COUNTER'];
   $sqls = "UPDATE orders SET payment_status='PAID',payment_date='$today',total_price = {$_SESSION['TOTALPRICE']}  WHERE order_id = {$_SESSION['COUNTER']}";
   unset($_GET["curaddr"]);
   if(mysqli_query($conn, $sqls)){
@@ -34,6 +35,8 @@ if (isset($_SESSION['TOTALPRICE'])) {
   
   
 }}?>
+
+
 <html>
 <head>
 <title>Jojoe food ordering system login page</title>
@@ -178,9 +181,9 @@ if (mysqli_num_rows($res) > 0) {
             $res_menu_name = mysqli_fetch_assoc($query_menu_name);
             $total_order_price = $rowi['order_quantity'] * $rowi['order_price'];
     echo "<tr colspan='3'>
-    <td style='padding-right: 20px;'> $rowi[menu_code] </td>
-    <td style='padding-right: 20px;'> $res_menu_name[menu_name] </td>
-    <td style='padding-left: 20px;'> $rowi[order_quantity] </td>
+    <td style='padding-left: 0.5rem;'> $rowi[menu_code] </td>
+    <td> $res_menu_name[menu_name] </td>
+    <td style='padding-left: 0.5px;padding-right: 0.5rem; text-align: right;'> x$rowi[order_quantity] </td>
     </tr>
     ";} }
 echo "</table>
