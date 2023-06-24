@@ -200,6 +200,7 @@ transition: ease 0.3s;
   margin: 8px 0;
   border: none;
   cursor: pointer;
+  margin-right: 15px;
 }
 
 .logoutText{
