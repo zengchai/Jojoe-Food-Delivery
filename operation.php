@@ -12,9 +12,13 @@ if (isset($_GET["pass"])) {
 if($_SESSION['LEVEL']==1){
 $sql = "DELETE FROM menu WHERE menu_code = '$pass'";
 unset($_GET["pass"]);
-mysqli_query($conn, $sql);
-header("Location: servicespage.php");
+if(mysqli_query($conn, $sql)){}
+else{
+    $em = "Error: " . mysqli_error($conn);
+    $_SESSION['alert_message'] = $em; 
 }
+
+header("Location: servicespage.php");}
 
 else if($_SESSION['LEVEL']==2|$_SESSION['LEVEL']==0){
     $sql = "DELETE FROM orderdetail WHERE item_id = '$pass'";
@@ -48,8 +52,7 @@ if(isset($_POST["menucode"])){
 
                 // Insert into database
                 $sql = "UPDATE menu set menu_img='$new_img_name', menu_name='$menu_name', menu_price='$menu_price', menu_description='$menu_description' WHERE menu_code = '$menu_code'";
-                if(mysqli_query($conn,$sql)){
-                    $em = "Edited Successfully";}
+                if(mysqli_query($conn,$sql)){}
                 else{
                     $em = "Error updating record: ". mysqli_error($conn);
                 }
@@ -61,8 +64,7 @@ if(isset($_POST["menucode"])){
     
     else{
         $sql = "UPDATE menu set menu_name='$menu_name', menu_price='$menu_price', menu_description='$menu_description' WHERE menu_code = '$menu_code'";
-        if(mysqli_query($conn,$sql)){
-        $em = "Edited Successfully";}
+        if(mysqli_query($conn,$sql)){}
         else{
             $em = "Error updating record: ". mysqli_error($conn);
         }

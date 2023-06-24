@@ -123,7 +123,7 @@ if (isset($_SESSION['alert_message'])) {
       <input type="text" class="foodCname" name="menuname" placeholder="" required>
 
       <label for="foodEngName"><b>Food's Description</b></label>
-      <input type="text" class="foodEngName" name="menudesc" placeholder="" required>
+      <input type="text" class="foodEngName" name="menudesc" placeholder="" maxlength="25" required>
         
       <label for="foodPrice"><b>Food Price</b></label>
       <input type="text" class="foodPrice" name="menuprice" placeholder="" required>
@@ -169,7 +169,7 @@ if (isset($_SESSION['alert_message'])) {
       <input type="text" class="foodCname" name="menuname" value="<?php echo $menu_name; ?>">
 
       <label for="foodEngName"><b>Food's Description</b></label>
-      <input type="text" class="foodEngName" name="menudesc" value="<?php echo $menu_description; ?>" >
+      <input type="text" class="foodEngName" name="menudesc" value="<?php echo $menu_description; ?>" maxlength="25">
         
       <label for="foodPrice"><b>Food Price</b></label>
       <input type="text" class="foodPrice" name="menuprice" value="<?php echo $menu_price; ?>">

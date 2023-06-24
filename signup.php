@@ -24,7 +24,7 @@ if (mysqli_query($conn, $sql)) {
     $_SESSION["Login"] = "YES";
     header("Location: homepage.php");
 } else {
-  $em= "Duplicate userid!  Sign up failed" .mysqli_error($conn);
+  $em= "Duplicate userid!  Sign up failed";
     echo '<script>window.onload = function() { alert("' . $em . '"); }</script>'; // Display the alert message
   
 }}
