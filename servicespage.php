@@ -114,19 +114,19 @@ if (isset($_SESSION['alert_message'])) {
 
     <div class="input-container">
       <label for="foodCname"><b>Food's Image: </b></label>
-      <input type="file" name="uploadfile" accept="image/jpeg, image/png, image/jpg"><br><br>
+      <input type="file" name="uploadfile" accept="image/jpeg, image/png, image/jpg" required><br><br>
 
       <label for="foodID"><b>Food's ID</b></label>
-      <input type="text" class="foodids" name="menucode" placeholder="" id="foodid" >
+      <input type="text" class="foodids" name="menucode" placeholder="" id="foodid" required>
 
       <label for="foodCname"><b>Food's Chinese Name</b></label>
-      <input type="text" class="foodCname" name="menuname" placeholder="">
+      <input type="text" class="foodCname" name="menuname" placeholder="" required>
 
       <label for="foodEngName"><b>Food's English Name</b></label>
-      <input type="text" class="foodEngName" name="menudesc" placeholder="">
+      <input type="text" class="foodEngName" name="menudesc" placeholder="" required>
         
       <label for="foodPrice"><b>Food Price:</b></label>
-      <input type="text" class="foodPrice" name="menuprice" placeholder="">
+      <input type="text" class="foodPrice" name="menuprice" placeholder="" required>
 
       <!--ltr need to change to submit-->
       <button type="submit" name="upload" class="allbutton" id="addButton">ADD</button>
@@ -179,6 +179,12 @@ if (isset($_SESSION['alert_message'])) {
       <!--<input type="button" id="addButton" value="ADD" >-->
       
     </div>
+    <?php
+if (isset($_SESSION['alert_message'])) {
+  $em = $_SESSION['alert_message'];
+  unset($_SESSION['alert_message']); // Clear the session variable
+  echo '<script>window.onload = function() { alert("' . $em . '"); }</script>'; // Display the alert message
+}?>
 
   </form></div>
   <?php endif;?>

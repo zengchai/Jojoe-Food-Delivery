@@ -102,7 +102,7 @@ if (mysqli_query($conn, $sql)) {
                 <p class="matricno">Matric Number: <br>
                 <input class="inputtype" type="text" name="matric" size="30", placeholder="Enter your matricno" maxlength="10"required ><br></p>
                 <p class="address" >Address: <br>
-                <input class="inputtype" type="text" name="address" size="30", placeholder="Enter your address" maxlength="30" required><br></p>
+                <input class="inputtype" type="text" name="address" size="30", placeholder="Enter your address" required><br></p>
                 <p class="phonenumber" >Phone Number: <br>
                 <input class="inputtype" type="text" name="phone" size="30", placeholder="Enter your phone number" maxlength="15" onkeypress="return isNumberKey(event)"required ><br></p>
                 <p class="password">Password: <br>

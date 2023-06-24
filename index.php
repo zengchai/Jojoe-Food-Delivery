@@ -28,7 +28,7 @@ $user = "CREATE TABLE user(
     user_name VARCHAR(30),
     user_phonenumber VARCHAR(12),
     user_matricno VARCHAR(10),
-    user_address VARCHAR(30),
+    user_address VARCHAR(200),
     user_level INT(3) NOT NULL,
     user_password VARCHAR(20) NOT NULL,
     order_counter INT(10),
