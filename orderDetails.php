@@ -84,7 +84,7 @@ if(isset($_POST['address'])){
 
 
         <div id="id02" class="modal">
-            <form class="modal-content animate" action="orderDetails.php" method="post">
+            <form class="modal-content2 animate" action="orderDetails.php" method="post">
                 <div class="imgcontainer">
                     <span onclick="document.getElementById('id02').style.display='none'" class="close" title="Close Modal">&times;</span>
                 </div>

@@ -61,6 +61,7 @@
    .line-container {
     text-align: left;
     width: 20rem;
+    padding-bottom: 1.5rem;
     
   }
   
@@ -139,4 +140,10 @@
      justify-content: center;
      
      
+   }
+
+   .logina{
+    font-weight: 3px;
+    font-size: 40px;
+    margin-bottom: 3rem;
    }

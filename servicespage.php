@@ -68,16 +68,6 @@ include("header.php");
         <h2><u>EDIT MENU</u></h2>
       </div>
 
-      <?php
-        // Check if the visitor count cookie exists
-        if (isset($_COOKIE['visitor_count'])) {
-            $count = $_COOKIE['visitor_count'];
-            echo nl2br("\n");
-            echo "Visitor count: " . $count;
-        } else {
-            echo "No visitor count available.";
-        }
-        ?> 
       <div class="date">
         <div><img src="servicePageImage/calendar.png" style="height: 30px; width: 30px; margin-right: 10px"></div>
         <div><text style="font-size: 1.1rem;" id="currentDate"><?php echo $today?></text></div>
