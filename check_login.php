@@ -55,10 +55,6 @@ $_SESSION['ID'] = $user_id;
 $_SESSION['LEVEL'] = $user_level;
 
 
-if ($_SESSION['LEVEL']==1){
-    header("Location: selmainpage.php");
-}
-
 if ($_SESSION['LEVEL']==2){
 	$sql = "SELECT * FROM user WHERE user_id = '{$_SESSION['ID']}'";
 	$res = mysqli_query($conn, $sql);

@@ -119,13 +119,13 @@ if (isset($_SESSION['alert_message'])) {
       <label for="foodID"><b>Food's ID</b></label>
       <input type="text" class="foodids" name="menucode" placeholder="" id="foodid" required>
 
-      <label for="foodCname"><b>Food's Chinese Name</b></label>
+      <label for="foodCname"><b>Food's Name</b></label>
       <input type="text" class="foodCname" name="menuname" placeholder="" required>
 
-      <label for="foodEngName"><b>Food's English Name</b></label>
+      <label for="foodEngName"><b>Food's Description</b></label>
       <input type="text" class="foodEngName" name="menudesc" placeholder="" required>
         
-      <label for="foodPrice"><b>Food Price:</b></label>
+      <label for="foodPrice"><b>Food Price</b></label>
       <input type="text" class="foodPrice" name="menuprice" placeholder="" required>
 
       <!--ltr need to change to submit-->
@@ -165,13 +165,13 @@ if (isset($_SESSION['alert_message'])) {
       <label for="foodID"><b>Food's ID </b></label>
       <input type="text" class="foodids" name="menucode" value="<?php echo $menu_code; ?>" type="hidden" readonly>
 
-      <label for="foodCname"><b>Food's Chinese Name</b></label>
+      <label for="foodCname"><b>Food's Name</b></label>
       <input type="text" class="foodCname" name="menuname" value="<?php echo $menu_name; ?>">
 
-      <label for="foodEngName"><b>Food's English Name</b></label>
+      <label for="foodEngName"><b>Food's Description</b></label>
       <input type="text" class="foodEngName" name="menudesc" value="<?php echo $menu_description; ?>" >
         
-      <label for="foodPrice"><b>Food Price:</b></label>
+      <label for="foodPrice"><b>Food Price</b></label>
       <input type="text" class="foodPrice" name="menuprice" value="<?php echo $menu_price; ?>">
 
       <!--ltr need to change to submit-->
