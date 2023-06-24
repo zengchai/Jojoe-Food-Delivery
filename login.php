@@ -6,9 +6,8 @@ session_start();
 // If the user is not logged in send him/her to the login form
 if(isset($_SESSION["Login"])){
 if ($_SESSION["Login"] == "NO") {
-  echo "<script>
-          alert('Invalid login');
-       </script>";
+  echo '<script>window.onload = function() { alert("Invalid login"); }</script>'; // Display the alert message
+
 }
 
 unset($_SESSION["Login"]);}
