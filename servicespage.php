@@ -192,22 +192,13 @@ include("header.php");
   <?php endif;?>
 
   <?php if($_SESSION['LEVEL']==2||$_SESSION['LEVEL']==0):?>
-    <?php
-      if(isset($_GET['em'])){
-        $em = $_GET['em'];
-        echo "<script>
-        alert('$em');
-      </script>";
-      unset($_GET['em']);
-      }
-      ?>
+    
   <div class="body-container">
     <div>
     <div class="grid-container">
       <div class="editMenu">
         <h2><u>MENU</u></h2>
       </div>
-
       <div class="filter">
         <form method="post" action="servicespage.php">
         <select name="sort" id="sort">
@@ -285,7 +276,12 @@ include("header.php");
           
         </div>
       </div>
-
+<?php
+if (isset($_SESSION['alert_message'])) {
+  $em = $_SESSION['alert_message'];
+  unset($_SESSION['alert_message']); // Clear the session variable
+  echo '<script>window.onload = function() { alert("' . $em . '"); }</script>'; // Display the alert message
+}?>
 
       
   </div> 
