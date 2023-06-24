@@ -47,7 +47,6 @@ if(!isset($_SESSION['COUNTER'])){
    <link rel='stylesheet' href='yam-css/navigationbar&body.css'/>
    <?php if($_SESSION['LEVEL']==1):?>
    <link rel='stylesheet' href='yam-css/serviceSeller.css'/>
-   <link rel='stylesheet' href='yam-script/serviceSellerScript.js'/>
    <?php endif;?>
    <?php if($_SESSION['LEVEL']==2||$_SESSION['LEVEL']==0):?>
    <link rel='stylesheet' href='yam-css/serviceCustomer.css'/>
@@ -239,10 +238,7 @@ include("header.php");
       </div>
 
       <div class="cart">
-        <span class="count">
-          <div id="total-count">0</div>
-        </span>
-        <a data-active="cart" class="material-icons" href="cart.php"><img src="servicePageImage/shopping-cart.png" style="height: 40px; width: 40px; margin-right: 10px"></a></i>
+        <a data-active="cart" href="cart.php"><img src="servicePageImage/shopping-cart.png" style="height: 40px; width: 40px; margin-right: 10px"></a></i>
       </div>
 
     </div>
