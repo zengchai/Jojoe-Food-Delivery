@@ -14,22 +14,25 @@ $sql = "DELETE FROM menu WHERE menu_code = '$pass'";
 unset($_GET["pass"]);
 if (mysqli_query($conn, $sql)) {
    $em = "Record deleted successfully";
-    header("Location: servicespage.php?sub=$em");
    } else {
     $em = "Error deleting record: " . mysqli_error($conn);
-    header("Location: servicespage.php?sub=$em");
-}}
+}
+
+$_SESSION['alert_message'] = $em; 
+header("Location: servicespage.php");
+}
 
 else if($_SESSION['LEVEL']==2|$_SESSION['LEVEL']==0){
     $sql = "DELETE FROM orderdetail WHERE item_id = '$pass'";
 
     if (mysqli_query($conn, $sql)) {
        $em = "Record deleted successfully";
-        header("Location: cart.php?sub=$em");
        } else {
         $em = "Error deleting record: " . mysqli_error($conn);
-        header("Location: cart.php?sub=$em");
     }
+
+    $_SESSION['alert_message'] = $em; 
+    header("Location: cart.php");
 }
 mysqli_close($conn);
 }
@@ -59,27 +62,29 @@ if(isset($_POST["menucode"])){
                 // Insert into database
                 $sql = "UPDATE menu set menu_img='$new_img_name', menu_name='$menu_name', menu_price='$menu_price', menu_description='$menu_description' WHERE menu_code = '$menu_code'";
                 if(mysqli_query($conn,$sql)){
-                    $em = "Edited Successfully";
-                    header("Location: servicespage.php?sub=$em");}
+                    $em = "Edited Successfully";}
                 else{
                     $em = "Error updating record: ". mysqli_error($conn);
-                    header("Location: servicespage.php?sub=$em");
                 }
             }else{
                 $em = "You can't upload files of this type";
-                header("Location: servicespage.php?sub=$em");
-            }}
+            }
+        
+        $_SESSION['alert_message'] = $em; 
+        header("Location: servicespage.php");
+        }
     
     else{
         $sql = "UPDATE menu set menu_name='$menu_name', menu_price='$menu_price', menu_description='$menu_description' WHERE menu_code = '$menu_code'";
         if(mysqli_query($conn,$sql)){
-        $em = "Edited Successfully";
-        header("Location: servicespage.php?sub=$em");}
+        $em = "Edited Successfully";}
         else{
             $em = "Error updating record: ". mysqli_error($conn);
-            header("Location: servicespage.php?sub=$em");
         }
-}
+        
+    $_SESSION['alert_message'] = $em; 
+    header("Location: servicespage.php");
+    }
 mysqli_close($conn);
 }
 
