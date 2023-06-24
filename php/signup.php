@@ -81,7 +81,7 @@ if (mysqli_query($conn, $sql)) {
                 <input class="inputtype" type="text" name="phone" size="30", placeholder="Enter your phone number" maxlength="15" onkeypress="return isNumberKey(event)"><br></p>
                 <p class="password">Password: <br>
                 <input class="inputtype" type="password" name="password" size="30", placeholder="Enter your password" maxlength="10"><br></p>
-                <p class="tandc"><input class="inputtype" type="radio" name="T&C" value="Terms & Condition"> Terms & Condition<br></p>
+               
                 <p class="button"><input class="inputtype" type="submit" name="signup" value="Sign Up"></p>
             </form>
             
