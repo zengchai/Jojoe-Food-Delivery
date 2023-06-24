@@ -124,30 +124,19 @@ echo "</div>
       <div class="top">
           <h2><u>ORDER HISTORY</u></h2>
       </div>
-    </div>
-    <div class="grid-container2">
-      <div class="filter">
-        <form action="">
-          <label for="filter">Filter: </label>
-          <select name="food">
-            <option value="UserID">User ID</option>
-            <option value="foodName">Food Name</option>
-            <option value="foodPrice">Food Price</option>
-          </select>
-          <input type="submit" value="Submit">
-        </form>
-      </div>
-      <div class="search">
+
+    <div class="search">
         <div class="search-container">
           <form method='get' action='orderhistory.php'>
             <input type='text' value='' name='userid' placeholder='Enter the user id'/>
             <button type='submit'><i class="fa fa-search"></i></button>
           </form>
-        </div>
       </div>
     </div>
+  </div>
+
     
-    <table class="table-container" style="min-width: 800px;">
+    <table class="table-container">
       <tr>
            <th>Order ID </th>
            <th>User ID</th>
@@ -179,7 +168,7 @@ if (mysqli_num_rows($res) > 0) {
            <td>ORD{$row['order_id']} </td>";
         echo "<td> {$row['user_id']} </td>
         <td>
-        <table>";
+        <table class='orderDetails' style='width: 100%;'>";
         $sqli = "SELECT * FROM orderdetail WHERE order_id = '{$row['order_id']}'";
         $resi = mysqli_query($conn, $sqli);
         if (mysqli_num_rows($resi) > 0) {
