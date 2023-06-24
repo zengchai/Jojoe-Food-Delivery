@@ -11,6 +11,7 @@ date_default_timezone_set('Asia/Kuala_Lumpur');
 $today = date('Y-m-d H:i:s');
 if(isset($_SESSION['COUNTER'])){
 if (isset($_SESSION['TOTALPRICE'])) {
+  $orderID = $_SESSION['COUNTER'];
   $sqls = "UPDATE orders SET payment_status='PAID',payment_date='$today',total_price = {$_SESSION['TOTALPRICE']}  WHERE order_id = {$_SESSION['COUNTER']}";
   unset($_GET["curaddr"]);
   if(mysqli_query($conn, $sqls)){
@@ -34,6 +35,8 @@ if (isset($_SESSION['TOTALPRICE'])) {
   
   
 }}?>
+
+
 <html>
 <head>
 <title>Jojoe food ordering system login page</title>
