@@ -10,6 +10,7 @@ if (!$conn) {
   die("Connection failed: " . mysqli_connect_error());
 }
 
+if (!mysqli_select_db($conn, 'jojoe')){
 $sql = "CREATE DATABASE jojoe";
 if (mysqli_query($conn, $sql)) {
   echo "Database Jojoe created successfully";
@@ -93,6 +94,6 @@ if (mysqli_query($conn, $orderdetail)) {
 			echo "Error: " . $sql . "<br>" . mysqli_error($conn);
 		}
     
-mysqli_close($conn);
+mysqli_close($conn);}
 header("Location: mainpage.php")
 ?>
