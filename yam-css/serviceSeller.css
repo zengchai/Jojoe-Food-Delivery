@@ -251,6 +251,14 @@
   display: block;
 }
 
+#visitor-count {
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+  margin-top: 10px;
+  /* Add more styles as needed */
+}
+
 
 
 

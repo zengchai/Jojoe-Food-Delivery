@@ -73,3 +73,10 @@
 .btn:hover{
     background: #eee;
 }
+
+#visitor-count{
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+    margin: 0px;
+}
