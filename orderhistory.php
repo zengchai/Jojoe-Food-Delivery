@@ -10,13 +10,13 @@ if ($_SESSION["Login"] != "YES") {
 date_default_timezone_set('Asia/Kuala_Lumpur');
 $today = date('Y-m-d H:i:s');
 if(isset($_SESSION['COUNTER'])){
-if (isset($_GET["tp"])) {
-  $tp = $_GET["tp"];
-
-  $sqls = "UPDATE orders SET payment_status='PAID',payment_date='$today',total_price = {$_SESSION['TOTALPRICE']} WHERE order_id = {$_SESSION['COUNTER']}";
+if (isset($_SESSION['TOTALPRICE'])) {
+  $sqls = "UPDATE orders SET payment_status='PAID',payment_date='$today',total_price = {$_SESSION['TOTALPRICE']}  WHERE order_id = {$_SESSION['COUNTER']}";
+  unset($_GET["curaddr"]);
   if(mysqli_query($conn, $sqls)){
       echo "Paid Successfully - Order Number: " . $_SESSION['COUNTER'];
       unset($_SESSION['COUNTER']);
+      unset($_SESSION['TOTALPRICE']);
       $_SESSION['PAID'] = "YES";
       $createOrder = "insert into orders (user_id) VALUES ('{$_SESSION['ID']}');";
       mysqli_query($conn,$createOrder);
@@ -28,7 +28,9 @@ if (isset($_GET["tp"])) {
       }
     }
   }
-  unset($_GET["tp"]);
+  else{
+    echo mysqli_error($conn);
+  }
   
   
 }}?>
@@ -39,7 +41,13 @@ if (isset($_GET["tp"])) {
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Lato:wght@700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-<link rel="stylesheet" type="text/css" href="ks-css/orderHistory.css" id="stylesheet">
+
+<?php if($_SESSION['LEVEL']==1){
+  echo "<link rel='stylesheet' type='text/css' href='ks-css/orderHistorySeller.css' id='stylesheet'>";
+}
+else{
+  echo "<link rel='stylesheet' type='text/css' href='ks-css/orderHistory.css' id='stylesheet'>";
+}?>
 <link rel="stylesheet" type="text/css" href="yam-css/navigationbar&body.css" id="stylesheet">
 <!-- <meta name="editport" content="width=device-width, initial-scale=1"> -->
 <script>
@@ -108,6 +116,75 @@ echo "</div>
     </div>
   </div>
 </div>
+<?php endif;?>
+  <?php if($_SESSION['LEVEL']==1):?>
+    <div class="body-container">
+  <div>
+    <div class="grid-container1">
+      <div class="top">
+          <h2><u>ORDER HISTORY</u></h2>
+      </div>
+    </div>
+    <form method='get' action='orderhistory.php'>
+  <input type='text' value='' name='userid' placeholder='Enter the user id'/>
+  <input type='submit' value='Submit'/>
+</form>
+      <table class="table-container" style="min-width: 800px;">
+      <tr>
+           <th>Order ID </th>
+           <th>User ID</th>
+           <th>Order Details</th>
+           <th>Total Price</th>
+           <th colspan="3">Address</th>
+           <th>Payment Time</th>
+        </tr>
+        
+    <?php if(isset($_GET["userid"])){
+    $user_id = $_GET["userid"];
+    $sql = "SELECT * FROM orders WHERE payment_status = 'PAID' AND user_id LIKE '$user_id'";
+    if($_GET["userid"]==""){
+        $sql = "SELECT * FROM orders WHERE payment_status = 'PAID'";
+    }
+}
+else{
+$sql = "SELECT * FROM orders WHERE payment_status = 'PAID'";}
+$res = mysqli_query($conn, $sql);
+if (mysqli_num_rows($res) > 0) {
+    while ($row = mysqli_fetch_assoc($res)) {
+      $sqla = "SELECT * FROM user WHERE user_id = '{$row['user_id']}'";
+      
+      $resa = mysqli_query($conn, $sqla);
+      if (mysqli_num_rows($resa) > 0) {
+          while ($rowa = mysqli_fetch_assoc($resa)) { 
+        echo "
+        <tr>
+           <td>ORD{$row['order_id']} </td>";
+        echo "<td> {$row['user_id']} </td>
+        <td>
+        <table>";
+        $sqli = "SELECT * FROM orderdetail WHERE order_id = '{$row['order_id']}'";
+        $resi = mysqli_query($conn, $sqli);
+        if (mysqli_num_rows($resi) > 0) {
+            while ($rowi = mysqli_fetch_assoc($resi)) { 
+            $menu_name = "SELECT * FROM menu WHERE menu_code = '$rowi[menu_code]'";
+            $query_menu_name = mysqli_query($conn, $menu_name);
+            $res_menu_name = mysqli_fetch_assoc($query_menu_name);
+            $total_order_price = $rowi['order_quantity'] * $rowi['order_price'];
+    echo "<tr colspan='3'>
+    <td style='padding-right: 20px;'> $rowi[menu_code] </td>
+    <td style='padding-right: 20px;'> $res_menu_name[menu_name] </td>
+    <td style='padding-left: 20px;'> $rowi[order_quantity] </td>
+    </tr>
+    ";} }
+echo "</table>
+</td>
+<td>RM $row[total_price] </td>
+<td colspan='3'>$rowa[user_address]</td>
+<td width='15%'>$row[payment_date]</td>
+</tr>";}}}}?>
+</table>
+
+    </div>
 <?php endif;?>
 </body>
 </html>

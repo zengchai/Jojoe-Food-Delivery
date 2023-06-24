@@ -52,23 +52,21 @@ function isValidEmail(email) {
 }
     </script>
 </head>
-<body> 
-  <div class='menu-container'>
-    <div class='menu'>
-      <div class ="header left">
-          <div class="logo">
-            <img src="headerImage/IMG_4380 1.png" style="height: 50px; width: 50px; text-align: center">
-          </div>  
-          <div class="header1"> 
-            <div class="header"><a data-active="home" href="mainPage.html">HOME</a></div> 
-            <div class="header"><a data-active="service" href="#">SERVICE</a></div> 
-            <div class="header"><a data-active="order" href="#">ORDER</a></div> 
-            <div class="header"><a data-active="about" href="#">ABOUT</a></div> 
-          </div> 
-      </div>
-      <div class="login">
-          <img src="headerImage/login (1) 1.png" style="text-align: center; padding: 10px 0;">
-          <a href="check_login.php">LOGIN</a>
+<div class='menu-container'>
+            <div class='menu'>
+              <div class ='left_menu'>
+                  <div class="logo">
+                    <img src="headerImage/image (1).png" style="height: 50px; width: 50px; text-align: center">
+                  </div>  
+                  <div class="header1"> 
+                    <div class="header"><a data-active="home" href="mainpage.php">HOME</a></div> 
+                    <div class="header"><a data-active="service" href="serviceSellerPage.html">SERVICE</a></div> 
+                    <div class="header"><a data-active="order" href="orderhistorySeller.html">ORDER</a></div> 
+                  </div> 
+              </div>
+                <div class="login">
+                    <img src="headerImage/image.png" style="text-align: center; padding: 15px 0;">
+          <a href="login.php">LOGIN</a>
       </div>          
     </div>
 </div>
@@ -78,7 +76,7 @@ function isValidEmail(email) {
             <form method="post" action="check_login.php">
                 <p class="logina">LOGIN </p>
                 <p class="userid">User ID: <br>
-                <input class="inputtype" type="text" name="username" size="30", placeholder="Enter an userid" maxlength="10"><br></p>                               
+                <input class="inputtype" type="text" name="username" size="30", placeholder="Enter your user ID" maxlength="10"><br></p>                               
                 <p class="password">Password: <br>
                 <input class="inputtype" type="password" name="password" size="30", placeholder="Enter your password" maxlength="10"></p>              
                <p class="loginbutton">
@@ -98,12 +96,6 @@ function isValidEmail(email) {
           <div class="foodcontainer" ><img class="foodlogo" src="image/platefood.png">
             <h1>Jojoe Food</h1></div>
     </div>
-    
-    <div class="position">
-      <a data-active="customer" href="logins.php">Customer</a>
-      <a data-active="seller" href="serviceSellerPage.html">Seller</a>
-    </div>
-
 
 </body>
 </html>

@@ -1,6 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
-    
+
+<?php
+// Check if the visitor count cookie exists
+if (!isset($_COOKIE['visitor_count'])) {
+    // Create a new cookie with an initial count of 1
+    $count = 1;
+    setcookie('visitor_count', $count, time() + 86400); // Expires in 24 hours
+} else {
+    // Increment the visitor count by 1
+    $count = $_COOKIE['visitor_count'] + 1;
+    setcookie('visitor_count', $count, time() + 86400); // Expires in 24 hours
+}
+?>
+
 <head>
    <title>Some Web Page</title>
    <link rel='stylesheet' href='yam-css/navigationbar&body.css'/>
@@ -11,19 +24,20 @@
 <body id="service">
 
 <div class='menu-container'>
-  <div class='menu'>
-      <div class="logo">
-        <img src="headerImage/IMG_4380 1.png" style="height: 50px; width: 50px; text-align: center">
-      </div>  
-      <div class="header1"> 
-        <div class="header"><a data-active="Home" href="home.html">HOME</a></div> 
-        <div class="header"><a data-active="Service" href="serviceCustomerPage.html">SERVICE</a></div> 
-        <div class="header"><a data-active="Order" href="orderhistory.html">ORDER</a></div> 
-        <div class="header"><a data-active="About" href="#">ABOUT</a></div> 
-      </div> 
+    <div class='menu'>
+      <div class ='left_menu'>
+          <div class="logo">
+            <img src="headerImage/image (1).png" style="height: 50px; width: 50px; text-align: center">
+          </div>  
+          <div class="header1"> 
+            <div class="header"><a data-active="home" href="homeSeller.html">HOME</a></div> 
+            <div class="header"><a data-active="service" href="serviceSellerPage.html">SERVICE</a></div> 
+            <div class="header"><a data-active="order" href="orderhistorySeller.html">ORDER</a></div> 
+          </div> 
+      </div>
       <div class="login">
-        <img src="headerImage/login (1) 1.png" style="text-align: center; padding: 10px 0;">
-        <button id="logoutButton" onclick="document.getElementById('id03').style.display='block'" style="background-color: white; width:auto; cursor: pointer">LOGOUT</button>
+        <img src="headerImage/image.png" style="text-align: center; padding: 15px 0;">
+        <button id="logoutButton" onclick="document.getElementById('id03').style.display='block'" style="color:white; background-color: black; width:auto; cursor: pointer">LOGOUT</button>
         <div id="id03" class="modal">
 
           <form class="modal-content animate" action="/action_page.php" method="post">
@@ -186,10 +200,11 @@
 
   
 <div class="position">
-  <a data-active="customer" href="serviceCustomerPage.html">Customer</a>
-  /
-  <a data-active="seller" href="serviceSellerPage.html">Seller</a>
+  <a data-active="customer" href="serviceCustomerPage.php">Customer</a>
+  <a data-active="seller" href="serviceSellerPage.php">Seller</a>
+  
 </div>
+
 
 <script>
   var today = new Date();
