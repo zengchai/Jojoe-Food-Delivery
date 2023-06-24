@@ -62,7 +62,7 @@ include("header.php");
 
 <?php if($_SESSION['LEVEL']==1):?>
 <div class="body-container">
-  <div>
+  <div class="edit-container">
     <div class="grid-container">
       <div class="editMenu">
         <h2><u>EDIT MENU</u></h2>
