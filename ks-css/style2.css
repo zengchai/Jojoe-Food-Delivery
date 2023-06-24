@@ -42,17 +42,13 @@
      margin-bottom: 1.3rem;    
      width:20rem; 
    }
-   .resetpwd a {
-    text-decoration: none;
-    color: blue;
-  }
+   
 
   .resetpwd a:hover {
     text-decoration: underline;
   }
   .signup a{
-  text-decoration: none;
-  color: blue;
+  color: rgb(25, 0, 190);
   }
 .signup a:hover{
   text-decoration: underline;
