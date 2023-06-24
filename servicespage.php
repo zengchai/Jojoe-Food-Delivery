@@ -192,7 +192,15 @@ include("header.php");
   <?php endif;?>
 
   <?php if($_SESSION['LEVEL']==2||$_SESSION['LEVEL']==0):?>
-    
+    <?php
+      if(isset($_GET['em'])){
+        $em = $_GET['em'];
+        echo "<script>
+        alert('$em');
+      </script>";
+      unset($_GET['em']);
+      }
+      ?>
   <div class="body-container">
     <div>
     <div class="grid-container">
