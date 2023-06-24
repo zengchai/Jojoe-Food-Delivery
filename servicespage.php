@@ -19,15 +19,6 @@ if ($_SESSION['LEVEL']==2||$_SESSION['LEVEL']==0){
     unset($_SESSION["ADDTOCART"]);
 }
 
-if(isset($_SESSION["PAID"])){
-    if($_SESSION["PAID"] == "YES")
-        if (isset($_GET['sub'])){
-            echo $_GET['sub'];
-        }
-    
-    unset($_SESSION["PAID"]);
-    
-}
 if(!isset($_SESSION['COUNTER'])){
     $createOrder = "insert into orders (user_id) VALUES ('{$_SESSION['ID']}');";
     mysqli_query($conn,$createOrder);
@@ -105,10 +96,13 @@ include("header.php");
     <button class='delete allbutton' onclick=location.href='operation.php?pass=$row[menu_code]'>Delete</button>
   </div></div>";
     } } ?>
-    <?php
-    if (isset($_GET['sub'])){
-      echo $_GET['sub'];
-        unset($_GET['sub']);}?>
+    
+<?php
+if (isset($_SESSION['alert_message'])) {
+  $em = $_SESSION['alert_message'];
+  unset($_SESSION['alert_message']); // Clear the session variable
+  echo '<script>window.onload = function() { alert("' . $em . '"); }</script>'; // Display the alert message
+}?>
 <button id="plusButton" class="allbutton" onclick="document.getElementById('id01').style.display='block'" style="width:auto;"> + </button>
 
 <div id="id01" class="modal">
