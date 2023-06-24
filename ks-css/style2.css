@@ -67,7 +67,7 @@
   
   .line {
     display: inline-block;
-    width: 30%;
+    width: 32%;
     margin: 0 6px;
     border: none;
     border-top: 1px solid black;
@@ -91,11 +91,10 @@
     margin-bottom: 2rem;
    }
    #login {
-     margin: 0 20px;
-     padding: 8px 80px;
+     padding: 8px 112.27px;
      background-color: #ffffff;
      color: rgb(0, 0, 0);
-     font-size: 25px;
+     font-size: 1.2rem;
      border-radius: 0.5rem;
      cursor: pointer;
 
@@ -121,7 +120,7 @@
  
    .inputtype{
      padding: 0.5rem;
-     border-radius: 5rem;
+     border-radius: 0.5rem;
      margin-top: 0.5rem;
  }
 
