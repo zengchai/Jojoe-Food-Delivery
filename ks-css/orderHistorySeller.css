@@ -44,7 +44,7 @@ td {
 
 .orderDetails td{
   border: none;
-  padding: 0.5rem 0;
+  padding: 0.5rem 0.2rem;
 }
 
 /*search box====================================================*/
