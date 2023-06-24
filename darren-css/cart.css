@@ -3,7 +3,6 @@
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: 0.5fr 0.5fr;
     gap: 20px;
-    padding-top: 100px; /*container up padding*/
     height: min-content;
 }
 
