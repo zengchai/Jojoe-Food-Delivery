@@ -78,8 +78,8 @@ if (mysqli_query($conn, $sql)) {
                   </div>  
                   <div class="header1"> 
                     <div class="header"><a data-active="home" href="mainpage.php">HOME</a></div> 
-                    <div class="header"><a data-active="service" href="serviceSellerPage.html">SERVICE</a></div> 
-                    <div class="header"><a data-active="order" href="orderhistorySeller.html">ORDER</a></div> 
+                    <div class="header"><a data-active="service" href="#">SERVICE</a></div> 
+                    <div class="header"><a data-active="order" href="#">ORDER</a></div> 
                   </div> 
               </div>
                 <div class="login">

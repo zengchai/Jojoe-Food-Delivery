@@ -60,8 +60,8 @@ function isValidEmail(email) {
                   </div>  
                   <div class="header1"> 
                     <div class="header"><a data-active="home" href="mainpage.php">HOME</a></div> 
-                    <div class="header"><a data-active="service" href="serviceSellerPage.html">SERVICE</a></div> 
-                    <div class="header"><a data-active="order" href="orderhistorySeller.html">ORDER</a></div> 
+                    <div class="header"><a data-active="service" href="#">SERVICE</a></div> 
+                    <div class="header"><a data-active="order" href="#">ORDER</a></div> 
                   </div> 
               </div>
                 <div class="login">
@@ -88,7 +88,7 @@ function isValidEmail(email) {
                 </div>
               <p class="resetpwd"> <a href="#"onclick="resetPwd()">Forgot password?<br></a></p>
 
-              <p class="signup"> Don't have an account? <a href="signup.php">SignupNow</a> </p> <!-- link to sign up page-->
+              <p class="signup"> Don't have an account? <a href="signup.php">Sign Up Now</a> </p> <!-- link to sign up page-->
               </form>
 
         </div>
