@@ -30,24 +30,22 @@ if ($_SESSION["Login"] != "YES") {
     
 <?php
     if ($_SESSION['LEVEL'] == 1) {
-        echo "<a class='btn signUpNow' href='servicespage.php'>EDIT NOW</a>";
-        ?>
-        <div id="visitor-count">
-            <?php
+        echo "<div id='visitor-count'>";
             // Check if the visitor count cookie exists
             if (isset($_COOKIE['visitor_count'])) {
                 $count = $_COOKIE['visitor_count'];
-                echo nl2br("\n");
-                echo nl2br("\n");
                 echo $count. " person visited your website today";
+                echo nl2br("\n");
+                echo nl2br("\n");
             } else {
-                echo nl2br("\n");
-                echo nl2br("\n");
                 echo "No visitor yet ";
+                echo nl2br("\n");
+                echo nl2br("\n");
             }
-            ?> 
-        </div>
-        <?php
+
+        
+            echo "</div>";
+        echo "<a class='btn signUpNow' href='servicespage.php'>EDIT NOW</a>";
     } else {
         echo "<a class='btn signUpNow' href='servicespage.php'>ORDER NOW</a>";
     }
