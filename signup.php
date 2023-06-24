@@ -18,15 +18,15 @@ require_once('config.php');
 $sql = "INSERT INTO user(user_id,user_name,user_email,user_matricno,user_phonenumber,user_password,user_address,user_level) VALUES ('$userId','$userName','$email','$matric','$phone','$password','$address',0)";
 
 if (mysqli_query($conn, $sql)) {
-	echo "New record created successfully";
     $_SESSION['USER'] = $userName;
     $_SESSION['ID'] = $userId;
     $_SESSION['LEVEL'] = 0;
     $_SESSION["Login"] = "YES";
     header("Location: homepage.php");
 } else {
+  $em= "Duplicate userid . Fuck u " .mysqli_error($conn);
+    echo '<script>window.onload = function() { alert("' . $em . '"); }</script>'; // Display the alert message
   
-	echo "Error: " . $sql . "<br>" . mysqli_error($conn);
 }}
 ?>
 <html>

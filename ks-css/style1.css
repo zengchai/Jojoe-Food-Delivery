@@ -95,10 +95,10 @@
   #signup {
     display: block;
     /* margin: 0 auto; */
-    padding: 8px 89px;
+    padding: 8px 100.19px;
     background-color: #ffffff;
     color: rgb(0, 0, 0);
-    font-size: 25px; 
+    font-size: 1.2rem; 
     border-radius: 0.8rem;
     cursor: pointer;
   }
