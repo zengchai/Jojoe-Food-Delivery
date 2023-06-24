@@ -22,6 +22,50 @@
     padding-top: 10px;
 }
 
+/*filter=====================================*/
+.grid-container .filter{
+  grid-column: 2 / 3;
+  grid-row: 2 / 3;
+  text-align: left;
+  display: flex;
+  justify-content: flex-start;
+  padding: 20px;
+}
+
+#sort{
+  float: left;
+  width: 100px;
+  padding: 5px;
+  border: 1px solid #dcdcdc;
+  background-color: #ffffff;
+}
+
+select{
+  float: left;
+  border: none;
+  outline: none;
+  border-radius: 0;
+  margin: 0;
+  display: block;
+  width: 100%;
+  font-size: 14px;
+  color: #000000;
+}
+
+.filter button {
+  float: right;
+  padding: 8px;
+  background: #ddd;
+  font-size: 12px;
+  border: none;
+  cursor: pointer;
+}
+
+button:hover{
+  background-color:rgb(230, 230, 230);
+}
+/*===========================================*/
+
 .date {
     display: flex;
     align-items: center;
@@ -249,4 +293,8 @@
   max-height: 3px;
   min-width: 20px;
   font-size:x-small;
+}
+
+.addfunction button:hover{
+  background-color:rgb(106, 199, 236);
 }

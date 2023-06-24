@@ -19,7 +19,6 @@
    
  }
  
- 
  .leftcontainer{
      font-size: 25px;
      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -27,10 +26,7 @@
    grid-column-start: 2;
      grid-column-end: 3;
    }
-   .logina{
-     font-size: 3rem;
-     margin-bottom: 3rem;
-   }
+   
    .userid{
     font-size: 1.2rem;
     margin-bottom: 1rem;
@@ -94,15 +90,14 @@
     margin-bottom: 2rem;
    }
    #login {
-     display: block;
-     margin: 0 auto;
+     margin: 0 20px;
      padding: 8px 80px;
      background-color: #ffffff;
      color: rgb(0, 0, 0);
      font-size: 25px;
-    
      border-radius: 0.5rem;
      cursor: pointer;
+
    }
    
    #login:hover {

@@ -74,7 +74,7 @@ if(isset($_POST['address'])){
                 if(isset($_GET['totalprice'])){
                     $_SESSION['TOTALPRICE'] = $_GET['totalprice'];
                 }
-                echo "<a class='btn pay' href='orderhistory.php?tp={$_SESSION['TOTALPRICE']}'>PAY</a>";
+                echo "<a class='btn pay' style='text-decoration: none;' href='orderhistory.php?tp={$_SESSION['TOTALPRICE']}'>PAY</a>";
                 ?>
             </div>
         </div>

@@ -95,12 +95,6 @@ if ($_SESSION["Login"] != "YES") {
     </div>
     </div>
 
-        <div class="position">
-            <a data-active="customer" href="#">Customer</a>
-            /
-            <a data-active="seller" href="serviceSellerPage.html">Seller</a>
-        </div>
-
         <script>
             var today = new Date();
             var dd = String(today.getDate()).padStart(2, '0');

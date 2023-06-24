@@ -112,7 +112,7 @@ include("header.php");
       <input name='menucode' type='hidden' value='$row[menu_code]'/>
       <button type='submit' onclick='display();'class='edit allbutton'>Edit</button>
     </form></div>
-	<a class='delete allbutton' href='operation.php?pass=$row[menu_code]'>Delete</a>
+    <button class='delete allbutton' onclick=location.href='operation.php?pass=$row[menu_code]'>Delete</button>
   </div></div>";
     } } ?>
     <?php
@@ -209,29 +209,33 @@ include("header.php");
       <div class="editMenu">
         <h2><u>MENU</u></h2>
       </div>
-      <form method="post" action="servicespage.php">
-<select name="sort" id="sort">
-    <option value="menu_code"
-    <?php if ($_SERVER['REQUEST_METHOD'] === 'POST'):
-        if($_POST['sort']=="menu_code"):?>
-    selected
-<?php endif; endif
-        ?>>none</option>
-    <option value="menu_name" 
-    <?php if ($_SERVER['REQUEST_METHOD'] === 'POST'):
-        if($_POST['sort']=="menu_name"):?>
-    selected
-<?php endif; endif
-        ?>>Name</option>
-    <option value="menu_price" 
-    <?php if ($_SERVER['REQUEST_METHOD'] === 'POST'):
-        if($_POST['sort']=="menu_price"):?>
-    selected
-<?php endif; endif
-        ?>>Price</option>
-  </select>
-  <input type="submit" value="Sort">
-</form>
+
+      <div class="filter">
+        <form method="post" action="servicespage.php">
+        <select name="sort" id="sort">
+            <option value="menu_code"
+            <?php if ($_SERVER['REQUEST_METHOD'] === 'POST'):
+                if($_POST['sort']=="menu_code"):?>
+            selected
+        <?php endif; endif
+                ?>>None</option>
+            <option value="menu_name" 
+            <?php if ($_SERVER['REQUEST_METHOD'] === 'POST'):
+                if($_POST['sort']=="menu_name"):?>
+            selected
+        <?php endif; endif
+                ?>>Name</option>
+            <option value="menu_price" 
+            <?php if ($_SERVER['REQUEST_METHOD'] === 'POST'):
+                if($_POST['sort']=="menu_price"):?>
+            selected
+        <?php endif; endif
+                ?>>Price</option>
+          </select> 
+          <button type="submit">Sort</button>
+        </form>
+      </div>
+
       <div class="date">
         <div><img src="servicePageImage/calendar.png" style="height: 30px; width: 30px; margin-right: 10px"></div>
         <div><text style="font-size: 1.1rem;" id="currentDate"><?php echo $today?></text></div>

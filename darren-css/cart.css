@@ -46,14 +46,16 @@
 
 .add{
     border: transparent;
-    background-color: inherit;
     padding: 14px 28px;
     font-size: 1.5rem;
     cursor: pointer;
+    border: 2px;
+    border-radius: 20px;
+    background-color:rgb(221, 221, 221);
 }
 
 .add:hover{
-    text-shadow: 0px 0px 3px #cdcdcd;
+    background-color:rgb(231, 231, 231)
 }
 
 .orderDetailsTable{
@@ -157,6 +159,7 @@
     grid-row: 3 / 4;
     text-align: center;
     padding-top: 3rem;
+    padding-bottom: 3rem;
 }
 
 .btn{
@@ -167,6 +170,7 @@
     cursor: pointer;
     display: inline-block;
     border-radius: 15px;
+    text-decoration: none;
 }
 
 .btn:hover{
