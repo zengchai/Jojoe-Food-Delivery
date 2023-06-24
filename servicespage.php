@@ -62,7 +62,6 @@ include("header.php");
 
 <?php if($_SESSION['LEVEL']==1):?>
 <div class="body-container">
-  
   <div>
     <div class="grid-container">
       <div class="editMenu">
@@ -74,18 +73,7 @@ include("header.php");
         <div><text style="font-size: 1.1rem;" id="currentDate"><?php echo $today?></text></div>
       </div>
     </div>
-    <div class="one">
-    <h1>JOJOE FOOD</h1><br><br>
-    <p>is a food ordering and delivering</p>
-    <p>platform inside UTM</p><br><br>
-    <?php
-    if ($_SESSION['LEVEL'] == 1) {
-        echo "<a class='btn signUpNow' href='servicespage.php'>EDIT NOW</a>";
-    } else {
-        echo "<a class='btn signUpNow' href='servicespage.php'>ORDER NOW</a>";
-    }
-    ?>
-</div>
+
     <div class="grid-container2" id="grid-container2">
 <?php 
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {

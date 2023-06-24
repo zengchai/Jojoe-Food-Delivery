@@ -37,6 +37,7 @@
 }
 
 .four {
+    height: fit-content;
     grid-row: 3 / 4;
     text-align: center;
 }
