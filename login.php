@@ -86,8 +86,6 @@ function isValidEmail(email) {
                   <span class="line-text">Or</span>
                   <hr class="line">
                 </div>
-              <p class="resetpwd"> <a href="#"onclick="resetPwd()">Forgot password?<br></a></p>
-
               <p class="signup"> Don't have an account? <a href="signup.php">Sign Up Now</a> </p> <!-- link to sign up page-->
               </form>
 
