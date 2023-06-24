@@ -41,7 +41,7 @@ if (isset($_SESSION['TOTALPRICE'])) {
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Lato:wght@700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
 <?php if($_SESSION['LEVEL']==1){
   echo "<link rel='stylesheet' type='text/css' href='ks-css/orderHistorySeller.css' id='stylesheet'>";
 }
@@ -125,11 +125,29 @@ echo "</div>
           <h2><u>ORDER HISTORY</u></h2>
       </div>
     </div>
-    <form method='get' action='orderhistory.php'>
-  <input type='text' value='' name='userid' placeholder='Enter the user id'/>
-  <input type='submit' value='Submit'/>
-</form>
-      <table class="table-container" style="min-width: 800px;">
+    <div class="grid-container2">
+      <div class="filter">
+        <form action="">
+          <label for="filter">Filter: </label>
+          <select name="food">
+            <option value="UserID">User ID</option>
+            <option value="foodName">Food Name</option>
+            <option value="foodPrice">Food Price</option>
+          </select>
+          <input type="submit" value="Submit">
+        </form>
+      </div>
+      <div class="search">
+        <div class="search-container">
+          <form method='get' action='orderhistory.php'>
+            <input type='text' value='' name='userid' placeholder='Enter the user id'/>
+            <button type='submit'><i class="fa fa-search"></i></button>
+          </form>
+        </div>
+      </div>
+    </div>
+    
+    <table class="table-container" style="min-width: 800px;">
       <tr>
            <th>Order ID </th>
            <th>User ID</th>
