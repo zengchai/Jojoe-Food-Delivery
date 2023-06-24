@@ -187,7 +187,7 @@ if (mysqli_num_rows($res) > 0) {
             $res_menu_name = mysqli_fetch_assoc($query_menu_name);
             $total_order_price = $rowi['order_quantity'] * $rowi['order_price'];
     echo "<tr colspan='3'>
-    <td style='padding-right: 20px;'> $rowi[menu_code] </td>
+    <td style='padding-left: 1rem;'> $rowi[menu_code] </td>
     <td style='padding-right: 20px;'> $res_menu_name[menu_name] </td>
     <td style='padding-left: 20px;'> $rowi[order_quantity] </td>
     </tr>
@@ -196,7 +196,7 @@ echo "</table>
 </td>
 <td>RM $row[total_price] </td>
 <td colspan='3'>$rowa[user_address]</td>
-<td width='15%'>$row[payment_date]</td>
+<td width='16%'>$row[payment_date]</td>
 </tr>";}}}}?>
 </table>
 
