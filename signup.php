@@ -24,7 +24,7 @@ if (mysqli_query($conn, $sql)) {
     $_SESSION["Login"] = "YES";
     header("Location: homepage.php");
 } else {
-  $em= "Duplicate userid . Fuck u " .mysqli_error($conn);
+  $em= "Duplicate userid!  Sign up failed" .mysqli_error($conn);
     echo '<script>window.onload = function() { alert("' . $em . '"); }</script>'; // Display the alert message
   
 }}
@@ -69,8 +69,6 @@ if (mysqli_query($conn, $sql)) {
     const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return emailPattern.test(email);
   }
-  
-  
     </script>
 </head>
 <body> 
@@ -95,21 +93,18 @@ if (mysqli_query($conn, $sql)) {
                 <p class="signup">SIGN UP</p>
                 
                 <p class="username">Username: <br>
-                <input class="inputtype" type="text" name="username" size="30", placeholder="Enter a username" maxlength="20" required ><br></p>
+                <input class="inputtype" type="text" name="username" size="30", placeholder="Create a username" maxlength="20"  ><br></p>
                 <p class="userid">User ID: <br>
-                  <input class="inputtype" type="text" name="userid" size="30", placeholder="Enter a userid" maxlength="10"  oninput="validateUserID(this)" required ><br></p>
+                  <input class="inputtype" type="text" name="userid" size="30", placeholder="Create a userid" maxlength="10"  oninput="validateUserID(this)" ><br></p>
                   <span id="userid-error" class="error-msg"></span>
                   <p class="emailaddress"> Email Address: <br>
-                <input class="inputtype" type="text" name="email" size="30", placeholder="Enter your email address" maxlength="30"oninput="validateEmail(this)"required ><br></p>
+                <input class="inputtype" type="text" name="email" size="30", placeholder="Enter your email address" maxlength="30"oninput="validateEmail(this)"><br></p>
                 <p class="matricno">Matric Number: <br>
-                <input class="inputtype" type="text" name="matric" size="30", placeholder="Enter your matricno" maxlength="10"required ><br></p>
-                <p class="address" >Address: <br>
-                <input class="inputtype" type="text" name="address" size="30", placeholder="Enter your address" maxlength="30" required><br></p>
+                <input class="inputtype" type="text" name="matric" size="30", placeholder="Enter your matricno" maxlength="10"><br></p>
                 <p class="phonenumber" >Phone Number: <br>
-                <input class="inputtype" type="text" name="phone" size="30", placeholder="Enter your phone number" maxlength="15" onkeypress="return isNumberKey(event)"required ><br></p>
+                <input class="inputtype" type="text" name="phone" size="30", placeholder="Enter your phone number" maxlength="15" onkeypress="return isNumberKey(event)"><br></p>
                 <p class="password">Password: <br>
-                <input class="inputtype" type="password" name="password" size="30", placeholder="Enter your password" maxlength="10"required ><br></p>
-                
+                <input class="inputtype" type="password" name="password" size="30", placeholder="Enter your password" maxlength="10"><br></p>
                 <p class="button"><input class="inputtype" type="submit" name="signup" value="Sign Up" id="signup"><br></p>
             </form>
             
