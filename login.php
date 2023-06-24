@@ -6,7 +6,8 @@ session_start();
 // If the user is not logged in send him/her to the login form
 if(isset($_SESSION["Login"])){
 if ($_SESSION["Login"] == "NO") {
-    echo "hi";
+  echo '<script>window.onload = function() { alert("Invalid login"); }</script>'; // Display the alert message
+
 }
 
 unset($_SESSION["Login"]);}
@@ -72,20 +73,23 @@ function isValidEmail(email) {
             <form method="post" action="check_login.php">
                 <p class="logina">LOGIN </p>
                 <p class="userid">User ID: <br>
-                <input class="inputtype" type="text" name="username" size="30", placeholder="Enter your user ID" maxlength="10"required><br></p>                               
+                <input class="inputtype" type="text" name="username" size="30", placeholder="Enter your user ID" maxlength="10"><br></p>                               
                 <p class="password">Password: <br>
-                <input class="inputtype" type="password" name="password" size="30", placeholder="Enter your password" maxlength="10"required></p>              
+                <input class="inputtype" type="password" name="password" size="30", placeholder="Enter your password" maxlength="10"></p>              
                <p class="loginbutton">
-                <input class="inputtype" type="submit" name="login" id="login"value="Login"></p>
+                <input class="inputtype" type="submit" name="login" id="login"value="Login"></p></form>
                 <div class="line-container">
                   <hr class="line">
                   <span class="line-text">Or</span>
                   <hr class="line">
                 </div>
+<<<<<<< HEAD
+=======
               
 
+>>>>>>> 91cedeff29d939648a9b0b2e82a303efbd6e049a
               <p class="signup"> Don't have an account? <a href="signup.php">Sign Up Now</a> </p> <!-- link to sign up page-->
-              </form>
+
 
         </div>
         <div class="rightcontainer">
