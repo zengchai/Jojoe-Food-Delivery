@@ -158,6 +158,8 @@ transition: ease 0.3s;
     display: flex;
     /*box-shadow: 25px 55px 75px black; 3D shadow*/
     justify-content: space-around;
+    padding-top: 8rem; /*container up padding*/
+    padding-bottom: 8rem; /*container up padding*/
 }
 
 .position {
@@ -198,7 +200,15 @@ transition: ease 0.3s;
   color: rgb(0, 0, 0);
   padding: 14px 20px;
   margin: 8px 0;
+  margin-right: 15px;
   border: none;
+  cursor: pointer;
+  margin-right: 15px;
+}
+
+#cancelButton:hover {
+
+  background-color: #ff7b71;
   cursor: pointer;
 }
 
