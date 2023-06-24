@@ -198,7 +198,14 @@ transition: ease 0.3s;
   color: rgb(0, 0, 0);
   padding: 14px 20px;
   margin: 8px 0;
+  margin-right: 15px;
   border: none;
+  cursor: pointer;
+}
+
+#cancelButton:hover {
+
+  background-color: #ff7b71;
   cursor: pointer;
 }
 
