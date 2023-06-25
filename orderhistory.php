@@ -10,16 +10,12 @@ if ($_SESSION["Login"] != "YES") {
 date_default_timezone_set('Asia/Kuala_Lumpur');
 $today = date('Y-m-d H:i:s');
 if(isset($_SESSION['COUNTER'])){
-if (isset($_SESSION['TOTALPRICE'])) {
+if (isset($_GET['tp'])) {
   $orderID = $_SESSION['COUNTER'];
-  function function_alert($message) {
-    // Display the alert box 
-    echo "<script>alert('Paid Successfully - Order Number: ' + '$message');</script>";
-  }
   $sqls = "UPDATE orders SET payment_status='PAID',payment_date='$today',total_price = {$_SESSION['TOTALPRICE']}  WHERE order_id = {$_SESSION['COUNTER']}";
   unset($_GET["curaddr"]);
   if(mysqli_query($conn, $sqls)){
-
+    if(isset($_SESSION['TOTALPRICE'])){
       unset($_SESSION['COUNTER']);
       unset($_SESSION['TOTALPRICE']);
       $_SESSION['PAID'] = "YES";
@@ -32,7 +28,7 @@ if (isset($_SESSION['TOTALPRICE'])) {
       $_SESSION['COUNTER'] = $order_ID['order_id'];
       }
     }
-  }
+  }}
   else{
     $em = "Error: " . mysqli_error($conn);
     echo '<script>window.onload = function() { alert("' . $em . '"); }</script>'; // Display the alert message

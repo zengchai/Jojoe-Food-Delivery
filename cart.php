@@ -68,20 +68,6 @@ if ($_SESSION["Login"] != "YES") {
                 } }}}}
                     ?>     
                     
-                    <!-- <div class=" food">
-                        <div class="foodNum">
-                            1 x 
-                        </div>
-                        <div class="foodNameChinese">
-                            A2 + 白饭
-                        </div>
-                        <div class="foodNameEnglish">
-                            A2 + White Rice
-                        </div>
-                        <div class="foodPrice">
-                            RM6.00
-                        </div>
-                    </div> -->
                 </div>
                 
                 <div class="table total">Total Price</div>
