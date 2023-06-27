@@ -35,12 +35,12 @@ if(!isset($_SESSION['COUNTER'])){
 <html lang="en">   
 <head>
    <title>Some Web Page</title>
-   <link rel='stylesheet' href='yam-css/navigationbar&body.css'/>
+   <link rel='stylesheet' href='css/yam-css/navigationbar&body.css'/>
    <?php if($_SESSION['LEVEL']==1):?>
-   <link rel='stylesheet' href='yam-css/serviceSeller.css'/>
+   <link rel='stylesheet' href='css/yam-css/serviceSeller.css'/>
    <?php endif;?>
    <?php if($_SESSION['LEVEL']==2||$_SESSION['LEVEL']==0):?>
-   <link rel='stylesheet' href='yam-css/serviceCustomer.css'/>
+   <link rel='stylesheet' href='css/yam-css/serviceCustomer.css'/>
    <?php endif;?>
    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!--windows size responsive-->
  </head>
@@ -60,7 +60,7 @@ include("header.php");
       </div>
 
       <div class="date">
-        <div><img src="servicePageImage/calendar.png" style="height: 30px; width: 30px; margin-right: 10px"></div>
+        <div><img src="img/servicePageImage/calendar.png" style="height: 30px; width: 30px; margin-right: 10px"></div>
         <div><text style="font-size: 1.1rem;" id="currentDate"><?php echo $today?></text></div>
       </div>
     </div>
@@ -82,7 +82,7 @@ include("header.php");
             <div class='food'>
             <div class='thumb'>";?>
 
-            <img class="image" src="menuimages/<?=$row['menu_img']?>">
+            <img class="image" src="img/menuimages/<?=$row['menu_img']?>">
             
     <?php echo "</div><div class='details'>
     <div class='foodID'> $row[menu_code]   $row[menu_name]</div>
@@ -226,12 +226,12 @@ if (isset($_SESSION['alert_message'])) {
       </div>
 
       <div class="date">
-        <div><img src="servicePageImage/calendar.png" style="height: 30px; width: 30px; margin-right: 10px"></div>
+        <div><img src="img/servicePageImage/calendar.png" style="height: 30px; width: 30px; margin-right: 10px"></div>
         <div><text style="font-size: 1.1rem;" id="currentDate"><?php echo $today?></text></div>
       </div>
 
       <div class="cart">
-        <a data-active="cart" href="cart.php"><img src="servicePageImage/shopping-cart.png" style="height: 40px; width: 40px; margin-right: 10px"></a></i>
+        <a data-active="cart" href="cart.php"><img src="img/servicePageImage/shopping-cart.png" style="height: 40px; width: 40px; margin-right: 10px"></a></i>
       </div>
 
     </div>
@@ -257,7 +257,7 @@ if (isset($_SESSION['alert_message'])) {
             <div class='food'>
             <div class='images'>";?>
 
-            <img class="picturesize" src="menuimages/<?=$row['menu_img']?>">
+            <img class="picturesize" src="img/menuimages/<?=$row['menu_img']?>">
             
         <?php echo "</div><div class='details'>
         <div class='foodIDs'>

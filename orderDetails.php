@@ -19,8 +19,8 @@ if(isset($_POST['address'])){
 <html>
     <head>
         <title>Jojoe Food</title>
-        <link rel='stylesheet' href='yam-css/navigationbar&body.css'/>
-        <link rel="stylesheet" href="darren-css/orderDetails.css">
+        <link rel='stylesheet' href='css/yam-css/navigationbar&body.css'/>
+        <link rel="stylesheet" href="css/darren-css/orderDetails.css">
     </head>
 
     <body>
@@ -59,7 +59,7 @@ if(isset($_POST['address'])){
                         echo "<span>{$row['user_address']}</span>";
                     }}?>
                     <a href="#">
-                        <img src="image/editlogo.png" class="editLogo"
+                        <img src="img/image/editlogo.png" class="editLogo"
                         onclick="document.getElementById('id02').style.display='block'" style="width:auto;">
                     </a>
                 </div>
