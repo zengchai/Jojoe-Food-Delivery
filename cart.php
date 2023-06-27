@@ -11,8 +11,8 @@ if ($_SESSION["Login"] != "YES") {
 <html>
     <head>
         <title>Jojoe Food</title>
-        <link rel='stylesheet' href='yam-css/navigationbar&body.css'/>
-        <link rel="stylesheet" href="darren-css/cart.css">
+        <link rel='stylesheet' href='css/yam-css/navigationbar&body.css'/>
+        <link rel="stylesheet" href="css/darren-css/cart.css">
     </head>
 
     <body>
@@ -28,7 +28,7 @@ if ($_SESSION["Login"] != "YES") {
             </div>
 
             <div class="date">
-                <div><img src="image/calendarlogo.png" style="height: 30px; width: 30px; margin-right: 10px"></div>
+                <div><img src="img/image/calendarlogo.png" style="height: 30px; width: 30px; margin-right: 10px"></div>
                 <div><text style="font-size: 1.1rem; " id="currentDate">dd/mm/yyyy</text></div>
             </div>
         

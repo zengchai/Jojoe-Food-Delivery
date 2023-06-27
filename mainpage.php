@@ -13,20 +13,20 @@ if (!isset($_COOKIE['visitor_count'])) {
 <html>
     <head>
         <title>Jojoe Food</title>
-        <link rel='stylesheet' href='yam-css/navigationbar&body.css'/>
-        <link rel="stylesheet" href="darren-css/mainPage.css">
+        <link rel='stylesheet' href='css/yam-css/navigationbar&body.css'/>
+        <link rel="stylesheet" href="css/darren-css/mainPage.css">
     </head>
 
     <div class='menu-container'>
             <div class='menu'>
               <div class ='left_menu'>
                   <div class="logo">
-                    <img src="headerImage/image (1).png" style="height: 50px; width: 50px; text-align: center">
+                    <img src="img/headerImage/image (1).png" style="height: 50px; width: 50px; text-align: center">
                   </div>   
                     <div class="headermain"><a data-active="home" href="mainpage.php" >HOME</a></div> 
               </div>
                 <div class="login">
-                    <img src="headerImage/image.png" style="text-align: center; padding: 15px 0;">
+                    <img src="img/headerImage/image.png" style="text-align: center; padding: 15px 0;">
           <a href="login.php">LOGIN</a>
       </div>          
     </div>
@@ -42,11 +42,11 @@ if (!isset($_COOKIE['visitor_count'])) {
                         <button class="btn signUpNow" onclick="location.href='signup.php'">SIGN UP NOW</a></button>
                     </div>
                     <div class="two">
-                        <img src="image/platefood.png" class="image1">
+                        <img src="img/image/platefood.png" class="image1">
                     </div>
             </div>
                 <div class="three">
-                    <img src="image/cendolbanner.png" class="image2">
+                    <img src="img/image/cendolbanner.png" class="image2">
                 </div>
                 <div class="four">
                     <br><br><br>

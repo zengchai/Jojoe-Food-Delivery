@@ -46,12 +46,12 @@ if (isset($_GET['tp'])) {
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
 <?php if($_SESSION['LEVEL']==1){
-  echo "<link rel='stylesheet' type='text/css' href='ks-css/orderHistorySeller.css' id='stylesheet'>";
+  echo "<link rel='stylesheet' type='text/css' href='css/ks-css/orderHistorySeller.css' id='stylesheet'>";
 }
 else{
-  echo "<link rel='stylesheet' type='text/css' href='ks-css/orderHistory.css' id='stylesheet'>";
+  echo "<link rel='stylesheet' type='text/css' href='css/ks-css/orderHistory.css' id='stylesheet'>";
 }?>
-<link rel="stylesheet" type="text/css" href="yam-css/navigationbar&body.css" id="stylesheet">
+<link rel="stylesheet" type="text/css" href="css/yam-css/navigationbar&body.css" id="stylesheet">
 <!-- <meta name="editport" content="width=device-width, initial-scale=1"> -->
 <script>
 var coll = document.getElementsByClassName("collapsible");
@@ -92,7 +92,7 @@ if (mysqli_num_rows($res) > 0) {
     while ($row = mysqli_fetch_assoc($res)) { 
         echo "<div class='infobox'>
         <div class='orderupper'>
-        <div class='foodimg'><img src='image/platefood.png'></div>
+        <div class='foodimg'><img src='img/image/platefood.png'></div>
           <div class='order-container'>
           <div class='orderno'> ORDER ID {$row['order_id']} </div>
         <div class='orderDetails'>";

@@ -35,8 +35,8 @@ if (mysqli_query($conn, $sql)) {
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Lato:wght@700&display=swap" rel="stylesheet">
-<link rel="stylesheet" type="text/css" href="ks-css/style1.css" id="stylesheet">
-<link rel='stylesheet' href='yam-css/navigationbar&body.css'/>
+<link rel="stylesheet" type="text/css" href="css/ks-css/style1.css" id="stylesheet">
+<link rel='stylesheet' href='css/yam-css/navigationbar&body.css'/>
 <script>
     function isNumberKey(event) {
       var charCode = (event.which) ? event.which : event.keyCode;
@@ -76,12 +76,12 @@ if (mysqli_query($conn, $sql)) {
             <div class='menu'>
               <div class ='left_menu'>
                   <div class="logo">
-                    <img src="headerImage/image (1).png" style="height: 50px; width: 50px; text-align: center">
+                    <img src="img/headerImage/image (1).png" style="height: 50px; width: 50px; text-align: center">
                   </div>   
                     <div class="headermain"><a data-active="home" href="mainpage.php" >HOME</a></div> 
               </div>
                 <div class="login">
-                    <img src="headerImage/image.png" style="text-align: center; padding: 15px 0;">
+                    <img src="img/headerImage/image.png" style="text-align: center; padding: 15px 0;">
           <a href="login.php">LOGIN</a>
       </div>          
     </div>
@@ -113,7 +113,7 @@ if (mysqli_query($conn, $sql)) {
             
         </div>
         <div class="rightcontainer">
-        <div class="foodcontainer" ><img class="foodlogo" src="image/platefood.png">
+        <div class="foodcontainer" ><img class="foodlogo" src="img/image/platefood.png">
             <h1>Jojoe Food</h1></div>
         </div>
     </div>

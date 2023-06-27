@@ -5,7 +5,7 @@
             <div class='menu'>
               <div class ='left_menu'>
                   <div class="logo">
-                    <img src="headerImage/image (1).png" style="height: 50px; width: 50px; text-align: center">
+                    <img src="img/headerImage/image (1).png" style="height: 50px; width: 50px; text-align: center">
                   </div>  
                   <div class="header1"> 
                     <div class="header"><a data-active="home" href="homepage.php">HOME</a></div> 
@@ -14,7 +14,7 @@
                   </div> 
               </div>
                 <div class="login">
-                    <img src="headerImage/image.png" style="text-align: center; padding: 15px 0;">
+                    <img src="img/headerImage/image.png" style="text-align: center; padding: 15px 0;">
         <button class="logout" onclick="document.getElementById('id03').style.display='block'">LOGOUT</button>
                 </div>          
             </div>

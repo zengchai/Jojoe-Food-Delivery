@@ -47,7 +47,7 @@ if(isset($_POST["menucode"])){
             $allowed_exs = array("jpg","jpeg","png");
             if (in_array($img_ex_lc,$allowed_exs)){
                 $new_img_name = uniqid("IMG-", true).'.'.$img_ex_lc;
-                $img_upload_path = 'menuimages/'.$new_img_name;
+                $img_upload_path = 'img/menuimages/'.$new_img_name;
                 move_uploaded_file($img_tmp_name,$img_upload_path);
 
                 // Insert into database
